@@ -19,3 +19,8 @@ DerivedData
 
 #CocoaPods
 Pods
+
+#Blender backups
+*.blend1
+*.blend2
+
