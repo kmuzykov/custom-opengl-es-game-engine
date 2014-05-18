@@ -7,20 +7,10 @@
 //
 
 #include "TestScene.h"
-#include "KMRenderable.h"
+
 #include "KMMacros.h"
-#include "KMRenderableModuleUniformColor.h"
-#include "KMRenderableModuleTextured.h"
-#include "KMRenderableModuleLighting.h"
-#include "KMTexture.h"
-
-#include "KMLightSourceNode.h"
-
-#include "KMPhysicsNode.h"
 #include "KMPhysicsWorld.h"
 
-#include "KMGameObject.h"
-#include "KMRendererMesh.h"
 
 #include "BowlingBall.h"
 #include "BowlingLane.h"
@@ -42,10 +32,10 @@ TestScene::TestScene()
     this->addLightSource(vec3(0, 3, -30), 0.25f);
 }
 
-//void TestScene::update(float dt)
-//{
-//    KMScene::update(dt);    
-//}
+void TestScene::update(float dt)
+{
+    KMScene::update(dt);    
+}
 
 //TestScene::TestScene()
 //{
@@ -210,41 +200,3 @@ TestScene::TestScene()
 ////        child->rotateBy(rot);
 ////    }
 //}
-
-void TestScene::update(float dt)
-{
-    KMScene::update(dt);
-    //_physicsWorld->step(dt);
-
-    vec3 ballPos = _ball->getPosition();
-    
-    ballPos += vec3(0,0, -0.1f);
-    _ball->setPosition(ballPos);
-    
-    
-    vec3 pos = this->getPosition();
-
-    pos.z = -1 * ballPos.z - 3;
-
-    if (pos.z > 30)
-        pos.z = 30;
-
-    this->setPosition(pos);
-//
-//    vec3 position = this->getPosition();
-//    position.z += dt;
-//    this->setPosition(position);
-
-//    float rads = DEGREES_TO_RADIANS(-15 * dt);
-//    Quaternion rot = Quaternion::CreateFromAxisAngle(vec3(0.5,1,1), rads);
-//
-//    for (auto& child : this->getChildren())
-//    {
-//        child->rotateBy(rot);
-//    }
-}
-
-
-
-
-

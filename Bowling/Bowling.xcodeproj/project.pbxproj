@@ -39,9 +39,6 @@
 		2A6C089618BBBDDA0005AF6F /* KMScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C087018BBBDDA0005AF6F /* KMScene.cpp */; };
 		2A6C089718BBBDDA0005AF6F /* KMPhysicsNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C087818BBBDDA0005AF6F /* KMPhysicsNode.cpp */; };
 		2A6C089818BBBDDA0005AF6F /* KMPhysicsWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C087A18BBBDDA0005AF6F /* KMPhysicsWorld.cpp */; };
-		2A6C089918BBBDDA0005AF6F /* KMRenderableModuleLighting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C087D18BBBDDA0005AF6F /* KMRenderableModuleLighting.cpp */; };
-		2A6C089A18BBBDDA0005AF6F /* KMRenderableModuleTextured.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C087F18BBBDDA0005AF6F /* KMRenderableModuleTextured.cpp */; };
-		2A6C089B18BBBDDA0005AF6F /* KMRenderableModuleUniformColor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C088118BBBDDA0005AF6F /* KMRenderableModuleUniformColor.cpp */; };
 		2A6C08A418BBBE040005AF6F /* default_red_color.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 2A6C088418BBBDDA0005AF6F /* default_red_color.fsh */; };
 		2A6C08A518BBBE040005AF6F /* default_red_color.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 2A6C088518BBBDDA0005AF6F /* default_red_color.vsh */; };
 		2A6C08A618BBBE040005AF6F /* textured.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 2A6C088618BBBDDA0005AF6F /* textured.fsh */; };
@@ -178,12 +175,6 @@
 		2A6C087918BBBDDA0005AF6F /* KMPhysicsNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPhysicsNode.h; sourceTree = "<group>"; };
 		2A6C087A18BBBDDA0005AF6F /* KMPhysicsWorld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMPhysicsWorld.cpp; sourceTree = "<group>"; };
 		2A6C087B18BBBDDA0005AF6F /* KMPhysicsWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPhysicsWorld.h; sourceTree = "<group>"; };
-		2A6C087D18BBBDDA0005AF6F /* KMRenderableModuleLighting.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMRenderableModuleLighting.cpp; sourceTree = "<group>"; };
-		2A6C087E18BBBDDA0005AF6F /* KMRenderableModuleLighting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMRenderableModuleLighting.h; sourceTree = "<group>"; };
-		2A6C087F18BBBDDA0005AF6F /* KMRenderableModuleTextured.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMRenderableModuleTextured.cpp; sourceTree = "<group>"; };
-		2A6C088018BBBDDA0005AF6F /* KMRenderableModuleTextured.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMRenderableModuleTextured.h; sourceTree = "<group>"; };
-		2A6C088118BBBDDA0005AF6F /* KMRenderableModuleUniformColor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMRenderableModuleUniformColor.cpp; sourceTree = "<group>"; };
-		2A6C088218BBBDDA0005AF6F /* KMRenderableModuleUniformColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMRenderableModuleUniformColor.h; sourceTree = "<group>"; };
 		2A6C088418BBBDDA0005AF6F /* default_red_color.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = default_red_color.fsh; sourceTree = "<group>"; };
 		2A6C088518BBBDDA0005AF6F /* default_red_color.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = default_red_color.vsh; sourceTree = "<group>"; };
 		2A6C088618BBBDDA0005AF6F /* textured.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = textured.fsh; sourceTree = "<group>"; };
@@ -387,7 +378,6 @@
 				2A6C086418BBBDDA0005AF6F /* iOS */,
 				2A6C087218BBBDDA0005AF6F /* Libraries */,
 				2A6C087718BBBDDA0005AF6F /* Physics */,
-				2A6C087C18BBBDDA0005AF6F /* Renderables */,
 				2A6C088318BBBDDA0005AF6F /* Shaders */,
 				2AA5C44F19229FCF00B65E9D /* Renderers */,
 				2A6C086A18BBBDDA0005AF6F /* KMDirector.h */,
@@ -469,19 +459,6 @@
 				2A6C087B18BBBDDA0005AF6F /* KMPhysicsWorld.h */,
 			);
 			path = Physics;
-			sourceTree = "<group>";
-		};
-		2A6C087C18BBBDDA0005AF6F /* Renderables */ = {
-			isa = PBXGroup;
-			children = (
-				2A6C087D18BBBDDA0005AF6F /* KMRenderableModuleLighting.cpp */,
-				2A6C087E18BBBDDA0005AF6F /* KMRenderableModuleLighting.h */,
-				2A6C087F18BBBDDA0005AF6F /* KMRenderableModuleTextured.cpp */,
-				2A6C088018BBBDDA0005AF6F /* KMRenderableModuleTextured.h */,
-				2A6C088118BBBDDA0005AF6F /* KMRenderableModuleUniformColor.cpp */,
-				2A6C088218BBBDDA0005AF6F /* KMRenderableModuleUniformColor.h */,
-			);
-			path = Renderables;
 			sourceTree = "<group>";
 		};
 		2A6C088318BBBDDA0005AF6F /* Shaders */ = {
@@ -669,7 +646,6 @@
 				2A6C089518BBBDDA0005AF6F /* KMRenderable.cpp in Sources */,
 				2A6C089818BBBDDA0005AF6F /* KMPhysicsWorld.cpp in Sources */,
 				2A6C088D18BBBDDA0005AF6F /* KMLightSourceNode.cpp in Sources */,
-				2A6C089B18BBBDDA0005AF6F /* KMRenderableModuleUniformColor.cpp in Sources */,
 				2A6C089018BBBDDA0005AF6F /* KMVertex.cpp in Sources */,
 				2A3FB17418881A240028A808 /* AppDelegate.mm in Sources */,
 				2A6C089218BBBDDA0005AF6F /* KMGLView.mm in Sources */,
@@ -679,9 +655,7 @@
 				2AA5C44819229E1D00B65E9D /* KMGameObject.cpp in Sources */,
 				2A6C089418BBBDDA0005AF6F /* KMNode.cpp in Sources */,
 				2AA5C44E19229F3300B65E9D /* KMComponent.cpp in Sources */,
-				2A6C089A18BBBDDA0005AF6F /* KMRenderableModuleTextured.cpp in Sources */,
 				2A3FB17018881A240028A808 /* main.m in Sources */,
-				2A6C089918BBBDDA0005AF6F /* KMRenderableModuleLighting.cpp in Sources */,
 				2AA5C4551922A09D00B65E9D /* KMMaterial.cpp in Sources */,
 				2AA5C4591922B2E100B65E9D /* KMMaterialColorUniform.cpp in Sources */,
 				2A3FB1DC188910930028A808 /* TestScene.cpp in Sources */,
