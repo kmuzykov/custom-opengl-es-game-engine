@@ -9,13 +9,12 @@
 #ifndef __Bowling__KMRenderer__
 #define __Bowling__KMRenderer__
 
-#include "KMComponent.h"
+#include "Matrix.hpp"
 
-class KMRenderer : public KMComponent
+class KMRenderer
 {
-    
-    
-
+public:
+    virtual void render(const mat4& mvm) = 0;
 };
 
 

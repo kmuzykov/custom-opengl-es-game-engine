@@ -11,10 +11,15 @@
 
 #include "KMGameObject.h"
 
-class BowlongBall : public KMGameObject
+class btCollisionShape;
+
+class BowlingBall : public KMGameObject
 {
 public:
-    BowlongBall();
+    BowlingBall();
+
+private:
+    static btCollisionShape* createShape();
 };
 
 #endif /* defined(__Bowling__BowlingBall__) */

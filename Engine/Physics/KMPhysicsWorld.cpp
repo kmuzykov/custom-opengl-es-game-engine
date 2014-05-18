@@ -6,9 +6,13 @@
 //  Copyright (c) 2014 PixelOxygen. All rights reserved.
 //
 
+
 #include "KMPhysicsWorld.h"
 #include "btBulletDynamicsCommon.h"
-#include "KMPhysicsNode.h"
+
+#include "KMGameObject.h"
+#include "KMVertex.h"
+#include "KMMacros.h"
 
 KMPhysicsWorld::KMPhysicsWorld()
 {
@@ -32,8 +36,15 @@ KMPhysicsWorld::~KMPhysicsWorld()
     delete _broadphase;
 }
 
-void KMPhysicsWorld::addObject(KMPhysicsNode* physicsObject)
+void KMPhysicsWorld::addObject(KMGameObject* physicsObject)
 {
+    btRigidBody *physicsBody = physicsObject->getPhysicsBody();
+    if (!physicsBody)
+    {
+        KMLOG("Trying to add object without physics body. The object will be ignored.");
+        return;
+    }
+    
     //TODO: Reset postion of the physicsObject
     _world->addRigidBody(physicsObject->getPhysicsBody());
 }
@@ -41,4 +52,23 @@ void KMPhysicsWorld::addObject(KMPhysicsNode* physicsObject)
 void KMPhysicsWorld::step(float dt)
 {
     _world->stepSimulation(dt);    
+}
+
+std::auto_ptr<btBvhTriangleMeshShape> KMPhysicsWorld::triangleMeshFromVertices(const std::vector<KMVertex>& vertices)
+{
+    btTriangleMesh* mesh = new btTriangleMesh();
+    for (int i=0; i < vertices.size(); i += 3)
+    {
+        KMVertex v1 = vertices[i];
+        KMVertex v2 = vertices[i+1];
+        KMVertex v3 = vertices[i+2];
+        
+        btVector3 bv1 = btVector3(v1.position.x, v1.position.y, v1.position.z);
+        btVector3 bv2 = btVector3(v2.position.x, v2.position.y, v2.position.z);
+        btVector3 bv3 = btVector3(v3.position.x, v3.position.y, v3.position.z);
+        
+        mesh->addTriangle(bv1, bv2, bv3);
+    }
+    
+    return std::auto_ptr<btBvhTriangleMeshShape>(new btBvhTriangleMeshShape(mesh, true));
 }

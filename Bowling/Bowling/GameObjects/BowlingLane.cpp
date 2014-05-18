@@ -12,12 +12,33 @@
 #include "KMRendererMesh.h"
 #include "KMMaterialTextureDiffuse.h"
 
+#include "btBulletDynamicsCommon.h"
+#include "KMPhysicsWorld.h"
+
 BowlingLane::BowlingLane()
 {
-    auto laneVertices = KMVertex::loadFromObj("lane.obj");
+    //Setting renderer
     KMTexture tex("lane_diffuse.png");
-
+    auto laneVertices = KMVertex::loadFromObj("lane.obj");
     auto mat = std::make_shared<KMMaterialTextureDiffuse>(tex);
-    std::shared_ptr<KMRenderer> renderer = std::make_shared<KMRendererMesh>(mat, laneVertices);
-    this->addComponent(renderer);
+    _renderer = std::make_shared<KMRendererMesh>(mat, laneVertices);
+    
+    //Setting up physics body
+    btCollisionShape* shape = createShape(laneVertices);
+    btScalar bodyMass = 0;
+    btVector3 bodyInertia;
+    shape->calculateLocalInertia(bodyMass, bodyInertia);
+    
+    btRigidBody::btRigidBodyConstructionInfo bodyCI = btRigidBody::btRigidBodyConstructionInfo(bodyMass, nullptr, shape, bodyInertia);
+    bodyCI.m_restitution = 0.6;
+    bodyCI.m_friction = 0.5;
+    
+    _physicsBody = std::unique_ptr<btRigidBody>(new btRigidBody(bodyCI));
+    _physicsBody->setUserPointer(this);
+}
+
+btCollisionShape* BowlingLane::createShape(const std::vector<KMVertex>& laneVertices)
+{
+    static auto _Shape = KMPhysicsWorld::triangleMeshFromVertices(laneVertices);
+    return _Shape.get();
 }

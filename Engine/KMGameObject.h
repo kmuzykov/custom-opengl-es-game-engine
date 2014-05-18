@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 PixelOxygen. All rights reserved.
 //
 
-#ifndef __Bowling__KMGameObject__
-#define __Bowling__KMGameObject__
+#ifndef __KMEngine__KMGameObject__
+#define __KMEngine__KMGameObject__
 
-#include "KMRenderer.h"
-#include "KMComponent.h"
 #include "KMNode.h"
-
 #include <memory>
-#include <vector>
+
+class KMRenderer;
+class KMPhysicsBody;
+class btRigidBody;
 
 class KMGameObject : public KMNode
 {
@@ -25,11 +25,20 @@ public:
     virtual void update(float dt);
     virtual void draw();
     
-    void addComponent(std::shared_ptr<KMComponent> component);
+    //Overriding position and rotation in case we need to take into account physics body.
+    virtual vec3 getPosition() const;
+    virtual void setPosition(const vec3& position);
+    virtual Quaternion getRotation() const;
+    virtual void setRotation(Quaternion rotation);
+    
+    virtual void rotateBy(Quaternion rotateBy);
 
-private:
-    std::vector<std::shared_ptr<KMComponent>> _components;
+    btRigidBody* getPhysicsBody() const { return _physicsBody.get(); }
+
+protected:
+    std::shared_ptr<KMRenderer>  _renderer;
+    std::unique_ptr<btRigidBody> _physicsBody;
 };
 
 
-#endif /* defined(__Bowling__KMGameObject__) */
+#endif

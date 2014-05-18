@@ -10,11 +10,17 @@
 #define __Bowling__BowlingLane__
 
 #include "KMGameObject.h"
+#include <vector>
+
+class btCollisionShape;
+class KMVertex;
 
 class BowlingLane : public KMGameObject
 {
 public:
     BowlingLane();
+private:
+    static btCollisionShape* createShape(const std::vector<KMVertex>& laneVertices);
 };
 
 

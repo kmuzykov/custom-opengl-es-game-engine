@@ -19,7 +19,7 @@ using namespace std;
 
 TestScene::TestScene()
 {
-    _ball = std::make_shared<BowlongBall>();
+    _ball = std::make_shared<BowlingBall>();
     _ball->setPosition(vec3(0,0,-3));
     this->addChild(_ball);
     
@@ -30,11 +30,16 @@ TestScene::TestScene()
     this->addLightSource(vec3(0, 3, -2));
     this->addLightSource(vec3(0, 3, -15), 0.5f);
     this->addLightSource(vec3(0, 3, -30), 0.25f);
+    
+    _physicsWorld = new KMPhysicsWorld();
+    _physicsWorld->addObject(_ball.get());
+    _physicsWorld->addObject(bowlingLane.get());
 }
 
 void TestScene::update(float dt)
 {
-    KMScene::update(dt);    
+    KMScene::update(dt);
+    _physicsWorld->step(dt);
 }
 
 //TestScene::TestScene()

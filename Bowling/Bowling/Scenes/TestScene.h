@@ -12,7 +12,7 @@
 #include "KMScene.h"
 
 class KMPhysicsWorld;
-class KMPhysicsNode;
+class KMGameObject;
 
 class TestScene : public KMScene
 {
@@ -24,7 +24,7 @@ protected:
     
 private:
     KMPhysicsWorld* _physicsWorld;
-    std::shared_ptr<KMNode> _ball;
+    std::shared_ptr<KMGameObject> _ball;
 };
 
 #endif /* defined(__Bowling__TestScene__) */

@@ -9,31 +9,36 @@
 #ifndef __Bowling__KMPhysicsWorld__
 #define __Bowling__KMPhysicsWorld__
 
+#include <memory>
+#include <vector>
+
 class btBroadphaseInterface;
 class btDefaultCollisionConfiguration;
 class btCollisionDispatcher;
 class btSequentialImpulseConstraintSolver;
 class btDiscreteDynamicsWorld;
+class btBvhTriangleMeshShape;
 
-class KMPhysicsNode;
+class KMVertex;
+class KMGameObject;
 
 class KMPhysicsWorld
 {
-    friend class KMPhysicsNode;
-
 public:
     KMPhysicsWorld();
-    virtual ~KMPhysicsWorld();
+    ~KMPhysicsWorld();
     
+    void addObject(KMGameObject* physicsObject);
     void step(float dt);
+    
+    static std::auto_ptr<btBvhTriangleMeshShape> triangleMeshFromVertices(const std::vector<KMVertex>& vertices);
+    
 private:
     btBroadphaseInterface*                  _broadphase;
     btDefaultCollisionConfiguration*        _collisionConfiguration;
     btCollisionDispatcher*                  _dispatcher;
     btSequentialImpulseConstraintSolver*    _solver;
     btDiscreteDynamicsWorld*                _world;
-    
-    void addObject(KMPhysicsNode* physicsObject);
 };
 
 
