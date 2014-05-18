@@ -21,6 +21,7 @@ public:
 
 protected:
     virtual void update(float dt);
+    virtual void draw();
     
 private:
     KMPhysicsWorld* _physicsWorld;

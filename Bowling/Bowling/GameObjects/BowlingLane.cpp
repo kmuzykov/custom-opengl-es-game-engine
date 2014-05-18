@@ -25,12 +25,12 @@ BowlingLane::BowlingLane()
     
     //Setting up physics body
     btCollisionShape* shape = createShape(laneVertices);
-    btScalar bodyMass = 0;
-    btVector3 bodyInertia;
-    shape->calculateLocalInertia(bodyMass, bodyInertia);
+    btScalar bodyMass = 0.0f;
+    btVector3 bodyInertia(0,0,0);
+    //shape->calculateLocalInertia(bodyMass, bodyInertia);
     
     btRigidBody::btRigidBodyConstructionInfo bodyCI = btRigidBody::btRigidBodyConstructionInfo(bodyMass, nullptr, shape, bodyInertia);
-    bodyCI.m_restitution = 0.6;
+    bodyCI.m_restitution = 0.0;
     bodyCI.m_friction = 0.5;
     
     _physicsBody = std::unique_ptr<btRigidBody>(new btRigidBody(bodyCI));

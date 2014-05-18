@@ -30,6 +30,7 @@ public:
     
     void addObject(KMGameObject* physicsObject);
     void step(float dt);
+    void drawDebug();
     
     static std::auto_ptr<btBvhTriangleMeshShape> triangleMeshFromVertices(const std::vector<KMVertex>& vertices);
     

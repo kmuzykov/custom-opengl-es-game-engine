@@ -14,6 +14,8 @@
 #include "KMVertex.h"
 #include "KMMacros.h"
 
+#include "GLDebugDrawer.h"
+
 KMPhysicsWorld::KMPhysicsWorld()
 {
     _broadphase = new btDbvtBroadphase();
@@ -25,6 +27,9 @@ KMPhysicsWorld::KMPhysicsWorld()
     
     _world = new btDiscreteDynamicsWorld(_dispatcher, _broadphase, _solver, _collisionConfiguration);
     _world->setGravity(btVector3(0, -9.8, 0));
+    
+
+    _world->setDebugDrawer(new GLDebugDrawer());
 }
 
 KMPhysicsWorld::~KMPhysicsWorld()
@@ -51,7 +56,12 @@ void KMPhysicsWorld::addObject(KMGameObject* physicsObject)
 
 void KMPhysicsWorld::step(float dt)
 {
-    _world->stepSimulation(dt);    
+    _world->stepSimulation(dt);
+}
+
+void KMPhysicsWorld::drawDebug()
+{
+    _world->debugDrawWorld();
 }
 
 std::auto_ptr<btBvhTriangleMeshShape> KMPhysicsWorld::triangleMeshFromVertices(const std::vector<KMVertex>& vertices)
