@@ -15,7 +15,6 @@
 #include <CoreFoundation/CoreFoundation.h> //for exit(1);
 #endif
 
-
 KMShader::KMShader(const char* vertex, const char* fragment)
 {
     const char* vertexSource = KMFileUtils::getSharedFileUtils().loadFile(vertex);
@@ -72,4 +71,16 @@ GLuint KMShader::buildShaderProgram(const char* vertexShaderSource, const char* 
     return programHandle;
 }
 
+std::shared_ptr<KMShader> KMShader::make(const char* nameWithoutExtension)
+{
+    size_t lenghtWithExt  = strlen(nameWithoutExtension) + 4;
+    
+    char vertex[lenghtWithExt];
+    char fragment[lenghtWithExt];
+    
+    sprintf(vertex, "%s.%s", nameWithoutExtension, "vsh");
+    sprintf(fragment, "%s.%s", nameWithoutExtension, "fsh");
+
+    return std::make_shared<KMShader>(&vertex[0], &fragment[0]);
+}
                         

@@ -26,7 +26,8 @@ void KMRenderableModuleUniformColor::onAdd(KMRenderable* owner, const KMShader& 
     if (_colorUniformLocation < 0)
     {
         KMLOG("KMRenderableModuleUniformColorc can't find 'u_color' uniform in shader program.");
-        return;    }
+        return;
+    }
     
     CHECK_GL_ERROR();
 }

@@ -10,6 +10,7 @@
 #define __KMSHader_h
 
 #include <OpenGLES/ES2/gl.h>
+#include <memory>
 
 class KMShader
 {
@@ -17,7 +18,9 @@ public:
     KMShader(const char* vertex, const char* fragment);
     virtual ~KMShader();
     
-    inline GLuint getGLProgram() const { return _glProgram; }
+    GLuint getGLProgram() const { return _glProgram; }
+    
+    static std::shared_ptr<KMShader> make(const char* nameWithoutExtension);
     
 private:
     GLuint _glProgram;
