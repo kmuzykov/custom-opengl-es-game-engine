@@ -25,6 +25,7 @@ public:
     
     void update(float dt);
     void runScene(std::shared_ptr<KMScene> scene);
+    std::shared_ptr<KMScene>& getCurrenScene() { return _currentScene;}
     
     int getViewWidth() const { return _viewWidth; }
     int getViewHeight() const { return _viewHeight; }
@@ -32,7 +33,7 @@ public:
     int getViewHeightInPixels() const {return _viewHeightInPixels; }
     int getScaleFactor() const { return _scaleFactor; }
     
-    const mat4& getProjectionMatrix() { return _projectionMatrix; }
+    const mat4& getProjectionMatrix() const { return _projectionMatrix; }
     
     static KMDirector& getSharedDirector();
 private:

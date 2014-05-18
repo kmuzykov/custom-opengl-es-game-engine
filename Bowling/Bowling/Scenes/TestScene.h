@@ -24,7 +24,7 @@ protected:
     
 private:
     KMPhysicsWorld* _physicsWorld;
-    std::shared_ptr<KMPhysicsNode> _ball;
+    std::shared_ptr<KMNode> _ball;
 };
 
 #endif /* defined(__Bowling__TestScene__) */

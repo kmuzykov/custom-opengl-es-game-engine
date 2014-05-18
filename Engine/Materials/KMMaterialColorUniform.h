@@ -17,7 +17,7 @@ public:
     KMMaterialColorUniform(vec3 color);
     virtual void setUniforms(const mat4& mvm);
 
-private:
+protected:
     GLint _colorUniform;
     vec3 _color;
 

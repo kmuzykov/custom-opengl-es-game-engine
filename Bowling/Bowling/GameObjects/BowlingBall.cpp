@@ -10,6 +10,7 @@
 #include "KMVertex.h"
 #include "KMMaterialColorUniform.h"
 #include "KMMaterialTextureUnlit.h"
+#include "KMMaterialTextureDiffuse.h"
 
 #include "KMRendererMesh.h"
 
@@ -20,7 +21,7 @@ BowlongBall::BowlongBall() : KMGameObject()
     
     KMTexture tex("ball_diffuse.png");
     
-    auto mat = std::make_shared<KMMaterialTextureUnlit>(tex);
+    auto mat = std::make_shared<KMMaterialTextureDiffuse>(tex);
     
     std::shared_ptr<KMRenderer> renderer = std::make_shared<KMRendererMesh>(mat, ballVertices);
     

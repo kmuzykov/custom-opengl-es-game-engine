@@ -21,4 +21,7 @@
 #endif
 
 
+#define KM_MAX_LIGHTS   8
+
+
 #endif

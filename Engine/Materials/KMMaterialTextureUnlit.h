@@ -20,7 +20,8 @@ public:
     virtual void setUniforms(const mat4& mvm);
     virtual void clearUniforms();
 
-private:
+protected:
+    KMMaterialTextureUnlit(const KMTexture texture, std::shared_ptr<KMShader> shader); //Special constructor for diffuse mat
     const KMTexture _texture; //TODO: Texture cache and store reference here
     GLint _textureUniform;
 

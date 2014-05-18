@@ -10,13 +10,14 @@
 #include "KMVertex.h"
 #include "KMMaterialTextureUnlit.h"
 #include "KMRendererMesh.h"
+#include "KMMaterialTextureDiffuse.h"
 
 BowlingLane::BowlingLane()
 {
     auto laneVertices = KMVertex::loadFromObj("lane.obj");
     KMTexture tex("lane_diffuse.png");
 
-    auto mat = std::make_shared<KMMaterialTextureUnlit>(tex);
+    auto mat = std::make_shared<KMMaterialTextureDiffuse>(tex);
     std::shared_ptr<KMRenderer> renderer = std::make_shared<KMRendererMesh>(mat, laneVertices);
     this->addComponent(renderer);
 }

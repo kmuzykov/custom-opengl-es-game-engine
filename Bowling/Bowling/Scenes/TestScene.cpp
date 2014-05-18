@@ -29,19 +29,23 @@ using namespace std;
 
 TestScene::TestScene()
 {
-    auto bowlingBall = std::make_shared<BowlongBall>();
-    bowlingBall->setPosition(vec3(0,0,-3));
-    this->addChild(bowlingBall);
+    _ball = std::make_shared<BowlongBall>();
+    _ball->setPosition(vec3(0,0,-3));
+    this->addChild(_ball);
     
     auto bowlingLane = std::make_shared<BowlingLane>();
     bowlingLane->setPosition(vec3(0,-1.5, -15));
-    this->addChild(bowlingLane);
+    this->addChild(bowlingLane);    
+    
+    this->addLightSource(vec3(0, 3, -2));
+    this->addLightSource(vec3(0, 3, -15), 0.5f);
+    this->addLightSource(vec3(0, 3, -30), 0.25f);
 }
 
-void TestScene::update(float dt)
-{
-    KMScene::update(dt);    
-}
+//void TestScene::update(float dt)
+//{
+//    KMScene::update(dt);    
+//}
 
 //TestScene::TestScene()
 //{
@@ -206,6 +210,39 @@ void TestScene::update(float dt)
 ////        child->rotateBy(rot);
 ////    }
 //}
+
+void TestScene::update(float dt)
+{
+    KMScene::update(dt);
+    //_physicsWorld->step(dt);
+
+    vec3 ballPos = _ball->getPosition();
+    
+    ballPos += vec3(0,0, -0.1f);
+    _ball->setPosition(ballPos);
+    
+    
+    vec3 pos = this->getPosition();
+
+    pos.z = -1 * ballPos.z - 3;
+
+    if (pos.z > 30)
+        pos.z = 30;
+
+    this->setPosition(pos);
+//
+//    vec3 position = this->getPosition();
+//    position.z += dt;
+//    this->setPosition(position);
+
+//    float rads = DEGREES_TO_RADIANS(-15 * dt);
+//    Quaternion rot = Quaternion::CreateFromAxisAngle(vec3(0.5,1,1), rads);
+//
+//    for (auto& child : this->getChildren())
+//    {
+//        child->rotateBy(rot);
+//    }
+}
 
 
 

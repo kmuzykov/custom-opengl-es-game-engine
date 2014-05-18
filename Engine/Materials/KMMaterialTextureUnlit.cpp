@@ -12,8 +12,13 @@
 const char* KMMaterialTextureUnlit::u_texture0 = "u_texture0";
 
 KMMaterialTextureUnlit::KMMaterialTextureUnlit(const KMTexture texture)
-:  KMMaterial(KMShader::make("textured")),
-   _texture(texture)
+:  KMMaterialTextureUnlit(texture, KMShader::make("textured"))
+{
+}
+
+KMMaterialTextureUnlit::KMMaterialTextureUnlit(const KMTexture texture, std::shared_ptr<KMShader> shader)
+: KMMaterial(shader),
+  _texture(texture)
 {
     _textureUniform = glGetUniformLocation(_shader->getGLProgram(), u_texture0);
 }
