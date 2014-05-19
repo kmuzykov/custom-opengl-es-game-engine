@@ -18,7 +18,7 @@ class KMVertex;
 class BowlingLane : public KMGameObject
 {
 public:
-    BowlingLane();
+    BowlingLane(const vec3& position);
 private:
     static btCollisionShape* createShape(const std::vector<KMVertex>& laneVertices);
 };

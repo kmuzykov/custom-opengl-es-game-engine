@@ -30,7 +30,7 @@ public:
     virtual void setPosition(const vec3& position);
     virtual Quaternion getRotation() const;
     virtual void setRotation(Quaternion rotation);
-    
+
     virtual void rotateBy(Quaternion rotateBy);
 
     btRigidBody* getPhysicsBody() const { return _physicsBody.get(); }

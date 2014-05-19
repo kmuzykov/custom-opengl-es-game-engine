@@ -30,22 +30,20 @@ TestScene::TestScene()
     this->addLightSource(vec3(0, 3, -30), 0.25f);
     
     //Creating ball & adding it to physics world
-    _ball = std::make_shared<BowlingBall>();
-    _ball->setPosition(vec3(0.7f, -0.7f, -3.0f));
+    _ball = std::make_shared<BowlingBall>(vec3(0.7f, -0.7f, -3.0f));
     this->addChild(_ball);
-    //_physicsWorld->addObject(_ball.get());
-    
+    _physicsWorld->addObject(_ball.get());
+
     //Bowling lane
-    auto bowlingLane = std::make_shared<BowlingLane>();
-    bowlingLane->setPosition(vec3(0,-1.5, -15));
+    auto bowlingLane = std::make_shared<BowlingLane>(vec3(0,-1.5, -15));
     this->addChild(bowlingLane);
     _physicsWorld->addObject(bowlingLane.get());
-    
+
     //Generating pins
-//    vec3 basePos = {0, -0.73, -34};
-//    float marginX = 0.3f;
-//    float marginZ = 0.305f;
-//
+    vec3 basePos = {0, -1, -10};//-34 end of lane base
+    float marginX = 0.3f;
+    float marginZ = 0.305f;
+
 //    for (int  i = 0; i < 4; i++)
 //    {
 //        float z = basePos.z - marginZ * i;
@@ -57,21 +55,46 @@ TestScene::TestScene()
 //            vec3 pinPos(x, basePos.y, z);
 //            
 //            //Creating actual pin and adding it to scene and physics world
-//            auto pin = std::make_shared<BowlingPin>();
-//            pin->setPosition(pinPos);
+//            auto pin = std::make_shared<BowlingPin>(pinPos);
 //            this->addChild(pin);
 //            _physicsWorld->addObject(pin.get());
+//            
+//            //Deactivating pin so that it stayed exactly where it was
+//            pin->getPhysicsBody()->setActivationState(WANTS_DEACTIVATION);
 //        }
 //    }
     
     //Single pin for tests
-    auto pin = std::make_shared<BowlingPin>();
-    pin->setPosition(vec3(0,-0.73, -3));
+    auto pin = std::make_shared<BowlingPin>(vec3(0, -1, -3));
     this->addChild(pin);
     _physicsWorld->addObject(pin.get());
+    //pin->getPhysicsBody()->setActivationState(WANTS_DEACTIVATION);
     
     //_ball->getPhysicsBody()->setLinearVelocity(btVector3(-0.02,0,-10));
+    _ball->getPhysicsBody()->applyCentralImpulse(btVector3(0, 10,-50));
+    _ball->getPhysicsBody()->applyTorqueImpulse(btVector3(0,0, 30));
 }
+
+void addBall()
+{
+    
+}
+
+void addTestPin()
+{
+    
+}
+
+void addAllPins()
+{
+    
+}
+
+void addLane()
+{
+    
+}
+
 
 void TestScene::update(float dt)
 {
@@ -84,31 +107,3 @@ void TestScene::draw()
     KMScene::draw();
     _physicsWorld->drawDebug();
 }
-
-///void TestScene::update(float dt)
-//{
-//    KMScene::update(dt);
-//    _physicsWorld->step(dt);
-//
-//    vec3 ballPos = _ball->getPosition();
-//    vec3 pos = this->getPosition();
-//    
-//    pos.z = -1 * ballPos.z - 3;
-//    
-//    if (pos.z > 30)
-//        pos.z = 30;
-//    
-//    this->setPosition(pos);
-////
-////    vec3 position = this->getPosition();
-////    position.z += dt;
-////    this->setPosition(position);
-//    
-////    float rads = DEGREES_TO_RADIANS(-15 * dt);
-////    Quaternion rot = Quaternion::CreateFromAxisAngle(vec3(0.5,1,1), rads);
-////    
-////    for (auto& child : this->getChildren())
-////    {
-////        child->rotateBy(rot);
-////    }
-//}

@@ -18,7 +18,7 @@
 
 KMPhysicsWorld::KMPhysicsWorld()
 {
-    _broadphase = new btDbvtBroadphase();
+    _broadphase = new btDbvtBroadphase();//new btAxisSweep3(btVector3(-100,-100,-100), btVector3(100,100,100));
 
     _collisionConfiguration = new btDefaultCollisionConfiguration();
     _dispatcher = new btCollisionDispatcher(_collisionConfiguration);
@@ -26,7 +26,7 @@ KMPhysicsWorld::KMPhysicsWorld()
     _solver = new btSequentialImpulseConstraintSolver();
     
     _world = new btDiscreteDynamicsWorld(_dispatcher, _broadphase, _solver, _collisionConfiguration);
-    _world->setGravity(btVector3(0, -9.8, 0));
+    _world->setGravity(btVector3(0.0f, -10.0f, 0.0f));
     
 
     _world->setDebugDrawer(new GLDebugDrawer());
@@ -56,6 +56,7 @@ void KMPhysicsWorld::addObject(KMGameObject* physicsObject)
 
 void KMPhysicsWorld::step(float dt)
 {
+    //_world->stepSimulation(dt, 32, 1.0/120.0f);
     _world->stepSimulation(dt);
 }
 

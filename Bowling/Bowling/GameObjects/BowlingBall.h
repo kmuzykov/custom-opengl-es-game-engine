@@ -16,7 +16,7 @@ class btCollisionShape;
 class BowlingBall : public KMGameObject
 {
 public:
-    BowlingBall();
+    BowlingBall(const vec3& position);
 
 private:
     static btCollisionShape* createShape();

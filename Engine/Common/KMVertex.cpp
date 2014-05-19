@@ -15,7 +15,7 @@
 
 using namespace std;
 
-std::vector<KMVertex> KMVertex::loadFromObj(const char* objFileName)
+std::vector<KMVertex> KMVertex::loadFromObj(const char* objFileName, bool includeTexCoords)
 {
     vector<vec3> positions;
     vector<vec2> textureCoords;
@@ -73,7 +73,7 @@ std::vector<KMVertex> KMVertex::loadFromObj(const char* objFileName)
     {
         KMVertex vertex;
         vertex.position = positions[face.x];
-        vertex.texCoords = textureCoords[face.y];
+        vertex.texCoords = includeTexCoords? textureCoords[face.y] : vec2(0,0);
         vertex.normal = normals[face.z];
         
         vertices.push_back(vertex);

@@ -24,4 +24,8 @@
 #define KM_MAX_LIGHTS   8
 
 
+//Can be useful to disable and see only physics wireframe
+#define KM_RENDER_ENABLED 1
+
+
 #endif

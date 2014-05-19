@@ -14,8 +14,11 @@
 
 #include "btBulletDynamicsCommon.h"
 #include "KMPhysicsWorld.h"
+#include "KMPhysicsMotionState.h"
 
-BowlingLane::BowlingLane()
+#include "KMMacros.h"
+
+BowlingLane::BowlingLane(const vec3& position)
 {
     //Setting renderer
     KMTexture tex("lane_diffuse.png");
@@ -29,16 +32,61 @@ BowlingLane::BowlingLane()
     btVector3 bodyInertia(0,0,0);
     //shape->calculateLocalInertia(bodyMass, bodyInertia);
     
-    btRigidBody::btRigidBodyConstructionInfo bodyCI = btRigidBody::btRigidBodyConstructionInfo(bodyMass, nullptr, shape, bodyInertia);
-    bodyCI.m_restitution = 0.0;
-    bodyCI.m_friction = 0.5;
+    btTransform trasn;
+    trasn.setIdentity();
+    trasn.setOrigin(btVector3(position.x, position.y, position.z));    
+    btDefaultMotionState *motionState = new btDefaultMotionState(trasn);
     
+    btRigidBody::btRigidBodyConstructionInfo bodyCI = btRigidBody::btRigidBodyConstructionInfo(bodyMass, motionState, shape, bodyInertia);
     _physicsBody = std::unique_ptr<btRigidBody>(new btRigidBody(bodyCI));
     _physicsBody->setUserPointer(this);
+    
+    _physicsBody->setRestitution(0.6f);
+    _physicsBody->setFriction(1.0f);
+    _physicsBody->setRollingFriction(1.0f);
+}
+
+
+
+btCompoundShape* initCompoundShape()
+{
+    btTransform transform;
+    transform.setIdentity();
+    
+    btCompoundShape* compound = new btCompoundShape();
+    
+    const float halfLaneBodyX = 1.1875f;
+    const float halfLaneBodyY = 0.17585f;
+    const float laneZ = 21.5f;
+
+    btBoxShape* laneBody = new btBoxShape(btVector3(halfLaneBodyX, halfLaneBodyY, laneZ));
+    compound->addChildShape(transform, laneBody);
+    
+    const float halfOutfallX = 0.37f;
+    const float halfOutfallY = 0.01f;
+    
+    btBoxShape* laneRight = new btBoxShape(btVector3(halfOutfallX, halfOutfallY, laneZ));
+    transform.setOrigin(btVector3(halfLaneBodyX + halfOutfallX, -halfLaneBodyY, 0));
+    compound->addChildShape(transform, laneRight);
+    
+    btBoxShape* laneLeft = new btBoxShape(btVector3(halfOutfallX, halfOutfallY, laneZ));
+    transform.setOrigin(btVector3(-halfLaneBodyX - halfOutfallX, -halfLaneBodyY, 0));
+    compound->addChildShape(transform, laneLeft);
+    
+    btBoxShape* laneEdgeLeft = new btBoxShape(btVector3(halfOutfallY, halfOutfallX * 2.0f, laneZ));
+    transform.setOrigin(btVector3(-halfLaneBodyX - 2.0f * halfOutfallX + 0.09f, 0, 0));
+    compound->addChildShape(transform, laneEdgeLeft);
+    
+    btBoxShape* laneEdgeRight = new btBoxShape(btVector3(halfOutfallY, halfOutfallX * 2.0f, laneZ));
+    transform.setOrigin(btVector3(halfLaneBodyX + 2.0f * halfOutfallX - 0.09f, 0, 0));
+    compound->addChildShape(transform, laneEdgeRight);
+    
+    return compound;
 }
 
 btCollisionShape* BowlingLane::createShape(const std::vector<KMVertex>& laneVertices)
 {
-    static auto _Shape = KMPhysicsWorld::triangleMeshFromVertices(laneVertices);
+    static auto _Shape = std::unique_ptr<btCollisionShape>(initCompoundShape());
+    //_Shape->setMargin(0.05f);
     return _Shape.get();
 }

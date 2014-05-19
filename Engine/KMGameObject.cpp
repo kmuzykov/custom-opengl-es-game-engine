@@ -10,6 +10,7 @@
 
 #include "btBulletDynamicsCommon.h"
 #include "KMRenderer.h"
+#include "KMMacros.h"
 
 
 KMGameObject::KMGameObject()
@@ -40,9 +41,11 @@ void KMGameObject::draw()
 vec3 KMGameObject::getPosition() const
 {
     if (!_physicsBody)
-        return KMNode::getPosition();
+     return KMNode::getPosition();
     
-    btTransform trans = _physicsBody->getWorldTransform();
+//    btTransform trans = _physicsBody->getWorldTransform();
+    btTransform trans;
+    _physicsBody->getMotionState()->getWorldTransform(trans);
     return vec3(trans.getOrigin().x(), trans.getOrigin().y(), trans.getOrigin().z());
 }
 
@@ -51,7 +54,6 @@ void KMGameObject::setPosition(const vec3& position)
     if (!_physicsBody)
     {
         KMNode::setPosition(position);
-        return;
     }
     
     btTransform trans = _physicsBody->getWorldTransform();
@@ -63,8 +65,10 @@ Quaternion KMGameObject::getRotation() const
 {
     if (!_physicsBody)
         return KMNode::getRotation();
-    
-    btTransform trans = _physicsBody->getWorldTransform();
+
+    //btTransform trans = _physicsBody->getWorldTransform();
+    btTransform trans;
+    _physicsBody->getMotionState()->getWorldTransform(trans);
     btQuaternion rot = trans.getRotation();
     return Quaternion(rot.getX(), rot.getY(), rot.getZ(), rot.getW());
 }
@@ -73,25 +77,17 @@ void KMGameObject::setRotation(Quaternion rotation)
 {
     if (!_physicsBody)
     {
-        KMNode::setRotation(rotation);
-        return;
+        KMNode::setRotation(rotation);        return;
     }
     
     btTransform trans = _physicsBody->getWorldTransform();
     btQuaternion btRot = btQuaternion(rotation.x, rotation.y, rotation.z, rotation.w);
     trans.setRotation(btRot);
-    _physicsBody->setWorldTransform(trans);
+    _physicsBody->setWorldTransform(trans);    
 }
 
 void KMGameObject::rotateBy(Quaternion rotateBy)
 {
-    //    btTransform trans = _physicsBody->getWorldTransform();
-    //    btQuaternion btRot = btQuaternion(rotateBy.x, rotateBy.y, rotateBy.z, rotateBy.w);
-    //
-    //    btRot =
-    //
-    //    trans.setRotation(btRot);
-    //    _physicsBody->setWorldTransform(trans);
-    
-    //TODO: fix and complete this
+    //TODO: Implement
+    KMLOG("KMGameObject::rotateBy is not yet implemented");
 }

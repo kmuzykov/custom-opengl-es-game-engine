@@ -10,16 +10,18 @@
 #define __Bowling__BowlingPin__
 
 #include "KMGameObject.h"
+#include <vector>
 
 class btCollisionShape;
+class KMVertex;
 
 class BowlingPin : public KMGameObject
 {
 public:
-    BowlingPin();
-    
+    BowlingPin(const vec3& position);
 private:
-    static btCollisionShape* createShape();
+    static btCollisionShape* createShape(const std::vector<KMVertex>& pinVertices);
+    static const std::vector<KMVertex>& cachedVertices();
 };
 
 

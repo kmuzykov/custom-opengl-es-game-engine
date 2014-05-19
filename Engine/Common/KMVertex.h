@@ -20,7 +20,7 @@ struct KMVertex
     vec3 normal;
     vec2 texCoords;
     
-    static std::vector<KMVertex> loadFromObj(const char* file);
+    static std::vector<KMVertex> loadFromObj(const char* file, bool includeTexCoords = true);
 
     static void cuboid(float width, float height, float depth,
                        std::vector<KMVertex>& vertices, std::vector<GLushort>& indices);

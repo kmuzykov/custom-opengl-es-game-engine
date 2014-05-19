@@ -33,7 +33,6 @@ public:
     void drawDebug();
     
     static std::auto_ptr<btBvhTriangleMeshShape> triangleMeshFromVertices(const std::vector<KMVertex>& vertices);
-    
 private:
     btBroadphaseInterface*                  _broadphase;
     btDefaultCollisionConfiguration*        _collisionConfiguration;

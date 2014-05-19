@@ -13,8 +13,10 @@
 #include "KMRendererMesh.h"
 
 #include "btBulletDynamicsCommon.h"
+#include "KMPhysicsMotionState.h"
 
-BowlingBall::BowlingBall()
+
+BowlingBall::BowlingBall(const vec3& position)
 {
     //Setting up renderer
     KMTexture tex("ball_diffuse.png");
@@ -24,17 +26,24 @@ BowlingBall::BowlingBall()
     
     //Setting up physics body
     btCollisionShape* shape = createShape();
-    btScalar bodyMass = 5.0f;
+    btScalar bodyMass = 10.0f;
     btVector3 bodyInertia;
     shape->calculateLocalInertia(bodyMass, bodyInertia);
     
-    btRigidBody::btRigidBodyConstructionInfo bodyCI = btRigidBody::btRigidBodyConstructionInfo(bodyMass, nullptr, shape, bodyInertia);
-    bodyCI.m_restitution = 0.7;
-    bodyCI.m_friction = 0.2;
-    bodyCI.m_rollingFriction = 0.3;
+    btTransform trasn;
+    trasn.setIdentity();
+    trasn.setOrigin(btVector3(position.x, position.y, position.z));
     
+    btDefaultMotionState *motionState = new btDefaultMotionState(trasn);
+    
+    btRigidBody::btRigidBodyConstructionInfo bodyCI = btRigidBody::btRigidBodyConstructionInfo(bodyMass, motionState, shape, bodyInertia);
     _physicsBody = std::unique_ptr<btRigidBody>(new btRigidBody(bodyCI));
-    _physicsBody->setUserPointer(this);    
+    _physicsBody->setUserPointer(this);
+    
+    _physicsBody->setRestitution(0.6f);
+    _physicsBody->setFriction(.1f);
+//    _physicsBody->setRollingFriction(.2f);
+//    _physicsBody->setAnisotropicFriction(shape->getAnisotropicRollingFrictionDirection(),btCollisionObject::CF_ANISOTROPIC_ROLLING_FRICTION);
 }
 
 btCollisionShape* BowlingBall::createShape()

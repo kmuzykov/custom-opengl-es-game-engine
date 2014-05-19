@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A03D2A3192A20FB00345FC0 /* pin_collider.obj in Resources */ = {isa = PBXBuildFile; fileRef = 2A03D2A2192A20FB00345FC0 /* pin_collider.obj */; };
 		2A20681F1928E15E00B5D75F /* KMMaterialTextureUnlit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A20681D1928E15E00B5D75F /* KMMaterialTextureUnlit.cpp */; };
 		2A2068221928EEAF00B5D75F /* BowlingLane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A2068201928EEAF00B5D75F /* BowlingLane.cpp */; };
 		2A20682A1928FE0B00B5D75F /* KMMaterialTextureDiffuse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A2068281928FE0B00B5D75F /* KMMaterialTextureDiffuse.cpp */; };
@@ -47,6 +48,7 @@
 		2A6C08AA18BBBE040005AF6F /* uniform_color.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 2A6C088A18BBBDDA0005AF6F /* uniform_color.fsh */; };
 		2A6C08AB18BBBE040005AF6F /* uniform_color.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 2A6C088B18BBBDDA0005AF6F /* uniform_color.vsh */; };
 		2A72AE671929376600A0A9B8 /* GLDebugDrawer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2A72AE651929376600A0A9B8 /* GLDebugDrawer.mm */; };
+		2A72AE6A1929E44E00A0A9B8 /* KMPhysicsMotionState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A72AE681929E44D00A0A9B8 /* KMPhysicsMotionState.cpp */; };
 		2AA5C44819229E1D00B65E9D /* KMGameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AA5C44619229E1D00B65E9D /* KMGameObject.cpp */; };
 		2AA5C44B19229EE200B65E9D /* KMRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AA5C44919229EE200B65E9D /* KMRenderer.cpp */; };
 		2AA5C4521922A00000B65E9D /* KMRendererMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AA5C4501922A00000B65E9D /* KMRendererMesh.cpp */; };
@@ -111,6 +113,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A03D2A2192A20FB00345FC0 /* pin_collider.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pin_collider.obj; sourceTree = "<group>"; };
 		2A20681D1928E15E00B5D75F /* KMMaterialTextureUnlit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = KMMaterialTextureUnlit.cpp; path = Materials/KMMaterialTextureUnlit.cpp; sourceTree = "<group>"; };
 		2A20681E1928E15E00B5D75F /* KMMaterialTextureUnlit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KMMaterialTextureUnlit.h; path = Materials/KMMaterialTextureUnlit.h; sourceTree = "<group>"; };
 		2A2068201928EEAF00B5D75F /* BowlingLane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BowlingLane.cpp; path = GameObjects/BowlingLane.cpp; sourceTree = "<group>"; };
@@ -181,6 +184,8 @@
 		2A6C088B18BBBDDA0005AF6F /* uniform_color.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = uniform_color.vsh; sourceTree = "<group>"; };
 		2A72AE651929376600A0A9B8 /* GLDebugDrawer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GLDebugDrawer.mm; sourceTree = "<group>"; };
 		2A72AE661929376600A0A9B8 /* GLDebugDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLDebugDrawer.h; sourceTree = "<group>"; };
+		2A72AE681929E44D00A0A9B8 /* KMPhysicsMotionState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMPhysicsMotionState.cpp; sourceTree = "<group>"; };
+		2A72AE691929E44D00A0A9B8 /* KMPhysicsMotionState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPhysicsMotionState.h; sourceTree = "<group>"; };
 		2AA5C44619229E1D00B65E9D /* KMGameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMGameObject.cpp; sourceTree = "<group>"; };
 		2AA5C44719229E1D00B65E9D /* KMGameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMGameObject.h; sourceTree = "<group>"; };
 		2AA5C44919229EE200B65E9D /* KMRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMRenderer.cpp; sourceTree = "<group>"; };
@@ -315,6 +320,7 @@
 		2A3FB21D188AA98A0028A808 /* Pin */ = {
 			isa = PBXGroup;
 			children = (
+				2A03D2A2192A20FB00345FC0 /* pin_collider.obj */,
 				2AC5558F188D46F50015A49F /* pin.mtl */,
 				2AC55590188D46F50015A49F /* pin.obj */,
 				2A3FB21E188AA9950028A808 /* pin_diffuse.png */,
@@ -448,6 +454,8 @@
 				2A6C087A18BBBDDA0005AF6F /* KMPhysicsWorld.cpp */,
 				2A72AE661929376600A0A9B8 /* GLDebugDrawer.h */,
 				2A72AE651929376600A0A9B8 /* GLDebugDrawer.mm */,
+				2A72AE691929E44D00A0A9B8 /* KMPhysicsMotionState.h */,
+				2A72AE681929E44D00A0A9B8 /* KMPhysicsMotionState.cpp */,
 			);
 			path = Physics;
 			sourceTree = "<group>";
@@ -613,6 +621,7 @@
 				2A3FB221188AA9950028A808 /* pin_diffuse.png in Resources */,
 				2A3FB228188ADE990028A808 /* ball_diffuse.png in Resources */,
 				2A3FB1EC188958440028A808 /* cube.mtl in Resources */,
+				2A03D2A3192A20FB00345FC0 /* pin_collider.obj in Resources */,
 				2A3FB22D188AF0A20028A808 /* lane_diffuse.png in Resources */,
 				2A3FB18018881A240028A808 /* Images.xcassets in Resources */,
 				2A3FB16E18881A240028A808 /* InfoPlist.strings in Resources */,
@@ -644,6 +653,7 @@
 				2A6C089218BBBDDA0005AF6F /* KMGLView.mm in Sources */,
 				2A6C088C18BBBDDA0005AF6F /* KMFileUtils.cpp in Sources */,
 				2AA5C44B19229EE200B65E9D /* KMRenderer.cpp in Sources */,
+				2A72AE6A1929E44E00A0A9B8 /* KMPhysicsMotionState.cpp in Sources */,
 				2A6C089118BBBDDA0005AF6F /* KMFileUtilsIOS.mm in Sources */,
 				2AA5C44819229E1D00B65E9D /* KMGameObject.cpp in Sources */,
 				2A6C089418BBBDDA0005AF6F /* KMNode.cpp in Sources */,

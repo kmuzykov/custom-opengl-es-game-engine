@@ -26,6 +26,11 @@ protected:
 private:
     KMPhysicsWorld* _physicsWorld;
     std::shared_ptr<KMGameObject> _ball;
+    
+    void addBall();
+    void addTestPin();
+    void addAllPins();
+    void addLane();
 };
 
 #endif /* defined(__Bowling__TestScene__) */

@@ -8,6 +8,7 @@
 
 #include "KMRendererMesh.h"
 #include "KMMacros.h"
+#include "KMConfig.h"
 
 KMRendererMesh::KMRendererMesh(std::shared_ptr<KMMaterial> material, std::vector<KMVertex> vertices)
 {
@@ -19,6 +20,8 @@ KMRendererMesh::KMRendererMesh(std::shared_ptr<KMMaterial> material, std::vector
     glGenBuffers(1, &_vertexBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffer);
     glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(vertices[0]), &vertices[0], GL_STATIC_DRAW);
+    
+    glBindBuffer(GL_ARRAY_BUFFER,0);
 }
 
 KMRendererMesh::KMRendererMesh(std::shared_ptr<KMMaterial> material, std::vector<KMVertex> vertices, std::vector<GLushort> indices)
@@ -30,6 +33,8 @@ KMRendererMesh::KMRendererMesh(std::shared_ptr<KMMaterial> material, std::vector
     glGenBuffers(1, &_indexBuffer);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBuffer);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(indices[0]), &indices[0], GL_STATIC_DRAW);
+    
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,0);
 }
 
 KMRendererMesh::~KMRendererMesh()
@@ -42,6 +47,7 @@ KMRendererMesh::~KMRendererMesh()
 
 void KMRendererMesh::render(const mat4& mvm)
 {
+#if KM_RENDER_ENABLED > 0
     _material->useProgram();
     _material->setBlendingFunc();
     
@@ -63,7 +69,7 @@ void KMRendererMesh::render(const mat4& mvm)
     CHECK_GL_ERROR();
     
     _material->clearAttributes();
-//    _material->clearUniforms();
+    _material->clearUniforms();
     
     //cleanup: buffers
     glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -71,4 +77,5 @@ void KMRendererMesh::render(const mat4& mvm)
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
     
     _material->clearProgram();
+#endif
 }
