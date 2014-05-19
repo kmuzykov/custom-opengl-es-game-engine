@@ -26,6 +26,7 @@
 
 //Can be useful to disable and see only physics wireframe
 #define KM_RENDER_ENABLED 1
+#define KM_RENDER_PHYSICS_DEBUG_ENABLED 0
 
 
 #endif

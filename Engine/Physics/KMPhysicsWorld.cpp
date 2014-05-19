@@ -62,7 +62,9 @@ void KMPhysicsWorld::step(float dt)
 
 void KMPhysicsWorld::drawDebug()
 {
+#if KM_RENDER_PHYSICS_DEBUG_ENABLED > 0
     _world->debugDrawWorld();
+#endif
 }
 
 std::auto_ptr<btBvhTriangleMeshShape> KMPhysicsWorld::triangleMeshFromVertices(const std::vector<KMVertex>& vertices)
