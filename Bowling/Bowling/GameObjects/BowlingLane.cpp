@@ -47,39 +47,63 @@ BowlingLane::BowlingLane(const vec3& position)
 }
 
 
-
+/** 
+    Creates a compound (multi-shape) shape for the bowling lane.
+ */
 btCompoundShape* initCompoundShape()
 {
+    //We'll use transform to place different shapes at different positions in local space.
     btTransform transform;
     transform.setIdentity();
     
+    //This will be the result
     btCompoundShape* compound = new btCompoundShape();
     
-    const float halfLaneBodyX = 1.1875f;
-    const float halfLaneBodyY = 0.17585f;
-    const float laneZ = 21.5f;
-
+    //Few constants we have from Blender. If you change models this needs to be adjusted.
+    const float halfLaneBodyX = 1.1875f;    //Half of the middle part of the lane (no trenches)
+    const float halfLaneBodyY = 0.17585f;   //Half height of the model
+    const float laneZ = 21.5f;              //Half lenght of the bowling lane
+    const float halfOutfallX = 0.37f;       //Half width of the outfall (trench)
+    const float halfOutfallY = 0.01f;       //A small value used as depth for boxes of the trenches.
+    
+    //  ||       |___________________ ... symmetric on the other side
+    //  ||       |
+    //  ||       |    *labeBody*
+    //  ||_______ ____________________
+    //    |______| <- laneOutfallLeft
+    //  ^ laneEdgeLeft
+    
+    
+    //Creating middle part of the lane
     btBoxShape* laneBody = new btBoxShape(btVector3(halfLaneBodyX, halfLaneBodyY, laneZ));
     compound->addChildShape(transform, laneBody);
     
-    const float halfOutfallX = 0.37f;
-    const float halfOutfallY = 0.01f;
-    
-    btBoxShape* laneRight = new btBoxShape(btVector3(halfOutfallX, halfOutfallY, laneZ));
-    transform.setOrigin(btVector3(halfLaneBodyX + halfOutfallX, -halfLaneBodyY, 0));
-    compound->addChildShape(transform, laneRight);
-    
-    btBoxShape* laneLeft = new btBoxShape(btVector3(halfOutfallX, halfOutfallY, laneZ));
-    transform.setOrigin(btVector3(-halfLaneBodyX - halfOutfallX, -halfLaneBodyY, 0));
-    compound->addChildShape(transform, laneLeft);
-    
-    btBoxShape* laneEdgeLeft = new btBoxShape(btVector3(halfOutfallY, halfOutfallX * 2.0f, laneZ));
-    transform.setOrigin(btVector3(-halfLaneBodyX - 2.0f * halfOutfallX + 0.09f, 0, 0));
+    //Few more positioning constants
+    const float edgeHeight    = halfOutfallX * 1.1f;                            //Making edge a bit higher
+    const float leftEdgeX     = -halfLaneBodyX - 2.0f * halfOutfallX + 0.09f;   //X-coordinage of center of the left edge box.
+    const float leftOutfallX  = -halfLaneBodyX - halfOutfallX;                  //X-coordinate of the horizontal outfall box on the left
+    const float rightOutfallX = -1 * leftOutfallX;                              //Mirrored for right outfall
+    const float rightEdgeX    = -1 * leftEdgeX;                                 //Mirrored for right edge
+
+    //Left edge (side of the trench)
+    btBoxShape* laneEdgeLeft = new btBoxShape(btVector3(halfOutfallY, edgeHeight, laneZ));
+    transform.setOrigin(btVector3(leftEdgeX, 0, 0));
     compound->addChildShape(transform, laneEdgeLeft);
     
-    btBoxShape* laneEdgeRight = new btBoxShape(btVector3(halfOutfallY, halfOutfallX * 2.0f, laneZ));
-    transform.setOrigin(btVector3(halfLaneBodyX + 2.0f * halfOutfallX - 0.09f, 0, 0));
+    //Left outfall (floor of the trench)
+    btBoxShape* laneOutfallLeft = new btBoxShape(btVector3(halfOutfallX, halfOutfallY, laneZ));
+    transform.setOrigin(btVector3(leftOutfallX, -halfLaneBodyY, 0));
+    compound->addChildShape(transform, laneOutfallLeft);
+
+    //Right Edge
+    btBoxShape* laneEdgeRight = new btBoxShape(btVector3(halfOutfallY, edgeHeight, laneZ));
+    transform.setOrigin(btVector3(rightEdgeX, 0, 0));
     compound->addChildShape(transform, laneEdgeRight);
+    
+    //Right outfall
+    btBoxShape* laneOutfallRight = new btBoxShape(btVector3(halfOutfallX, halfOutfallY, laneZ));
+    transform.setOrigin(btVector3(rightOutfallX, -halfLaneBodyY, 0));
+    compound->addChildShape(transform, laneOutfallRight);
     
     return compound;
 }
@@ -87,6 +111,5 @@ btCompoundShape* initCompoundShape()
 btCollisionShape* BowlingLane::createShape(const std::vector<KMVertex>& laneVertices)
 {
     static auto _Shape = std::unique_ptr<btCollisionShape>(initCompoundShape());
-    //_Shape->setMargin(0.05f);
     return _Shape.get();
 }
