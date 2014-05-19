@@ -22,6 +22,10 @@ class btBvhTriangleMeshShape;
 class KMVertex;
 class KMGameObject;
 
+/** 
+ * Wrapper around Bullet Physics world.
+ * Add all nodes with physics bodies to it to add them into simulation.
+ */
 class KMPhysicsWorld
 {
 public:

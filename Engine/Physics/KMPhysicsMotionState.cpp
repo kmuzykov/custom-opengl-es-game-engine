@@ -10,7 +10,6 @@
 #include "KMGameObject.h"
 #include "KMMacros.h"
 
-
 KMPhysicsMotionState::KMPhysicsMotionState(KMGameObject* const node)
 : _node(node)
 {

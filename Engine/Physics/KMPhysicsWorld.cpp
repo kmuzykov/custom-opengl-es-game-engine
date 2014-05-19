@@ -14,26 +14,29 @@
 #include "KMVertex.h"
 #include "KMMacros.h"
 
-#include "GLDebugDrawer.h"
+#include "KMPhysicsDebugDrawer.h"
 
 KMPhysicsWorld::KMPhysicsWorld()
 {
+    //Creating everything for the world
     _broadphase = new btDbvtBroadphase();//new btAxisSweep3(btVector3(-100,-100,-100), btVector3(100,100,100));
-
     _collisionConfiguration = new btDefaultCollisionConfiguration();
     _dispatcher = new btCollisionDispatcher(_collisionConfiguration);
-
     _solver = new btSequentialImpulseConstraintSolver();
     
+    //Creating the world itself
     _world = new btDiscreteDynamicsWorld(_dispatcher, _broadphase, _solver, _collisionConfiguration);
+    
+    //Setting approx. gravity.
     _world->setGravity(btVector3(0.0f, -10.0f, 0.0f));
     
-
-    _world->setDebugDrawer(new GLDebugDrawer());
+    //Setting our debug renderer.
+    _world->setDebugDrawer(new KMPhysicsDebugDrawer());
 }
 
 KMPhysicsWorld::~KMPhysicsWorld()
 {
+    //Removing everything in opposite order.
     delete _world;
     delete _solver;
     delete _collisionConfiguration;
@@ -43,6 +46,7 @@ KMPhysicsWorld::~KMPhysicsWorld()
 
 void KMPhysicsWorld::addObject(KMGameObject* physicsObject)
 {
+    //Checking if object really has physics body.
     btRigidBody *physicsBody = physicsObject->getPhysicsBody();
     if (!physicsBody)
     {
@@ -50,7 +54,7 @@ void KMPhysicsWorld::addObject(KMGameObject* physicsObject)
         return;
     }
     
-    //TODO: Reset postion of the physicsObject
+    //Adding it to simulation.
     _world->addRigidBody(physicsObject->getPhysicsBody());
 }
 

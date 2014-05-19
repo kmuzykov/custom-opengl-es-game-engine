@@ -46,7 +46,7 @@
 		2A6C08A918BBBE040005AF6F /* textureDiffuse.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 2A6C088918BBBDDA0005AF6F /* textureDiffuse.vsh */; };
 		2A6C08AA18BBBE040005AF6F /* uniform_color.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 2A6C088A18BBBDDA0005AF6F /* uniform_color.fsh */; };
 		2A6C08AB18BBBE040005AF6F /* uniform_color.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 2A6C088B18BBBDDA0005AF6F /* uniform_color.vsh */; };
-		2A72AE671929376600A0A9B8 /* GLDebugDrawer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2A72AE651929376600A0A9B8 /* GLDebugDrawer.mm */; };
+		2A72AE671929376600A0A9B8 /* KMPhysicsDebugDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A72AE651929376600A0A9B8 /* KMPhysicsDebugDrawer.cpp */; };
 		2A72AE6A1929E44E00A0A9B8 /* KMPhysicsMotionState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A72AE681929E44D00A0A9B8 /* KMPhysicsMotionState.cpp */; };
 		2AA5C44819229E1D00B65E9D /* KMGameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AA5C44619229E1D00B65E9D /* KMGameObject.cpp */; };
 		2AA5C44B19229EE200B65E9D /* KMRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AA5C44919229EE200B65E9D /* KMRenderer.cpp */; };
@@ -179,8 +179,8 @@
 		2A6C088918BBBDDA0005AF6F /* textureDiffuse.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = textureDiffuse.vsh; sourceTree = "<group>"; };
 		2A6C088A18BBBDDA0005AF6F /* uniform_color.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = uniform_color.fsh; sourceTree = "<group>"; };
 		2A6C088B18BBBDDA0005AF6F /* uniform_color.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = uniform_color.vsh; sourceTree = "<group>"; };
-		2A72AE651929376600A0A9B8 /* GLDebugDrawer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GLDebugDrawer.mm; sourceTree = "<group>"; };
-		2A72AE661929376600A0A9B8 /* GLDebugDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLDebugDrawer.h; sourceTree = "<group>"; };
+		2A72AE651929376600A0A9B8 /* KMPhysicsDebugDrawer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMPhysicsDebugDrawer.cpp; sourceTree = "<group>"; };
+		2A72AE661929376600A0A9B8 /* KMPhysicsDebugDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPhysicsDebugDrawer.h; sourceTree = "<group>"; };
 		2A72AE681929E44D00A0A9B8 /* KMPhysicsMotionState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMPhysicsMotionState.cpp; sourceTree = "<group>"; };
 		2A72AE691929E44D00A0A9B8 /* KMPhysicsMotionState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPhysicsMotionState.h; sourceTree = "<group>"; };
 		2AA5C44619229E1D00B65E9D /* KMGameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMGameObject.cpp; sourceTree = "<group>"; };
@@ -447,8 +447,8 @@
 			children = (
 				2A6C087B18BBBDDA0005AF6F /* KMPhysicsWorld.h */,
 				2A6C087A18BBBDDA0005AF6F /* KMPhysicsWorld.cpp */,
-				2A72AE661929376600A0A9B8 /* GLDebugDrawer.h */,
-				2A72AE651929376600A0A9B8 /* GLDebugDrawer.mm */,
+				2A72AE661929376600A0A9B8 /* KMPhysicsDebugDrawer.h */,
+				2A72AE651929376600A0A9B8 /* KMPhysicsDebugDrawer.cpp */,
 				2A72AE691929E44D00A0A9B8 /* KMPhysicsMotionState.h */,
 				2A72AE681929E44D00A0A9B8 /* KMPhysicsMotionState.cpp */,
 			);
@@ -643,7 +643,7 @@
 				2A6C089818BBBDDA0005AF6F /* KMPhysicsWorld.cpp in Sources */,
 				2A6C089018BBBDDA0005AF6F /* KMVertex.cpp in Sources */,
 				2A3FB17418881A240028A808 /* AppDelegate.mm in Sources */,
-				2A72AE671929376600A0A9B8 /* GLDebugDrawer.mm in Sources */,
+				2A72AE671929376600A0A9B8 /* KMPhysicsDebugDrawer.cpp in Sources */,
 				2A6C089218BBBDDA0005AF6F /* KMGLView.mm in Sources */,
 				2A6C088C18BBBDDA0005AF6F /* KMFileUtils.cpp in Sources */,
 				2AA5C44B19229EE200B65E9D /* KMRenderer.cpp in Sources */,
