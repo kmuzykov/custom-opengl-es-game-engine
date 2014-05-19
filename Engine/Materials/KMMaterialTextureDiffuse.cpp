@@ -17,7 +17,7 @@ const char* KMMaterialTextureDiffuse::u_lights_intensity = "u_lights_intensity";
 const char* KMMaterialTextureDiffuse::u_normalMatrix = "u_normalMatrix";
 
 
-KMMaterialTextureDiffuse::KMMaterialTextureDiffuse(KMTexture texture)
+KMMaterialTextureDiffuse::KMMaterialTextureDiffuse(const KMTexture& texture)
  : KMMaterialTextureUnlit(texture, KMShader::make("textureDiffuse"))
 {
     _lightsCountUniform = glGetUniformLocation(_shader->getGLProgram(), u_lights_count);

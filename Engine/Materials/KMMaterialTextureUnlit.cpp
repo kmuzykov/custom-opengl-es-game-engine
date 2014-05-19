@@ -11,7 +11,7 @@
 
 const char* KMMaterialTextureUnlit::u_texture0 = "u_texture0";
 
-KMMaterialTextureUnlit::KMMaterialTextureUnlit(const KMTexture texture)
+KMMaterialTextureUnlit::KMMaterialTextureUnlit(const KMTexture& texture)
 :  KMMaterialTextureUnlit(texture, KMShader::make("textured"))
 {
 }

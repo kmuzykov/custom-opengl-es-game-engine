@@ -15,7 +15,7 @@
 class KMMaterialTextureUnlit : public KMMaterial
 {
 public:
-    KMMaterialTextureUnlit(const KMTexture texture);
+    KMMaterialTextureUnlit(const KMTexture& texture);
     
     virtual void setUniforms(const mat4& mvm);
     virtual void clearUniforms();

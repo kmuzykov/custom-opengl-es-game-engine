@@ -14,7 +14,7 @@
 class KMMaterialColorUniform : public KMMaterial
 {
 public:
-    KMMaterialColorUniform(vec3 color);
+    KMMaterialColorUniform(const vec3& color);
     virtual void setUniforms(const mat4& mvm);
 
 protected:

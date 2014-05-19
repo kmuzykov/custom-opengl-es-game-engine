@@ -15,7 +15,7 @@
 class KMMaterialTextureDiffuse : public KMMaterialTextureUnlit
 {
 public:
-    KMMaterialTextureDiffuse(KMTexture texture);
+    KMMaterialTextureDiffuse(const KMTexture& texture);
     
     virtual void setUniforms(const mat4& mvm);
 

@@ -10,7 +10,7 @@
 
 const char* KMMaterialColorUniform::u_color = "u_color";
 
-KMMaterialColorUniform::KMMaterialColorUniform(vec3 color)
+KMMaterialColorUniform::KMMaterialColorUniform(const vec3& color)
  :  KMMaterial(std::make_shared<KMShader>("uniform_color.vsh", "uniform_color.fsh")),
    _color(color)
 {
