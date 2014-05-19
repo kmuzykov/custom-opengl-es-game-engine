@@ -36,7 +36,8 @@ void KMMaterialTextureUnlit::setUniforms(const mat4& mvm)
 
 void KMMaterialTextureUnlit::clearUniforms()
 {
-    glBindTexture(GL_TEXTURE_2D, 0);    
+    glBindTexture(GL_TEXTURE_2D, 0);
+    
     CHECK_GL_ERROR();
 }
 

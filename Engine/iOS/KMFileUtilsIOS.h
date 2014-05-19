@@ -8,6 +8,7 @@
 
 #include "KMFileUtils.h"
 
+/** iOS implementation of file utils */
 class KMFileUtilsIOS : public KMFileUtils
 {
 public:

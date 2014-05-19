@@ -141,16 +141,17 @@ void KMVertex::cuboid(float width, float height, float depth, std::vector<KMVert
 void KMVertex::sphere(float radius, unsigned short verticalSegments, unsigned short horizontalSegments,
                       std::vector<KMVertex>& vertices, std::vector<GLushort>& indices)
 {
+    //Clearing result arrays just to be safe
     vertices.clear();
     indices.clear();
     
+    //Few often used constants
+    const float TwoPi = M_PI * 2.0f;
+    const vec3 sphereCenter = vec3(0,0,0);
     
-    float TwoPi = M_PI * 2.0f;
-    vec3 sphereCenter = vec3(0,0,0);
-    
+    //Calculating steps
     float dy = M_PI/(verticalSegments-1);
     float dxAngle = TwoPi/(horizontalSegments-1);
-    
     float dxTex = 1.0f/(horizontalSegments-1);
     float dyTex = 1.0f/(verticalSegments-1);
     
@@ -177,15 +178,20 @@ void KMVertex::sphere(float radius, unsigned short verticalSegments, unsigned sh
     {
         for (int j = 0; j < horizontalSegments - 1; j++)
         {
+            //Getting coordinates of quad face of sphere..
             int bl = i * horizontalSegments + j;            //Bottom Left
             int br = i * horizontalSegments + (j + 1);      //Bottom Right
             int tl = (i + 1) * horizontalSegments + j;      //Top Left
             int tr = (i + 1) * horizontalSegments + (j + 1);//Top Right
             
+            //..and translating it into 2 triangles:
+            
+            //First triangle
             indices.push_back(bl);
             indices.push_back(br);
             indices.push_back(tl);
             
+            //Second triangle
             indices.push_back(tr);
             indices.push_back(tl);
             indices.push_back(br);

@@ -16,7 +16,6 @@ const char* KMMaterialTextureDiffuse::u_lights_pos = "u_lights_pos";
 const char* KMMaterialTextureDiffuse::u_lights_intensity = "u_lights_intensity";
 const char* KMMaterialTextureDiffuse::u_normalMatrix = "u_normalMatrix";
 
-
 KMMaterialTextureDiffuse::KMMaterialTextureDiffuse(const KMTexture& texture)
  : KMMaterialTextureUnlit(texture, KMShader::make("textureDiffuse"))
 {
@@ -28,7 +27,6 @@ KMMaterialTextureDiffuse::KMMaterialTextureDiffuse(const KMTexture& texture)
 
 void KMMaterialTextureDiffuse::setUniforms(const mat4& mvm)
 {
-    //Parent
     KMMaterialTextureUnlit::setUniforms(mvm);
 
     //Getting scene
@@ -44,6 +42,7 @@ void KMMaterialTextureDiffuse::setUniforms(const mat4& mvm)
     const std::vector<vec3>& ligtPositions = scene->getLightSources();
     const std::vector<float>& lightIntensities = scene->getLightIntensities();
     
+    //Passing lights and their intesity as uniforms
     glUniform3fv(_lightsPosUniform, (GLsizei)ligtPositions.size(), (GLfloat*)&ligtPositions[0]);
     glUniform1fv(_lightsIntensityUniform, (GLsizei)lightIntensities.size(), (GLfloat*)&lightIntensities[0]);
     

@@ -11,7 +11,7 @@
 const char* KMMaterialColorUniform::u_color = "u_color";
 
 KMMaterialColorUniform::KMMaterialColorUniform(const vec3& color)
- :  KMMaterial(std::make_shared<KMShader>("uniform_color.vsh", "uniform_color.fsh")),
+:  KMMaterial(KMShader::make("uniform_color")),
    _color(color)
 {
     _colorUniform = glGetUniformLocation(_shader->getGLProgram(), u_color);

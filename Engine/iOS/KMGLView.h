@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+/** iOS view used for OpenGL rendering */
 @interface KMGLView : UIView
 
 @end

@@ -29,7 +29,6 @@
 		2A3FB228188ADE990028A808 /* ball_diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A3FB225188ADE990028A808 /* ball_diffuse.png */; };
 		2A3FB22D188AF0A20028A808 /* lane_diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A3FB22C188AF0A20028A808 /* lane_diffuse.png */; };
 		2A6C088C18BBBDDA0005AF6F /* KMFileUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C085918BBBDDA0005AF6F /* KMFileUtils.cpp */; };
-		2A6C088D18BBBDDA0005AF6F /* KMLightSourceNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C085B18BBBDDA0005AF6F /* KMLightSourceNode.cpp */; };
 		2A6C088E18BBBDDA0005AF6F /* KMShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C085E18BBBDDA0005AF6F /* KMShader.cpp */; };
 		2A6C088F18BBBDDA0005AF6F /* KMTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C086018BBBDDA0005AF6F /* KMTexture.cpp */; };
 		2A6C089018BBBDDA0005AF6F /* KMVertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C086218BBBDDA0005AF6F /* KMVertex.cpp */; };
@@ -150,8 +149,6 @@
 		2A6C085818BBBDDA0005AF6F /* KMConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMConfig.h; sourceTree = "<group>"; };
 		2A6C085918BBBDDA0005AF6F /* KMFileUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMFileUtils.cpp; sourceTree = "<group>"; };
 		2A6C085A18BBBDDA0005AF6F /* KMFileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMFileUtils.h; sourceTree = "<group>"; };
-		2A6C085B18BBBDDA0005AF6F /* KMLightSourceNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMLightSourceNode.cpp; sourceTree = "<group>"; };
-		2A6C085C18BBBDDA0005AF6F /* KMLightSourceNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMLightSourceNode.h; sourceTree = "<group>"; };
 		2A6C085D18BBBDDA0005AF6F /* KMMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMMacros.h; sourceTree = "<group>"; };
 		2A6C085E18BBBDDA0005AF6F /* KMShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMShader.cpp; sourceTree = "<group>"; };
 		2A6C085F18BBBDDA0005AF6F /* KMShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMShader.h; sourceTree = "<group>"; };
@@ -403,11 +400,9 @@
 			isa = PBXGroup;
 			children = (
 				2A6C085818BBBDDA0005AF6F /* KMConfig.h */,
-				2A6C085918BBBDDA0005AF6F /* KMFileUtils.cpp */,
-				2A6C085A18BBBDDA0005AF6F /* KMFileUtils.h */,
-				2A6C085B18BBBDDA0005AF6F /* KMLightSourceNode.cpp */,
-				2A6C085C18BBBDDA0005AF6F /* KMLightSourceNode.h */,
 				2A6C085D18BBBDDA0005AF6F /* KMMacros.h */,
+				2A6C085A18BBBDDA0005AF6F /* KMFileUtils.h */,
+				2A6C085918BBBDDA0005AF6F /* KMFileUtils.cpp */,
 				2A6C085F18BBBDDA0005AF6F /* KMShader.h */,
 				2A6C085E18BBBDDA0005AF6F /* KMShader.cpp */,
 				2A6C086118BBBDDA0005AF6F /* KMTexture.h */,
@@ -646,7 +641,6 @@
 				2A20682A1928FE0B00B5D75F /* KMMaterialTextureDiffuse.cpp in Sources */,
 				2A6C089318BBBDDA0005AF6F /* KMDirector.cpp in Sources */,
 				2A6C089818BBBDDA0005AF6F /* KMPhysicsWorld.cpp in Sources */,
-				2A6C088D18BBBDDA0005AF6F /* KMLightSourceNode.cpp in Sources */,
 				2A6C089018BBBDDA0005AF6F /* KMVertex.cpp in Sources */,
 				2A3FB17418881A240028A808 /* AppDelegate.mm in Sources */,
 				2A72AE671929376600A0A9B8 /* GLDebugDrawer.mm in Sources */,

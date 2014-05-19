@@ -17,7 +17,10 @@ KMFileUtils& KMFileUtils::getSharedFileUtils()
 {
 #ifdef IOS
     static KMFileUtilsIOS fileUtils;
+#elif 
+    //TODO: Create Android version
 #endif
+    
     return fileUtils;
 }
 

@@ -14,17 +14,21 @@
 
 #include <vector>
 
+/** Vertex contains all attributes (per-vertex) parameters. */
 struct KMVertex
 {
     vec3 position;
     vec3 normal;
     vec2 texCoords;
     
+    /** Load vertices from Wavefront .obj file */
     static std::vector<KMVertex> loadFromObj(const char* file, bool includeTexCoords = true);
 
+    /** Generate Cube or Box */
     static void cuboid(float width, float height, float depth,
                        std::vector<KMVertex>& vertices, std::vector<GLushort>& indices);
     
+    /** Generate UV sphere */
     static void sphere(float radius, unsigned short verticalSegments, unsigned short horizontalSegments,
                        std::vector<KMVertex>& vertices, std::vector<GLushort>& indices);
 };

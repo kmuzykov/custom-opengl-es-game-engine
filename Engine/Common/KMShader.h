@@ -12,6 +12,7 @@
 #include <OpenGLES/ES2/gl.h>
 #include <memory>
 
+/** Shader loader and compiler */
 class KMShader
 {
 public:

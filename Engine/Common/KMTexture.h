@@ -11,15 +11,15 @@
 
 #include <OpenGLES/ES2/gl.h>
 
+/** Texture unit */
 class KMTexture
 {
 public:
     KMTexture(const char* fileName);
-    
     inline GLuint getTextureName() const {return _name;}
+    
 private:
     GLuint _name;
-    
     static unsigned int nextPot(unsigned int n);
 };
 

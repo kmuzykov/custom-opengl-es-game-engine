@@ -20,8 +20,10 @@
 {
     if (self = [super initWithFrame:frame])
     {
+        //Retina support
         self.contentScaleFactor = [[UIScreen mainScreen] scale];
         
+        //Creating OpenGL ES 2.0 context
         _glContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
         if (!_glContext || ![EAGLContext setCurrentContext:_glContext])
         {
@@ -29,20 +31,24 @@
             return nil;
         }
         
+        //Setting up director using fullscreen.
         KMDirector& director = KMDirector::getSharedDirector();
         director.initialize(self.frame.size.width, self.frame.size.height, self.contentScaleFactor);
         
+        //Setting up underlying CoreAnimation layer.
         CAEAGLLayer* eaglLayer = (CAEAGLLayer*)super.layer;
         eaglLayer.opaque = YES;
-        //eaglLayer.contentsScale = self.contentScaleFactor;
-//        eaglLayer.drawableProperties = @{kEAGLDrawablePropertyColorFormat: kEAGLColorFormatRGBA8,
-//                                         kEAGLDrawablePropertyRetainedBacking : @NO};
-        //eaglLayer.contentsScale = self.contentScaleFactor;
+
+        //eaglLayer.drawableProperties = @{kEAGLDrawablePropertyColorFormat: kEAGLColorFormatRGBA8,
+        //                                 kEAGLDrawablePropertyRetainedBacking : @NO};
         
+        //Allocating space for RENDERBUFFER
         [_glContext renderbufferStorage:GL_RENDERBUFFER fromDrawable:eaglLayer];
         
+        //Checking glCheckFramebufferStatus
         director.validateInit();
         
+        //Setting up update: function
         _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update:)];
         [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     }
@@ -51,16 +57,18 @@
 
 - (void)update: (CADisplayLink*) dl
 {
+    //Calculating delta from last update
     float elapsed = 0.00001f;
     if (_timestamp > 0)
     {
         elapsed = dl.timestamp - _timestamp;
     }
-    
     _timestamp = dl.timestamp;
     
+    //Calling director update: which will update: and render: all contents.
     KMDirector::getSharedDirector().update(elapsed);
     
+    //Presenting renderbuffer on screen.
     [_glContext presentRenderbuffer:GL_RENDERBUFFER];
 }
 
