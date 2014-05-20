@@ -57,13 +57,15 @@ const vec3& KMGameObject::getPosition()
 void KMGameObject::setPosition(const vec3& position)
 {
     //Setting position ivar using parent function in any case.
-    if (!_physicsBody)
-        KMNode::setPosition(position);
+    KMNode::setPosition(position);
     
-    //Setting the linked physics body position.
-    btTransform trans = _physicsBody->getWorldTransform();
-    trans.setOrigin(btVector3(position.x, position.y, position.z));
-    _physicsBody->setWorldTransform(trans);
+    if (_physicsBody)
+    {
+        //Setting the linked physics body position.
+        btTransform trans = _physicsBody->getWorldTransform();
+        trans.setOrigin(btVector3(position.x, position.y, position.z));
+        _physicsBody->setWorldTransform(trans);
+    }
 }
 
 const Quaternion& KMGameObject::getRotation()
@@ -81,13 +83,15 @@ const Quaternion& KMGameObject::getRotation()
 
 void KMGameObject::setRotation(const Quaternion& rotation)
 {
-    if (!_physicsBody)
-        KMNode::setRotation(rotation);
+    KMNode::setRotation(rotation);
     
-    btTransform trans = _physicsBody->getWorldTransform();
-    btQuaternion btRot = btQuaternion(rotation.x, rotation.y, rotation.z, rotation.w);
-    trans.setRotation(btRot);
-    _physicsBody->setWorldTransform(trans);    
+    if (_physicsBody)
+    {
+        btTransform trans = _physicsBody->getWorldTransform();
+        btQuaternion btRot = btQuaternion(rotation.x, rotation.y, rotation.z, rotation.w);
+        trans.setRotation(btRot);
+        _physicsBody->setWorldTransform(trans);
+    }
 }
 
 void KMGameObject::rotateBy(Quaternion rotateBy)

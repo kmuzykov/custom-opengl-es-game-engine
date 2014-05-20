@@ -25,6 +25,8 @@ public:
     virtual void update(float dt);
     virtual void draw();
     
+    void setRenderer(const std::shared_ptr<KMRenderer>& renderer) { _renderer = renderer;}
+    
     //Overriding position and rotation in case we need to take into account physics body.
     virtual const vec3& getPosition();
     virtual void setPosition(const vec3& position);
