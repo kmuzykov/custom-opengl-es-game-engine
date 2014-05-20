@@ -1,14 +1,12 @@
 //
-//  GLDebugDrawer.cpp
-//  Bowling
+//  KMPhysicsDebugDrawer.cpp
+//  KMEngine
 //
 //  Created by Kirill Muzykov on 18/05/14.
 //  Copyright (c) 2014 PixelOxygen. All rights reserved.
 //
 
 #include "KMPhysicsDebugDrawer.h"
-
-#include <stdio.h> //printf debugging
 #include "Vector.hpp"
 #include "Matrix.hpp"
 #include "KMDirector.h"

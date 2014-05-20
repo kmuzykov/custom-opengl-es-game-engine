@@ -1,6 +1,6 @@
 //
-//  P3DConfig.h
-//  Pixel3D
+//  KMConfig.h
+//  KMEngine
 //
 //  Created by Kirill Muzykov on 16/01/14.
 //  Copyright (c) 2014 PixelOxygen. All rights reserved.

@@ -1,17 +1,19 @@
 //
 //  KMMaterial.h
-//  Bowling
+//  KMEngine
 //
 //  Created by Kirill Muzykov on 13/05/14.
 //  Copyright (c) 2014 PixelOxygen. All rights reserved.
 //
 
-#ifndef __Bowling__KMMaterial__
-#define __Bowling__KMMaterial__
+#ifndef __KMEngine__KMMaterial__
+#define __KMEngine__KMMaterial__
 
-#include "Matrix.hpp"
-#include "KMShader.h"
 #include <memory>
+#include <OpenGLES/ES2/gl.h>
+#include "Matrix.hpp"
+
+class KMShader;
 
 class KMMaterial
 {

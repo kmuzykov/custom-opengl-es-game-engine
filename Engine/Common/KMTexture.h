@@ -1,13 +1,13 @@
 //
 //  KMTexture.h
-//  Bowling
+//  KMEngine
 //
 //  Created by Kirill Muzykov on 17/01/14.
 //  Copyright (c) 2014 PixelOxygen. All rights reserved.
 //
 
-#ifndef __Bowling__KMTexture__
-#define __Bowling__KMTexture__
+#ifndef __KMEngine__KMTexture__
+#define __KMEngine__KMTexture__
 
 #include <OpenGLES/ES2/gl.h>
 

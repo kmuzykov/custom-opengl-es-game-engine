@@ -1,6 +1,6 @@
 //
 //  KMMaterial.cpp
-//  Bowling
+//  KMEngine
 //
 //  Created by Kirill Muzykov on 13/05/14.
 //  Copyright (c) 2014 PixelOxygen. All rights reserved.
@@ -11,6 +11,7 @@
 #include "KMVertex.h"
 #include "KMDirector.h"
 #include "Matrix.hpp"
+#include "KMShader.h"
 
 const char* KMMaterial::a_position  = "a_position";
 const char* KMMaterial::a_texCoords = "a_texCoords";

@@ -1,13 +1,13 @@
 //
-//  P3DFileUtils.h
-//  Bowling
+//  KMFileUtils.h
+//  KMEngine
 //
 //  Created by Kirill Muzykov on 16/01/14.
 //  Copyright (c) 2014 PixelOxygen. All rights reserved.
 //
 
-#ifndef __Bowling__P3DFileUtils__
-#define __Bowling__P3DFileUtils__
+#ifndef __KMEngine__KMFileUtils__
+#define __KMEngine__KMFileUtils__
 
 #include <OpenGLES/ES2/gl.h>
 

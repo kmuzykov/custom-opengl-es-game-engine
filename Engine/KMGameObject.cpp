@@ -1,6 +1,6 @@
 //
 //  KMGameObject.cpp
-//  Bowling
+//  KMEngine
 //
 //  Created by Kirill Muzykov on 13/05/14.
 //  Copyright (c) 2014 PixelOxygen. All rights reserved.
@@ -14,7 +14,8 @@
 
 
 KMGameObject::KMGameObject()
-: _renderer(nullptr),
+: KMNode(),
+  _renderer(nullptr),
   _physicsBody(nullptr)
 {
     
@@ -38,47 +39,50 @@ void KMGameObject::draw()
     _renderer->render(mvm);
 }
 
-vec3 KMGameObject::getPosition() const
+const vec3& KMGameObject::getPosition()
 {
+    //If we don't have physics body then we use parent function.
     if (!_physicsBody)
      return KMNode::getPosition();
-    
-//    btTransform trans = _physicsBody->getWorldTransform();
+
+    //Getting transform from motion state.
     btTransform trans;
     _physicsBody->getMotionState()->getWorldTransform(trans);
-    return vec3(trans.getOrigin().x(), trans.getOrigin().y(), trans.getOrigin().z());
+    
+    //Updaging ivar and returning it
+    _position = vec3(trans.getOrigin().x(), trans.getOrigin().y(), trans.getOrigin().z());
+    return _position;
 }
 
 void KMGameObject::setPosition(const vec3& position)
 {
+    //Setting position ivar using parent function in any case.
     if (!_physicsBody)
-    {
         KMNode::setPosition(position);
-    }
     
+    //Setting the linked physics body position.
     btTransform trans = _physicsBody->getWorldTransform();
     trans.setOrigin(btVector3(position.x, position.y, position.z));
     _physicsBody->setWorldTransform(trans);
 }
 
-Quaternion KMGameObject::getRotation() const
+const Quaternion& KMGameObject::getRotation()
 {
     if (!_physicsBody)
         return KMNode::getRotation();
 
-    //btTransform trans = _physicsBody->getWorldTransform();
     btTransform trans;
     _physicsBody->getMotionState()->getWorldTransform(trans);
     btQuaternion rot = trans.getRotation();
-    return Quaternion(rot.getX(), rot.getY(), rot.getZ(), rot.getW());
+    
+    _rotation = Quaternion(rot.getX(), rot.getY(), rot.getZ(), rot.getW());
+    return _rotation;
 }
 
-void KMGameObject::setRotation(Quaternion rotation)
+void KMGameObject::setRotation(const Quaternion& rotation)
 {
     if (!_physicsBody)
-    {
-        KMNode::setRotation(rotation);        return;
-    }
+        KMNode::setRotation(rotation);
     
     btTransform trans = _physicsBody->getWorldTransform();
     btQuaternion btRot = btQuaternion(rotation.x, rotation.y, rotation.z, rotation.w);

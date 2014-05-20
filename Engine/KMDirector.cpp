@@ -1,6 +1,6 @@
 //
-//  P3DDirector.cpp
-//  Pixel3D
+//  KMDirector.cpp
+//  KMEngine
 //
 //  Created by Kirill Muzykov on 16/01/14.
 //  Copyright (c) 2014 PixelOxygen. All rights reserved.
@@ -86,8 +86,7 @@ void KMDirector::update(float dt)
 
 void KMDirector::runScene(std::shared_ptr<KMScene> scene)
 {
-    //TODO: Check
-    
+    //TODO: Check    
     _currentScene = scene;
 }
 

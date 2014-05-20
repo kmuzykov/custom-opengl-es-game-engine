@@ -1,13 +1,13 @@
 //
 //  KMVertex.h
-//  Bowling
+//  KMEngine
 //
 //  Created by Kirill Muzykov on 20/01/14.
 //  Copyright (c) 2014 PixelOxygen. All rights reserved.
 //
 
-#ifndef __Bowling__KMVertex__
-#define __Bowling__KMVertex__
+#ifndef __KMEngine__KMVertex__
+#define __KMEngine__KMVertex__
 
 #include "Vector.hpp"
 #include <OpenGLES/ES2/gl.h>

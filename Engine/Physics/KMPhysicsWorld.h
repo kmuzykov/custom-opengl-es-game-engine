@@ -1,13 +1,13 @@
 //
 //  KMPhysicsWorld.h
-//  Bowling
+//  KMEngine
 //
 //  Created by Kirill Muzykov on 20/01/14.
 //  Copyright (c) 2014 PixelOxygen. All rights reserved.
 //
 
-#ifndef __Bowling__KMPhysicsWorld__
-#define __Bowling__KMPhysicsWorld__
+#ifndef __KMEngine__KMPhysicsWorld__
+#define __KMEngine__KMPhysicsWorld__
 
 #include <memory>
 #include <vector>

@@ -1,12 +1,13 @@
 //
 //  KMMaterialColorUniform.cpp
-//  Bowling
+//  KMEngine
 //
 //  Created by Kirill Muzykov on 14/05/14.
 //  Copyright (c) 2014 PixelOxygen. All rights reserved.
 //
 
 #include "KMMaterialColorUniform.h"
+#include "KMShader.h"
 
 const char* KMMaterialColorUniform::u_color = "u_color";
 

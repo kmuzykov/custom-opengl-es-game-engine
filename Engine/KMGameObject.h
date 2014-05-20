@@ -1,6 +1,6 @@
 //
 //  KMGameObject.h
-//  Bowling
+//  KMEngine
 //
 //  Created by Kirill Muzykov on 13/05/14.
 //  Copyright (c) 2014 PixelOxygen. All rights reserved.
@@ -26,10 +26,10 @@ public:
     virtual void draw();
     
     //Overriding position and rotation in case we need to take into account physics body.
-    virtual vec3 getPosition() const;
+    virtual const vec3& getPosition();
     virtual void setPosition(const vec3& position);
-    virtual Quaternion getRotation() const;
-    virtual void setRotation(Quaternion rotation);
+    virtual const Quaternion& getRotation();
+    virtual void setRotation(const Quaternion& rotation);
 
     virtual void rotateBy(Quaternion rotateBy);
 

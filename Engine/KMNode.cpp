@@ -1,6 +1,6 @@
 //
-//  Node.cpp
-//  Bowling
+//  KMNode.cpp
+//  KMEngine
 //
 //  Created by Kirill Muzykov on 17/01/14.
 //  Copyright (c) 2014 PixelOxygen. All rights reserved.
@@ -58,17 +58,16 @@ const list<shared_ptr<KMNode>>& KMNode::getChildren() const
 
 mat4 KMNode::modelViewMatrix(bool includeParent)
 {
-    //KMLOG("mvm: %s", typeid(this).name());
-    
     //TODO: cache and mark dirty (check with profiler first)
+    //TODO: Test big level of nested nodes
+
+    //Calculating current node's MVM
     mat4 translate = mat4::Translate(this->getPosition());
     mat4 rotate = this->getRotation().ToMatrix();
     mat4 scale = mat4::Scale(this->getScale());
-    
     mat4 mvm = scale * rotate * translate;
     
-    //TODO: Test big level of nested nodes
-    //BUG: Doesn't work with physics node
+    //Multipluing with all parents.
     if (includeParent && _parent)
         mvm*= _parent->modelViewMatrix(true);
     

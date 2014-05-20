@@ -1,6 +1,6 @@
 //
 //  KMPhysicsMotionState.h
-//  Bowling
+//  KMEngine
 //
 //  Created by Kirill Muzykov on 19/05/14.
 //  Copyright (c) 2014 PixelOxygen. All rights reserved.

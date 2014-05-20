@@ -43,9 +43,9 @@ void TestScene::addBall()
     
     
     //Applying impulse to move forward and spin
-    _ball->getPhysicsBody()->applyCentralImpulse(btVector3(0, 10,-50));
-    //_ball->getPhysicsBody()->applyTorqueImpulse(btVector3(0,0, 30)); //left rot
-    _ball->getPhysicsBody()->applyTorqueImpulse(btVector3(0,0, -30)); //right rot
+    _ball->getPhysicsBody()->applyCentralImpulse(btVector3(0, 10,-80));
+    _ball->getPhysicsBody()->applyTorqueImpulse(btVector3(0,0, 30)); //left rot
+    //_ball->getPhysicsBody()->applyTorqueImpulse(btVector3(0,0, -30)); //right rot
 }
 
 void TestScene::addTestPin()

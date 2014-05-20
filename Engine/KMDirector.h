@@ -1,13 +1,13 @@
 //
-//  P3DDirector.h
-//  Pixel3D
+//  KMDirector.h
+//  KMEngine
 //
 //  Created by Kirill Muzykov on 16/01/14.
 //  Copyright (c) 2014 PixelOxygen. All rights reserved.
 //
 
-#ifndef __Bowling__P3DDirector__
-#define __Bowling__P3DDirector__
+#ifndef __KMEngine__P3DDirector__
+#define __KMEngine__P3DDirector__
 
 #include <OpenGLES/ES2/gl.h>
 #include <OpenGLES/ES2/glext.h>

@@ -1,13 +1,13 @@
 //
 //  KMMaterialColorUniform.h
-//  Bowling
+//  KMEngine
 //
 //  Created by Kirill Muzykov on 14/05/14.
 //  Copyright (c) 2014 PixelOxygen. All rights reserved.
 //
 
-#ifndef __Bowling__KMMaterialColorUniform__
-#define __Bowling__KMMaterialColorUniform__
+#ifndef __KMEngine__KMMaterialColorUniform__
+#define __KMEngine__KMMaterialColorUniform__
 
 #include "KMMaterial.h"
 
