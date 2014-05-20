@@ -79,7 +79,7 @@ std::vector<KMVertex> KMVertex::loadFromObj(const char* objFileName, bool includ
         vertices.push_back(vertex);
     }
     
-    KMLOG("Loaded OBJ: Positions %ld, Normals %ld, Texture %ld, Faces %ld", positions.size(), normals.size(), textureCoords.size(), faces.size());
+    KMLOG("Loaded OBJ: %s \n \t Positions %ld, \n \t Normals %ld, \n \t Texture %ld, \n \t Faces %ld \n", objFileName, positions.size(), normals.size(), textureCoords.size(), faces.size());
     
     return vertices;
 }
