@@ -27,9 +27,9 @@ using namespace std;
 TestScene::TestScene()
 {
     //Adding lights (let there be light :)
-    this->addLightSource(vec3(0, 2, -2));
-    this->addLightSource(vec3(0, 2, -15), 0.5f);
-    //this->addLightSource(vec3(0, 2, -30), 0.25f);
+    this->addLightSource(vec3(0, 8, -8));
+    this->addLightSource(vec3(-3, 8, -8), 0.5f);
+    this->addLightSource(vec3(3, 8, -8), 0.25f);
 
     //Creating physics world to add all objects for simulation
     _physicsWorld = new KMPhysicsWorld();
