@@ -48,6 +48,9 @@
 		2A6C08AB18BBBE040005AF6F /* uniform_color.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 2A6C088B18BBBDDA0005AF6F /* uniform_color.vsh */; };
 		2A72AE671929376600A0A9B8 /* KMPhysicsDebugDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A72AE651929376600A0A9B8 /* KMPhysicsDebugDrawer.cpp */; };
 		2A72AE6A1929E44E00A0A9B8 /* KMPhysicsMotionState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A72AE681929E44D00A0A9B8 /* KMPhysicsMotionState.cpp */; };
+		2A9D405A192B527300279280 /* walls_diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A9D4057192B527300279280 /* walls_diffuse.png */; };
+		2A9D405B192B527400279280 /* walls.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 2A9D4058192B527300279280 /* walls.mtl */; };
+		2A9D405C192B527400279280 /* walls.obj in Resources */ = {isa = PBXBuildFile; fileRef = 2A9D4059192B527300279280 /* walls.obj */; };
 		2AA5C44819229E1D00B65E9D /* KMGameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AA5C44619229E1D00B65E9D /* KMGameObject.cpp */; };
 		2AA5C44B19229EE200B65E9D /* KMRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AA5C44919229EE200B65E9D /* KMRenderer.cpp */; };
 		2AA5C4521922A00000B65E9D /* KMRendererMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AA5C4501922A00000B65E9D /* KMRendererMesh.cpp */; };
@@ -183,6 +186,9 @@
 		2A72AE661929376600A0A9B8 /* KMPhysicsDebugDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPhysicsDebugDrawer.h; sourceTree = "<group>"; };
 		2A72AE681929E44D00A0A9B8 /* KMPhysicsMotionState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMPhysicsMotionState.cpp; sourceTree = "<group>"; };
 		2A72AE691929E44D00A0A9B8 /* KMPhysicsMotionState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPhysicsMotionState.h; sourceTree = "<group>"; };
+		2A9D4057192B527300279280 /* walls_diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walls_diffuse.png; sourceTree = "<group>"; };
+		2A9D4058192B527300279280 /* walls.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = walls.mtl; sourceTree = "<group>"; };
+		2A9D4059192B527300279280 /* walls.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = walls.obj; sourceTree = "<group>"; };
 		2AA5C44619229E1D00B65E9D /* KMGameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMGameObject.cpp; sourceTree = "<group>"; };
 		2AA5C44719229E1D00B65E9D /* KMGameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMGameObject.h; sourceTree = "<group>"; };
 		2AA5C44919229EE200B65E9D /* KMRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMRenderer.cpp; sourceTree = "<group>"; };
@@ -296,6 +302,7 @@
 		2A3FB1E7188958440028A808 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2A9D4056192B526300279280 /* Decorations */,
 				2A3FB22B188AF08F0028A808 /* Lane */,
 				2A3FB224188ADE8B0028A808 /* Ball */,
 				2A3FB21D188AA98A0028A808 /* Pin */,
@@ -470,6 +477,16 @@
 			path = Shaders;
 			sourceTree = "<group>";
 		};
+		2A9D4056192B526300279280 /* Decorations */ = {
+			isa = PBXGroup;
+			children = (
+				2A9D4057192B527300279280 /* walls_diffuse.png */,
+				2A9D4058192B527300279280 /* walls.mtl */,
+				2A9D4059192B527300279280 /* walls.obj */,
+			);
+			name = Decorations;
+			sourceTree = "<group>";
+		};
 		2AA5C44F19229FCF00B65E9D /* Renderers */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,6 +617,7 @@
 			files = (
 				2A6C08A418BBBE040005AF6F /* default_red_color.fsh in Resources */,
 				2A6C08A518BBBE040005AF6F /* default_red_color.vsh in Resources */,
+				2A9D405B192B527400279280 /* walls.mtl in Resources */,
 				2A6C08A618BBBE040005AF6F /* textured.fsh in Resources */,
 				2A6C08A718BBBE040005AF6F /* textured.vsh in Resources */,
 				2A6C08A818BBBE040005AF6F /* textureDiffuse.fsh in Resources */,
@@ -610,7 +628,9 @@
 				2AC55592188D46F50015A49F /* pin.obj in Resources */,
 				2AC55589188D46C10015A49F /* ball.mtl in Resources */,
 				2AC5558A188D46C10015A49F /* ball.obj in Resources */,
+				2A9D405A192B527300279280 /* walls_diffuse.png in Resources */,
 				2AC55591188D46F50015A49F /* pin.mtl in Resources */,
+				2A9D405C192B527400279280 /* walls.obj in Resources */,
 				2A3FB1ED188958440028A808 /* cube.obj in Resources */,
 				2A3FB1EE188958440028A808 /* cube_diffuse.png in Resources */,
 				2A3FB221188AA9950028A808 /* pin_diffuse.png in Resources */,

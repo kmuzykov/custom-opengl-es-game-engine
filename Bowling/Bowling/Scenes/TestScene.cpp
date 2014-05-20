@@ -10,6 +10,11 @@
 
 #include "KMMacros.h"
 #include "KMPhysicsWorld.h"
+#include "KMVertex.h"
+#include "KMTexture.h"
+#include "KMGameObject.h"
+#include "KMMaterialTextureDiffuse.h"
+#include "KMRendererMesh.h"
 
 #include "BowlingBall.h"
 #include "BowlingLane.h"
@@ -22,9 +27,9 @@ using namespace std;
 TestScene::TestScene()
 {
     //Adding lights (let there be light :)
-    this->addLightSource(vec3(0, 3, -2));
-    this->addLightSource(vec3(0, 3, -15), 0.5f);
-    this->addLightSource(vec3(0, 3, -30), 0.25f);
+    this->addLightSource(vec3(0, 2, -2));
+    this->addLightSource(vec3(0, 2, -15), 0.5f);
+    //this->addLightSource(vec3(0, 2, -30), 0.25f);
 
     //Creating physics world to add all objects for simulation
     _physicsWorld = new KMPhysicsWorld();
@@ -32,6 +37,8 @@ TestScene::TestScene()
     addLane();
     addAllPins();
     addBall();
+    
+    addDecorations();
 }
 
 void TestScene::addBall()
@@ -40,7 +47,6 @@ void TestScene::addBall()
     _ball = std::make_shared<BowlingBall>(vec3(0.7f, -0.7f, -3.0f));
     this->addChild(_ball);
     _physicsWorld->addObject(_ball.get());
-    
     
     //Applying impulse to move forward and spin
     _ball->getPhysicsBody()->applyCentralImpulse(btVector3(0, 10,-80));
@@ -106,4 +112,18 @@ void TestScene::draw()
 {
     KMScene::draw();
     _physicsWorld->drawDebug();
+}
+
+void TestScene::addDecorations()
+{
+    KMTexture tex("walls_diffuse.png");
+    auto wallsVertices = KMVertex::loadFromObj("walls.obj");
+    auto wallsMat = std::make_shared<KMMaterialTextureDiffuse>(tex);
+    auto wallsRenderer = std::make_shared<KMRendererMesh>(wallsMat, wallsVertices);
+    
+    auto wallsGameObject = std::make_shared<KMGameObject>();
+    wallsGameObject->setRenderer(wallsRenderer);
+    
+    wallsGameObject->setPosition(vec3(0, -1.5, -15));
+    this->addChild(wallsGameObject);
 }

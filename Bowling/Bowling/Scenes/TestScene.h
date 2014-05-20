@@ -31,6 +31,8 @@ private:
     void addTestPin();
     void addAllPins();
     void addLane();
+    
+    void addDecorations();
 };
 
 #endif /* defined(__Bowling__TestScene__) */
