@@ -28,6 +28,11 @@ void KMDirector::initialize(int width, int height, float scaleFactor)
     // Create a new perspective projection matrix. The height will stay the same
     // while the width will vary as per aspect ratio.
     float ratio = (float)height/(float)width;
+    
+    //TODO: This won't fix incorrect sizes of width/height returned, need to fix them later
+    if (_isPortrait)
+        ratio = 1.0f/ratio;
+        
     float left = -ratio;
     float right = ratio;
     float bottom = -1.0;

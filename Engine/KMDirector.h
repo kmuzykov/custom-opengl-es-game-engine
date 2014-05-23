@@ -33,6 +33,8 @@ public:
     int getViewHeightInPixels() const {return _viewHeightInPixels; }
     int getScaleFactor() const { return _scaleFactor; }
     
+    void setTargetOrientation(bool isPortrait) { _isPortrait = isPortrait; }
+    
     const mat4& getProjectionMatrix() const { return _projectionMatrix; }
     
     static KMDirector& getSharedDirector();
@@ -46,6 +48,8 @@ private:
     int _viewWidthInPixels;
     int _viewHeightInPixels;
     float _scaleFactor;
+    
+    bool _isPortrait = false;
     
     mat4 _projectionMatrix;
     
