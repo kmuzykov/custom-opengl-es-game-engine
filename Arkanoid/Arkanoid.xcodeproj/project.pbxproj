@@ -1,0 +1,601 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2AD421C0192F9D990010A57F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD421BF192F9D990010A57F /* Foundation.framework */; };
+		2AD421C2192F9D990010A57F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD421C1192F9D990010A57F /* CoreGraphics.framework */; };
+		2AD421C4192F9D990010A57F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD421C3192F9D990010A57F /* UIKit.framework */; };
+		2AD421C6192F9D990010A57F /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD421C5192F9D990010A57F /* GLKit.framework */; };
+		2AD421C8192F9D990010A57F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD421C7192F9D990010A57F /* OpenGLES.framework */; };
+		2AD421CE192F9D990010A57F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2AD421CC192F9D990010A57F /* InfoPlist.strings */; };
+		2AD421D0192F9D990010A57F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD421CF192F9D990010A57F /* main.m */; };
+		2AD421D4192F9D990010A57F /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2AD421D3192F9D990010A57F /* AppDelegate.mm */; };
+		2AD421E3192F9D990010A57F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD421E2192F9D990010A57F /* Images.xcassets */; };
+		2AD4223C192F9DAA0010A57F /* KMFileUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42202192F9DAA0010A57F /* KMFileUtils.cpp */; };
+		2AD4223D192F9DAA0010A57F /* KMShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42205192F9DAA0010A57F /* KMShader.cpp */; };
+		2AD4223E192F9DAA0010A57F /* KMTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42207192F9DAA0010A57F /* KMTexture.cpp */; };
+		2AD4223F192F9DAA0010A57F /* KMVertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42209192F9DAA0010A57F /* KMVertex.cpp */; };
+		2AD42240192F9DAA0010A57F /* KMFileUtilsIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4220D192F9DAA0010A57F /* KMFileUtilsIOS.mm */; };
+		2AD42241192F9DAA0010A57F /* KMGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4220F192F9DAA0010A57F /* KMGLView.mm */; };
+		2AD42242192F9DAA0010A57F /* KMDirector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42210192F9DAA0010A57F /* KMDirector.cpp */; };
+		2AD42243192F9DAA0010A57F /* KMGameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42212192F9DAA0010A57F /* KMGameObject.cpp */; };
+		2AD42244192F9DAA0010A57F /* KMMaterial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42214192F9DAA0010A57F /* KMMaterial.cpp */; };
+		2AD42245192F9DAA0010A57F /* KMNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42216192F9DAA0010A57F /* KMNode.cpp */; };
+		2AD42246192F9DAA0010A57F /* KMRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42218192F9DAA0010A57F /* KMRenderer.cpp */; };
+		2AD42247192F9DAA0010A57F /* KMScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4221A192F9DAA0010A57F /* KMScene.cpp */; };
+		2AD42248192F9DAA0010A57F /* KMMaterialColorUniform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42222192F9DAA0010A57F /* KMMaterialColorUniform.cpp */; };
+		2AD42249192F9DAA0010A57F /* KMMaterialTextureDiffuse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42224192F9DAA0010A57F /* KMMaterialTextureDiffuse.cpp */; };
+		2AD4224A192F9DAA0010A57F /* KMMaterialTextureUnlit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42226192F9DAA0010A57F /* KMMaterialTextureUnlit.cpp */; };
+		2AD4224E192F9DAA0010A57F /* KMRendererMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42231192F9DAA0010A57F /* KMRendererMesh.cpp */; };
+		2AD4224F192F9DAA0010A57F /* default_red_color.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 2AD42234192F9DAA0010A57F /* default_red_color.fsh */; };
+		2AD42250192F9DAA0010A57F /* default_red_color.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 2AD42235192F9DAA0010A57F /* default_red_color.vsh */; };
+		2AD42251192F9DAA0010A57F /* textured.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 2AD42236192F9DAA0010A57F /* textured.fsh */; };
+		2AD42252192F9DAA0010A57F /* textured.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 2AD42237192F9DAA0010A57F /* textured.vsh */; };
+		2AD42253192F9DAA0010A57F /* textureDiffuse.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 2AD42238192F9DAA0010A57F /* textureDiffuse.fsh */; };
+		2AD42254192F9DAA0010A57F /* textureDiffuse.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 2AD42239192F9DAA0010A57F /* textureDiffuse.vsh */; };
+		2AD42255192F9DAA0010A57F /* uniform_color.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4223A192F9DAA0010A57F /* uniform_color.fsh */; };
+		2AD42256192F9DAA0010A57F /* uniform_color.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4223B192F9DAA0010A57F /* uniform_color.vsh */; };
+		2AD4225E192F9EC40010A57F /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4225C192F9EC40010A57F /* GameScene.cpp */; };
+		2AD42268192FA33F0010A57F /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42266192FA33F0010A57F /* Ball.cpp */; };
+		2AD4226C192FA5520010A57F /* arkanoid_ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4226A192FA5520010A57F /* arkanoid_ball.png */; };
+		2AD42270192FA5A20010A57F /* arkanoid_ball.obj in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4226F192FA5A20010A57F /* arkanoid_ball.obj */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2AD421BC192F9D990010A57F /* Arkanoid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arkanoid.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AD421BF192F9D990010A57F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2AD421C1192F9D990010A57F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2AD421C3192F9D990010A57F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2AD421C5192F9D990010A57F /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		2AD421C7192F9D990010A57F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		2AD421CB192F9D990010A57F /* Arkanoid-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Arkanoid-Info.plist"; sourceTree = "<group>"; };
+		2AD421CD192F9D990010A57F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2AD421CF192F9D990010A57F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2AD421D1192F9D990010A57F /* Arkanoid-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Arkanoid-Prefix.pch"; sourceTree = "<group>"; };
+		2AD421D2192F9D990010A57F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2AD421D3192F9D990010A57F /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		2AD421E2192F9D990010A57F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2AD421E9192F9D9A0010A57F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		2AD42201192F9DAA0010A57F /* KMConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMConfig.h; sourceTree = "<group>"; };
+		2AD42202192F9DAA0010A57F /* KMFileUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMFileUtils.cpp; sourceTree = "<group>"; };
+		2AD42203192F9DAA0010A57F /* KMFileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMFileUtils.h; sourceTree = "<group>"; };
+		2AD42204192F9DAA0010A57F /* KMMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMMacros.h; sourceTree = "<group>"; };
+		2AD42205192F9DAA0010A57F /* KMShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMShader.cpp; sourceTree = "<group>"; };
+		2AD42206192F9DAA0010A57F /* KMShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMShader.h; sourceTree = "<group>"; };
+		2AD42207192F9DAA0010A57F /* KMTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMTexture.cpp; sourceTree = "<group>"; };
+		2AD42208192F9DAA0010A57F /* KMTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMTexture.h; sourceTree = "<group>"; };
+		2AD42209192F9DAA0010A57F /* KMVertex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMVertex.cpp; sourceTree = "<group>"; };
+		2AD4220A192F9DAA0010A57F /* KMVertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMVertex.h; sourceTree = "<group>"; };
+		2AD4220C192F9DAA0010A57F /* KMFileUtilsIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMFileUtilsIOS.h; sourceTree = "<group>"; };
+		2AD4220D192F9DAA0010A57F /* KMFileUtilsIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = KMFileUtilsIOS.mm; sourceTree = "<group>"; };
+		2AD4220E192F9DAA0010A57F /* KMGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMGLView.h; sourceTree = "<group>"; };
+		2AD4220F192F9DAA0010A57F /* KMGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = KMGLView.mm; sourceTree = "<group>"; };
+		2AD42210192F9DAA0010A57F /* KMDirector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMDirector.cpp; sourceTree = "<group>"; };
+		2AD42211192F9DAA0010A57F /* KMDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMDirector.h; sourceTree = "<group>"; };
+		2AD42212192F9DAA0010A57F /* KMGameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMGameObject.cpp; sourceTree = "<group>"; };
+		2AD42213192F9DAA0010A57F /* KMGameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMGameObject.h; sourceTree = "<group>"; };
+		2AD42214192F9DAA0010A57F /* KMMaterial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMMaterial.cpp; sourceTree = "<group>"; };
+		2AD42215192F9DAA0010A57F /* KMMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMMaterial.h; sourceTree = "<group>"; };
+		2AD42216192F9DAA0010A57F /* KMNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMNode.cpp; sourceTree = "<group>"; };
+		2AD42217192F9DAA0010A57F /* KMNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMNode.h; sourceTree = "<group>"; };
+		2AD42218192F9DAA0010A57F /* KMRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMRenderer.cpp; sourceTree = "<group>"; };
+		2AD42219192F9DAA0010A57F /* KMRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMRenderer.h; sourceTree = "<group>"; };
+		2AD4221A192F9DAA0010A57F /* KMScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMScene.cpp; sourceTree = "<group>"; };
+		2AD4221B192F9DAA0010A57F /* KMScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMScene.h; sourceTree = "<group>"; };
+		2AD4221E192F9DAA0010A57F /* Matrix.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Matrix.hpp; sourceTree = "<group>"; };
+		2AD4221F192F9DAA0010A57F /* Quaternion.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Quaternion.hpp; sourceTree = "<group>"; };
+		2AD42220192F9DAA0010A57F /* Vector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Vector.hpp; sourceTree = "<group>"; };
+		2AD42222192F9DAA0010A57F /* KMMaterialColorUniform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMMaterialColorUniform.cpp; sourceTree = "<group>"; };
+		2AD42223192F9DAA0010A57F /* KMMaterialColorUniform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMMaterialColorUniform.h; sourceTree = "<group>"; };
+		2AD42224192F9DAA0010A57F /* KMMaterialTextureDiffuse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMMaterialTextureDiffuse.cpp; sourceTree = "<group>"; };
+		2AD42225192F9DAA0010A57F /* KMMaterialTextureDiffuse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMMaterialTextureDiffuse.h; sourceTree = "<group>"; };
+		2AD42226192F9DAA0010A57F /* KMMaterialTextureUnlit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMMaterialTextureUnlit.cpp; sourceTree = "<group>"; };
+		2AD42227192F9DAA0010A57F /* KMMaterialTextureUnlit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMMaterialTextureUnlit.h; sourceTree = "<group>"; };
+		2AD42229192F9DAA0010A57F /* KMPhysicsDebugDrawer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMPhysicsDebugDrawer.cpp; sourceTree = "<group>"; };
+		2AD4222A192F9DAA0010A57F /* KMPhysicsDebugDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPhysicsDebugDrawer.h; sourceTree = "<group>"; };
+		2AD4222B192F9DAA0010A57F /* KMPhysicsMotionState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMPhysicsMotionState.cpp; sourceTree = "<group>"; };
+		2AD4222C192F9DAA0010A57F /* KMPhysicsMotionState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPhysicsMotionState.h; sourceTree = "<group>"; };
+		2AD4222D192F9DAA0010A57F /* KMPhysicsWorld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMPhysicsWorld.cpp; sourceTree = "<group>"; };
+		2AD4222E192F9DAA0010A57F /* KMPhysicsWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPhysicsWorld.h; sourceTree = "<group>"; };
+		2AD42231192F9DAA0010A57F /* KMRendererMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMRendererMesh.cpp; sourceTree = "<group>"; };
+		2AD42232192F9DAA0010A57F /* KMRendererMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMRendererMesh.h; sourceTree = "<group>"; };
+		2AD42234192F9DAA0010A57F /* default_red_color.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = default_red_color.fsh; sourceTree = "<group>"; };
+		2AD42235192F9DAA0010A57F /* default_red_color.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = default_red_color.vsh; sourceTree = "<group>"; };
+		2AD42236192F9DAA0010A57F /* textured.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = textured.fsh; sourceTree = "<group>"; };
+		2AD42237192F9DAA0010A57F /* textured.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = textured.vsh; sourceTree = "<group>"; };
+		2AD42238192F9DAA0010A57F /* textureDiffuse.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = textureDiffuse.fsh; sourceTree = "<group>"; };
+		2AD42239192F9DAA0010A57F /* textureDiffuse.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = textureDiffuse.vsh; sourceTree = "<group>"; };
+		2AD4223A192F9DAA0010A57F /* uniform_color.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = uniform_color.fsh; sourceTree = "<group>"; };
+		2AD4223B192F9DAA0010A57F /* uniform_color.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = uniform_color.vsh; sourceTree = "<group>"; };
+		2AD4225C192F9EC40010A57F /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameScene.cpp; path = Scenes/GameScene.cpp; sourceTree = "<group>"; };
+		2AD4225D192F9EC40010A57F /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Scenes/GameScene.h; sourceTree = "<group>"; };
+		2AD4225F192F9F010010A57F /* KMEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMEngine.h; sourceTree = "<group>"; };
+		2AD42266192FA33F0010A57F /* Ball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ball.cpp; path = GameObjects/Ball.cpp; sourceTree = "<group>"; };
+		2AD42267192FA33F0010A57F /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ball.h; path = GameObjects/Ball.h; sourceTree = "<group>"; };
+		2AD4226A192FA5520010A57F /* arkanoid_ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arkanoid_ball.png; sourceTree = "<group>"; };
+		2AD4226F192FA5A20010A57F /* arkanoid_ball.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = arkanoid_ball.obj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2AD421B9192F9D990010A57F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AD421C8192F9D990010A57F /* OpenGLES.framework in Frameworks */,
+				2AD421C2192F9D990010A57F /* CoreGraphics.framework in Frameworks */,
+				2AD421C4192F9D990010A57F /* UIKit.framework in Frameworks */,
+				2AD421C6192F9D990010A57F /* GLKit.framework in Frameworks */,
+				2AD421C0192F9D990010A57F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2AD421B3192F9D990010A57F = {
+			isa = PBXGroup;
+			children = (
+				2AD421C9192F9D990010A57F /* Arkanoid */,
+				2AD421BE192F9D990010A57F /* Frameworks */,
+				2AD421BD192F9D990010A57F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2AD421BD192F9D990010A57F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2AD421BC192F9D990010A57F /* Arkanoid.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2AD421BE192F9D990010A57F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2AD421BF192F9D990010A57F /* Foundation.framework */,
+				2AD421C1192F9D990010A57F /* CoreGraphics.framework */,
+				2AD421C3192F9D990010A57F /* UIKit.framework */,
+				2AD421C5192F9D990010A57F /* GLKit.framework */,
+				2AD421C7192F9D990010A57F /* OpenGLES.framework */,
+				2AD421E9192F9D9A0010A57F /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2AD421C9192F9D990010A57F /* Arkanoid */ = {
+			isa = PBXGroup;
+			children = (
+				2AD42265192FA3220010A57F /* GameObjects */,
+				2AD4225B192F9EAB0010A57F /* Scenes */,
+				2AD421FF192F9DAA0010A57F /* Engine */,
+				2AD4225A192F9E9C0010A57F /* App */,
+				2AD421CA192F9D990010A57F /* Supporting Files */,
+				2AD42260192FA2EC0010A57F /* Resources */,
+			);
+			path = Arkanoid;
+			sourceTree = "<group>";
+		};
+		2AD421CA192F9D990010A57F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2AD421CB192F9D990010A57F /* Arkanoid-Info.plist */,
+				2AD421CC192F9D990010A57F /* InfoPlist.strings */,
+				2AD421CF192F9D990010A57F /* main.m */,
+				2AD421D1192F9D990010A57F /* Arkanoid-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2AD421FF192F9DAA0010A57F /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				2AD42200192F9DAA0010A57F /* Common */,
+				2AD4220B192F9DAA0010A57F /* iOS */,
+				2AD4221C192F9DAA0010A57F /* Libraries */,
+				2AD42221192F9DAA0010A57F /* Materials */,
+				2AD42228192F9DAA0010A57F /* Physics */,
+				2AD4222F192F9DAA0010A57F /* Renderables */,
+				2AD42230192F9DAA0010A57F /* Renderers */,
+				2AD42233192F9DAA0010A57F /* Shaders */,
+				2AD42210192F9DAA0010A57F /* KMDirector.cpp */,
+				2AD42211192F9DAA0010A57F /* KMDirector.h */,
+				2AD42212192F9DAA0010A57F /* KMGameObject.cpp */,
+				2AD42213192F9DAA0010A57F /* KMGameObject.h */,
+				2AD42214192F9DAA0010A57F /* KMMaterial.cpp */,
+				2AD42215192F9DAA0010A57F /* KMMaterial.h */,
+				2AD42216192F9DAA0010A57F /* KMNode.cpp */,
+				2AD42217192F9DAA0010A57F /* KMNode.h */,
+				2AD42218192F9DAA0010A57F /* KMRenderer.cpp */,
+				2AD42219192F9DAA0010A57F /* KMRenderer.h */,
+				2AD4221A192F9DAA0010A57F /* KMScene.cpp */,
+				2AD4221B192F9DAA0010A57F /* KMScene.h */,
+				2AD4225F192F9F010010A57F /* KMEngine.h */,
+			);
+			name = Engine;
+			path = ../../Engine;
+			sourceTree = "<group>";
+		};
+		2AD42200192F9DAA0010A57F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2AD42201192F9DAA0010A57F /* KMConfig.h */,
+				2AD42202192F9DAA0010A57F /* KMFileUtils.cpp */,
+				2AD42203192F9DAA0010A57F /* KMFileUtils.h */,
+				2AD42204192F9DAA0010A57F /* KMMacros.h */,
+				2AD42205192F9DAA0010A57F /* KMShader.cpp */,
+				2AD42206192F9DAA0010A57F /* KMShader.h */,
+				2AD42207192F9DAA0010A57F /* KMTexture.cpp */,
+				2AD42208192F9DAA0010A57F /* KMTexture.h */,
+				2AD42209192F9DAA0010A57F /* KMVertex.cpp */,
+				2AD4220A192F9DAA0010A57F /* KMVertex.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		2AD4220B192F9DAA0010A57F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2AD4220C192F9DAA0010A57F /* KMFileUtilsIOS.h */,
+				2AD4220D192F9DAA0010A57F /* KMFileUtilsIOS.mm */,
+				2AD4220E192F9DAA0010A57F /* KMGLView.h */,
+				2AD4220F192F9DAA0010A57F /* KMGLView.mm */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		2AD4221C192F9DAA0010A57F /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				2AD4221D192F9DAA0010A57F /* Math */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		2AD4221D192F9DAA0010A57F /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				2AD4221E192F9DAA0010A57F /* Matrix.hpp */,
+				2AD4221F192F9DAA0010A57F /* Quaternion.hpp */,
+				2AD42220192F9DAA0010A57F /* Vector.hpp */,
+			);
+			path = Math;
+			sourceTree = "<group>";
+		};
+		2AD42221192F9DAA0010A57F /* Materials */ = {
+			isa = PBXGroup;
+			children = (
+				2AD42222192F9DAA0010A57F /* KMMaterialColorUniform.cpp */,
+				2AD42223192F9DAA0010A57F /* KMMaterialColorUniform.h */,
+				2AD42224192F9DAA0010A57F /* KMMaterialTextureDiffuse.cpp */,
+				2AD42225192F9DAA0010A57F /* KMMaterialTextureDiffuse.h */,
+				2AD42226192F9DAA0010A57F /* KMMaterialTextureUnlit.cpp */,
+				2AD42227192F9DAA0010A57F /* KMMaterialTextureUnlit.h */,
+			);
+			path = Materials;
+			sourceTree = "<group>";
+		};
+		2AD42228192F9DAA0010A57F /* Physics */ = {
+			isa = PBXGroup;
+			children = (
+				2AD42229192F9DAA0010A57F /* KMPhysicsDebugDrawer.cpp */,
+				2AD4222A192F9DAA0010A57F /* KMPhysicsDebugDrawer.h */,
+				2AD4222B192F9DAA0010A57F /* KMPhysicsMotionState.cpp */,
+				2AD4222C192F9DAA0010A57F /* KMPhysicsMotionState.h */,
+				2AD4222D192F9DAA0010A57F /* KMPhysicsWorld.cpp */,
+				2AD4222E192F9DAA0010A57F /* KMPhysicsWorld.h */,
+			);
+			path = Physics;
+			sourceTree = "<group>";
+		};
+		2AD4222F192F9DAA0010A57F /* Renderables */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Renderables;
+			sourceTree = "<group>";
+		};
+		2AD42230192F9DAA0010A57F /* Renderers */ = {
+			isa = PBXGroup;
+			children = (
+				2AD42231192F9DAA0010A57F /* KMRendererMesh.cpp */,
+				2AD42232192F9DAA0010A57F /* KMRendererMesh.h */,
+			);
+			path = Renderers;
+			sourceTree = "<group>";
+		};
+		2AD42233192F9DAA0010A57F /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				2AD42234192F9DAA0010A57F /* default_red_color.fsh */,
+				2AD42235192F9DAA0010A57F /* default_red_color.vsh */,
+				2AD42236192F9DAA0010A57F /* textured.fsh */,
+				2AD42237192F9DAA0010A57F /* textured.vsh */,
+				2AD42238192F9DAA0010A57F /* textureDiffuse.fsh */,
+				2AD42239192F9DAA0010A57F /* textureDiffuse.vsh */,
+				2AD4223A192F9DAA0010A57F /* uniform_color.fsh */,
+				2AD4223B192F9DAA0010A57F /* uniform_color.vsh */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		2AD4225A192F9E9C0010A57F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2AD421D2192F9D990010A57F /* AppDelegate.h */,
+				2AD421D3192F9D990010A57F /* AppDelegate.mm */,
+				2AD421E2192F9D990010A57F /* Images.xcassets */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		2AD4225B192F9EAB0010A57F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				2AD4225C192F9EC40010A57F /* GameScene.cpp */,
+				2AD4225D192F9EC40010A57F /* GameScene.h */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		2AD42260192FA2EC0010A57F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2AD4226F192FA5A20010A57F /* arkanoid_ball.obj */,
+				2AD4226A192FA5520010A57F /* arkanoid_ball.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2AD42265192FA3220010A57F /* GameObjects */ = {
+			isa = PBXGroup;
+			children = (
+				2AD42267192FA33F0010A57F /* Ball.h */,
+				2AD42266192FA33F0010A57F /* Ball.cpp */,
+			);
+			name = GameObjects;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2AD421BB192F9D990010A57F /* Arkanoid */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AD421F9192F9D9A0010A57F /* Build configuration list for PBXNativeTarget "Arkanoid" */;
+			buildPhases = (
+				2AD421B8192F9D990010A57F /* Sources */,
+				2AD421B9192F9D990010A57F /* Frameworks */,
+				2AD421BA192F9D990010A57F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Arkanoid;
+			productName = Arkanoid;
+			productReference = 2AD421BC192F9D990010A57F /* Arkanoid.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2AD421B4192F9D990010A57F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Kirill Muzykov";
+			};
+			buildConfigurationList = 2AD421B7192F9D990010A57F /* Build configuration list for PBXProject "Arkanoid" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2AD421B3192F9D990010A57F;
+			productRefGroup = 2AD421BD192F9D990010A57F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2AD421BB192F9D990010A57F /* Arkanoid */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2AD421BA192F9D990010A57F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AD42254192F9DAA0010A57F /* textureDiffuse.vsh in Resources */,
+				2AD42250192F9DAA0010A57F /* default_red_color.vsh in Resources */,
+				2AD4224F192F9DAA0010A57F /* default_red_color.fsh in Resources */,
+				2AD42256192F9DAA0010A57F /* uniform_color.vsh in Resources */,
+				2AD42251192F9DAA0010A57F /* textured.fsh in Resources */,
+				2AD42270192FA5A20010A57F /* arkanoid_ball.obj in Resources */,
+				2AD42253192F9DAA0010A57F /* textureDiffuse.fsh in Resources */,
+				2AD42252192F9DAA0010A57F /* textured.vsh in Resources */,
+				2AD421E3192F9D990010A57F /* Images.xcassets in Resources */,
+				2AD42255192F9DAA0010A57F /* uniform_color.fsh in Resources */,
+				2AD421CE192F9D990010A57F /* InfoPlist.strings in Resources */,
+				2AD4226C192FA5520010A57F /* arkanoid_ball.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2AD421B8192F9D990010A57F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AD42245192F9DAA0010A57F /* KMNode.cpp in Sources */,
+				2AD42248192F9DAA0010A57F /* KMMaterialColorUniform.cpp in Sources */,
+				2AD42242192F9DAA0010A57F /* KMDirector.cpp in Sources */,
+				2AD4223C192F9DAA0010A57F /* KMFileUtils.cpp in Sources */,
+				2AD42268192FA33F0010A57F /* Ball.cpp in Sources */,
+				2AD4223D192F9DAA0010A57F /* KMShader.cpp in Sources */,
+				2AD421D4192F9D990010A57F /* AppDelegate.mm in Sources */,
+				2AD4225E192F9EC40010A57F /* GameScene.cpp in Sources */,
+				2AD42246192F9DAA0010A57F /* KMRenderer.cpp in Sources */,
+				2AD4224E192F9DAA0010A57F /* KMRendererMesh.cpp in Sources */,
+				2AD42247192F9DAA0010A57F /* KMScene.cpp in Sources */,
+				2AD421D0192F9D990010A57F /* main.m in Sources */,
+				2AD42240192F9DAA0010A57F /* KMFileUtilsIOS.mm in Sources */,
+				2AD4223F192F9DAA0010A57F /* KMVertex.cpp in Sources */,
+				2AD42249192F9DAA0010A57F /* KMMaterialTextureDiffuse.cpp in Sources */,
+				2AD4224A192F9DAA0010A57F /* KMMaterialTextureUnlit.cpp in Sources */,
+				2AD42243192F9DAA0010A57F /* KMGameObject.cpp in Sources */,
+				2AD42241192F9DAA0010A57F /* KMGLView.mm in Sources */,
+				2AD42244192F9DAA0010A57F /* KMMaterial.cpp in Sources */,
+				2AD4223E192F9DAA0010A57F /* KMTexture.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2AD421CC192F9D990010A57F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2AD421CD192F9D990010A57F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2AD421F7192F9D9A0010A57F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2AD421F8192F9D9A0010A57F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2AD421FA192F9D9A0010A57F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Arkanoid/Arkanoid-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"KM_PHYSICS=0",
+				);
+				INFOPLIST_FILE = "Arkanoid/Arkanoid-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2AD421FB192F9D9A0010A57F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Arkanoid/Arkanoid-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "KM_PHYSICS=0";
+				INFOPLIST_FILE = "Arkanoid/Arkanoid-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2AD421B7192F9D990010A57F /* Build configuration list for PBXProject "Arkanoid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AD421F7192F9D9A0010A57F /* Debug */,
+				2AD421F8192F9D9A0010A57F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2AD421F9192F9D9A0010A57F /* Build configuration list for PBXNativeTarget "Arkanoid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AD421FA192F9D9A0010A57F /* Debug */,
+				2AD421FB192F9D9A0010A57F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2AD421B4192F9D990010A57F /* Project object */;
+}
