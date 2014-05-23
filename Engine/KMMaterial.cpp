@@ -40,9 +40,10 @@ void KMMaterial::useProgram()
 void KMMaterial::setBlendingFunc()
 {
     //TODO: Add flag to enable, disable function and set SRC and DST
-    //    glEnable(GL_BLEND);
-    //    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    //    CHECK_GL_ERROR();
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    
+    CHECK_GL_ERROR();
 }
 
 void KMMaterial::setAtrributes()

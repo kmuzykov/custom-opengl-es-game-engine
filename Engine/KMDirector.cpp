@@ -55,7 +55,7 @@ void KMDirector::initialize(int width, int height, float scaleFactor)
     glViewport(0, 0, _viewWidthInPixels, _viewHeightInPixels);
     
     glEnable(GL_DEPTH_TEST);
-    //glEnable(GL_CULL_FACE);
+    glEnable(GL_CULL_FACE);
 }
 
 void KMDirector::validateInit()
