@@ -8,15 +8,20 @@
 
 #include "KMGameObject.h"
 
-#include "btBulletDynamicsCommon.h"
 #include "KMRenderer.h"
 #include "KMMacros.h"
+
+#if KM_PHYSICS > 0
+#include "btBulletDynamicsCommon.h"
+#endif
 
 
 KMGameObject::KMGameObject()
 : KMNode(),
-  _renderer(nullptr),
-  _physicsBody(nullptr)
+  _renderer(nullptr)
+#if KM_PHYSICS > 0
+  ,_physicsBody(nullptr)
+#endif
 {
     
 }
@@ -38,6 +43,8 @@ void KMGameObject::draw()
     mat4 mvm = this->modelViewMatrix(true);
     _renderer->render(mvm);
 }
+
+#if KM_PHYSICS > 0
 
 const vec3& KMGameObject::getPosition()
 {
@@ -99,3 +106,5 @@ void KMGameObject::rotateBy(Quaternion rotateBy)
     //TODO: Implement
     KMLOG("KMGameObject::rotateBy is not yet implemented");
 }
+
+#endif
