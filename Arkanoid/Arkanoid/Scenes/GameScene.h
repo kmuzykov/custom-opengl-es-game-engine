@@ -11,6 +11,7 @@
 
 #include "KMEngine.h"
 #include "Ball.h"
+#include "Bat.h"
 
 class GameScene : public KMScene
 {

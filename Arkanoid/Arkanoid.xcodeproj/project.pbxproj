@@ -42,8 +42,10 @@
 		2AD42256192F9DAA0010A57F /* uniform_color.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4223B192F9DAA0010A57F /* uniform_color.vsh */; };
 		2AD4225E192F9EC40010A57F /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4225C192F9EC40010A57F /* GameScene.cpp */; };
 		2AD42268192FA33F0010A57F /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42266192FA33F0010A57F /* Ball.cpp */; };
-		2AD4226C192FA5520010A57F /* arkanoid_ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4226A192FA5520010A57F /* arkanoid_ball.png */; };
 		2AD42270192FA5A20010A57F /* arkanoid_ball.obj in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4226F192FA5A20010A57F /* arkanoid_ball.obj */; };
+		2AD42274192FAE760010A57F /* arkanoid_ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD42273192FAE760010A57F /* arkanoid_ball.png */; };
+		2AD42279192FAFD50010A57F /* Bat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42277192FAFD50010A57F /* Bat.cpp */; };
+		2AD4227B192FB06D0010A57F /* arkanoid_bat.obj in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4227A192FB06D0010A57F /* arkanoid_bat.obj */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,8 +119,11 @@
 		2AD4225F192F9F010010A57F /* KMEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMEngine.h; sourceTree = "<group>"; };
 		2AD42266192FA33F0010A57F /* Ball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ball.cpp; path = GameObjects/Ball.cpp; sourceTree = "<group>"; };
 		2AD42267192FA33F0010A57F /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ball.h; path = GameObjects/Ball.h; sourceTree = "<group>"; };
-		2AD4226A192FA5520010A57F /* arkanoid_ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arkanoid_ball.png; sourceTree = "<group>"; };
 		2AD4226F192FA5A20010A57F /* arkanoid_ball.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = arkanoid_ball.obj; sourceTree = "<group>"; };
+		2AD42273192FAE760010A57F /* arkanoid_ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arkanoid_ball.png; sourceTree = "<group>"; };
+		2AD42277192FAFD50010A57F /* Bat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Bat.cpp; path = GameObjects/Bat.cpp; sourceTree = "<group>"; };
+		2AD42278192FAFD50010A57F /* Bat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bat.h; path = GameObjects/Bat.h; sourceTree = "<group>"; };
+		2AD4227A192FB06D0010A57F /* arkanoid_bat.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = arkanoid_bat.obj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -345,8 +350,9 @@
 		2AD42260192FA2EC0010A57F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2AD4227A192FB06D0010A57F /* arkanoid_bat.obj */,
+				2AD42273192FAE760010A57F /* arkanoid_ball.png */,
 				2AD4226F192FA5A20010A57F /* arkanoid_ball.obj */,
-				2AD4226A192FA5520010A57F /* arkanoid_ball.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -356,6 +362,8 @@
 			children = (
 				2AD42267192FA33F0010A57F /* Ball.h */,
 				2AD42266192FA33F0010A57F /* Ball.cpp */,
+				2AD42277192FAFD50010A57F /* Bat.cpp */,
+				2AD42278192FAFD50010A57F /* Bat.h */,
 			);
 			name = GameObjects;
 			sourceTree = "<group>";
@@ -419,11 +427,12 @@
 				2AD42251192F9DAA0010A57F /* textured.fsh in Resources */,
 				2AD42270192FA5A20010A57F /* arkanoid_ball.obj in Resources */,
 				2AD42253192F9DAA0010A57F /* textureDiffuse.fsh in Resources */,
+				2AD4227B192FB06D0010A57F /* arkanoid_bat.obj in Resources */,
 				2AD42252192F9DAA0010A57F /* textured.vsh in Resources */,
 				2AD421E3192F9D990010A57F /* Images.xcassets in Resources */,
 				2AD42255192F9DAA0010A57F /* uniform_color.fsh in Resources */,
 				2AD421CE192F9D990010A57F /* InfoPlist.strings in Resources */,
-				2AD4226C192FA5520010A57F /* arkanoid_ball.png in Resources */,
+				2AD42274192FAE760010A57F /* arkanoid_ball.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +446,7 @@
 				2AD42245192F9DAA0010A57F /* KMNode.cpp in Sources */,
 				2AD42248192F9DAA0010A57F /* KMMaterialColorUniform.cpp in Sources */,
 				2AD42242192F9DAA0010A57F /* KMDirector.cpp in Sources */,
+				2AD42279192FAFD50010A57F /* Bat.cpp in Sources */,
 				2AD4223C192F9DAA0010A57F /* KMFileUtils.cpp in Sources */,
 				2AD42268192FA33F0010A57F /* Ball.cpp in Sources */,
 				2AD4223D192F9DAA0010A57F /* KMShader.cpp in Sources */,
