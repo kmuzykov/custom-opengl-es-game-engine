@@ -46,6 +46,10 @@
 		2AD42274192FAE760010A57F /* arkanoid_ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD42273192FAE760010A57F /* arkanoid_ball.png */; };
 		2AD42279192FAFD50010A57F /* Bat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42277192FAFD50010A57F /* Bat.cpp */; };
 		2AD4227B192FB06D0010A57F /* arkanoid_bat.obj in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4227A192FB06D0010A57F /* arkanoid_bat.obj */; };
+		2AD4227D192FB1730010A57F /* arkanoid_brick.obj in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4227C192FB1730010A57F /* arkanoid_brick.obj */; };
+		2AD42280192FB1860010A57F /* Brick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4227E192FB1860010A57F /* Brick.cpp */; };
+		2AD4228B1930A55D0010A57F /* ArkanoidGameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD422891930A55D0010A57F /* ArkanoidGameObject.cpp */; };
+		2AD422911930C58C0010A57F /* CollidableSurface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4228F1930C58C0010A57F /* CollidableSurface.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +128,13 @@
 		2AD42277192FAFD50010A57F /* Bat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Bat.cpp; path = GameObjects/Bat.cpp; sourceTree = "<group>"; };
 		2AD42278192FAFD50010A57F /* Bat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bat.h; path = GameObjects/Bat.h; sourceTree = "<group>"; };
 		2AD4227A192FB06D0010A57F /* arkanoid_bat.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = arkanoid_bat.obj; sourceTree = "<group>"; };
+		2AD4227C192FB1730010A57F /* arkanoid_brick.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = arkanoid_brick.obj; sourceTree = "<group>"; };
+		2AD4227E192FB1860010A57F /* Brick.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Brick.cpp; path = GameObjects/Brick.cpp; sourceTree = "<group>"; };
+		2AD4227F192FB1860010A57F /* Brick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Brick.h; path = GameObjects/Brick.h; sourceTree = "<group>"; };
+		2AD422891930A55D0010A57F /* ArkanoidGameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ArkanoidGameObject.cpp; path = GameObjects/ArkanoidGameObject.cpp; sourceTree = "<group>"; };
+		2AD4228A1930A55D0010A57F /* ArkanoidGameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArkanoidGameObject.h; path = GameObjects/ArkanoidGameObject.h; sourceTree = "<group>"; };
+		2AD4228F1930C58C0010A57F /* CollidableSurface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CollidableSurface.cpp; path = GameObjects/Common/CollidableSurface.cpp; sourceTree = "<group>"; };
+		2AD422901930C58C0010A57F /* CollidableSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollidableSurface.h; path = GameObjects/Common/CollidableSurface.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +214,7 @@
 				2AD4220B192F9DAA0010A57F /* iOS */,
 				2AD4221C192F9DAA0010A57F /* Libraries */,
 				2AD42221192F9DAA0010A57F /* Materials */,
+				2AD422841930A4640010A57F /* CustomPhysics */,
 				2AD42228192F9DAA0010A57F /* Physics */,
 				2AD4222F192F9DAA0010A57F /* Renderables */,
 				2AD42230192F9DAA0010A57F /* Renderers */,
@@ -350,6 +362,7 @@
 		2AD42260192FA2EC0010A57F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2AD4227C192FB1730010A57F /* arkanoid_brick.obj */,
 				2AD4227A192FB06D0010A57F /* arkanoid_bat.obj */,
 				2AD42273192FAE760010A57F /* arkanoid_ball.png */,
 				2AD4226F192FA5A20010A57F /* arkanoid_ball.obj */,
@@ -362,10 +375,23 @@
 			children = (
 				2AD42267192FA33F0010A57F /* Ball.h */,
 				2AD42266192FA33F0010A57F /* Ball.cpp */,
-				2AD42277192FAFD50010A57F /* Bat.cpp */,
 				2AD42278192FAFD50010A57F /* Bat.h */,
+				2AD42277192FAFD50010A57F /* Bat.cpp */,
+				2AD4227F192FB1860010A57F /* Brick.h */,
+				2AD4227E192FB1860010A57F /* Brick.cpp */,
+				2AD4228A1930A55D0010A57F /* ArkanoidGameObject.h */,
+				2AD422891930A55D0010A57F /* ArkanoidGameObject.cpp */,
+				2AD422901930C58C0010A57F /* CollidableSurface.h */,
+				2AD4228F1930C58C0010A57F /* CollidableSurface.cpp */,
 			);
 			name = GameObjects;
+			sourceTree = "<group>";
+		};
+		2AD422841930A4640010A57F /* CustomPhysics */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CustomPhysics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -426,6 +452,7 @@
 				2AD42256192F9DAA0010A57F /* uniform_color.vsh in Resources */,
 				2AD42251192F9DAA0010A57F /* textured.fsh in Resources */,
 				2AD42270192FA5A20010A57F /* arkanoid_ball.obj in Resources */,
+				2AD4227D192FB1730010A57F /* arkanoid_brick.obj in Resources */,
 				2AD42253192F9DAA0010A57F /* textureDiffuse.fsh in Resources */,
 				2AD4227B192FB06D0010A57F /* arkanoid_bat.obj in Resources */,
 				2AD42252192F9DAA0010A57F /* textured.vsh in Resources */,
@@ -452,6 +479,8 @@
 				2AD4223D192F9DAA0010A57F /* KMShader.cpp in Sources */,
 				2AD421D4192F9D990010A57F /* AppDelegate.mm in Sources */,
 				2AD4225E192F9EC40010A57F /* GameScene.cpp in Sources */,
+				2AD4228B1930A55D0010A57F /* ArkanoidGameObject.cpp in Sources */,
+				2AD422911930C58C0010A57F /* CollidableSurface.cpp in Sources */,
 				2AD42246192F9DAA0010A57F /* KMRenderer.cpp in Sources */,
 				2AD4224E192F9DAA0010A57F /* KMRendererMesh.cpp in Sources */,
 				2AD42247192F9DAA0010A57F /* KMScene.cpp in Sources */,
@@ -460,6 +489,7 @@
 				2AD4223F192F9DAA0010A57F /* KMVertex.cpp in Sources */,
 				2AD42249192F9DAA0010A57F /* KMMaterialTextureDiffuse.cpp in Sources */,
 				2AD4224A192F9DAA0010A57F /* KMMaterialTextureUnlit.cpp in Sources */,
+				2AD42280192FB1860010A57F /* Brick.cpp in Sources */,
 				2AD42243192F9DAA0010A57F /* KMGameObject.cpp in Sources */,
 				2AD42241192F9DAA0010A57F /* KMGLView.mm in Sources */,
 				2AD42244192F9DAA0010A57F /* KMMaterial.cpp in Sources */,
@@ -604,6 +634,7 @@
 				2AD421FB192F9D9A0010A57F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

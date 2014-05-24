@@ -9,7 +9,6 @@
 #include "Bat.h"
 
 Bat::Bat()
-: KMGameObject()
 {
     KMTexture tex("arkanoid_ball.png");
     auto ballVertices = KMVertex::loadFromObj("arkanoid_bat.obj");

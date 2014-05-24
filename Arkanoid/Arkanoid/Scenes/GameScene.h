@@ -12,13 +12,24 @@
 #include "KMEngine.h"
 #include "Ball.h"
 #include "Bat.h"
+#include "Brick.h"
+
+#include <memory>
+#include <vector>
 
 class GameScene : public KMScene
 {
 public:
     GameScene();
 
+protected:
+    virtual void update(float dt);
+
+private:
+    std::shared_ptr<Ball> _ball;
+    std::shared_ptr<Bat> _bat;
     
+    std::vector<std::shared_ptr<Brick>> _bricks;    
 };
 
 

@@ -10,12 +10,22 @@
 #define __Arkanoid__Ball__
 
 #include "KMEngine.h"
+#include "ArkanoidGameObject.h"
 
-class Ball : public KMGameObject
+class Ball : public ArkanoidGameObject
 {
 public:
     Ball();
-    
+
+    vec2 getPosition2D() const {return vec2(_position.x, _position.y);}
+    void setPosition2D(const vec2& newPos) { KMGameObject::setPosition(vec3(newPos.x, newPos.y, _position.z));}
+        
+    const vec2& getDimensions() const { return _dimensions; }
+    const vec2& getMovementVector() const {return _movement; }
+
+private:
+    vec2 _movement;
+    vec2 _dimensions;
 };
 
 #endif /* defined(__Arkanoid__Ball__) */

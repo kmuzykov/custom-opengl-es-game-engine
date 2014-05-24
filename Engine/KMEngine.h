@@ -9,10 +9,11 @@
 #ifndef KMEngine_KMEngine_h
 #define KMEngine_KMEngine_h
 
+#include "KMMacros.h"
+
 #include "KMDirector.h"
 #include "KMScene.h"
 #include "KMGameObject.h"
-
 
 #include "KMTexture.h"
 #include "KMShader.h"
