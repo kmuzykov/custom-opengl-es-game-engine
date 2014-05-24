@@ -29,17 +29,20 @@ GameScene::GameScene()
     this->addChild(brick);
     
 //  _ball->setMovementVector(vec2(-0,0.25));
-    _ball->setMovementVector(vec2(-0.25,0));
+    _ball->setMovementVector(vec2(-0.25,0.25));
     
     auto leftWall = std::make_shared<SideWall>();
+    leftWall->setTag("left_wall");
     leftWall->setPosition(vec3(-0.8,0, -2));
     this->addChild(leftWall);
     
     auto rightWall = std::make_shared<SideWall>();
+    rightWall->setTag("right_wall");
     rightWall->setPosition(vec3(0.8,0, -2));
     this->addChild(rightWall);
 
     auto topWall = std::make_shared<TopWall>();
+    topWall->setTag("top_wall");
     topWall->setPosition(vec3(0,1.2,-2));
     this->addChild(topWall);
     
@@ -95,6 +98,8 @@ void GameScene::update(float dt)
     
     if (intersectsAtLeastOnce)
     {
+        KMLOG("Collided with: %s", collidedSurf->getOwner()->getTag().c_str());
+        
         vec2 reflectVec = collidedSurf->reflectVector(ballMovementVec);
         _ball->setMovementVector(reflectVec);
     }

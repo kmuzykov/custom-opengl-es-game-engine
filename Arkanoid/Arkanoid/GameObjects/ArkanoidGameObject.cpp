@@ -34,7 +34,7 @@ void ArkanoidGameObject::calculateCollidableSurfaces(const std::vector<KMVertex>
         return;
     }
     
-    const KMVertex& first = vertices.front();
+    const KMVertex& first = vertices[0];
     float minX = first.position.x;
     float minY = first.position.y;
     float maxX = minX;
@@ -47,7 +47,7 @@ void ArkanoidGameObject::calculateCollidableSurfaces(const std::vector<KMVertex>
         const KMVertex& v = vertices[i];
         
         maxX = fmaxf(maxX, v.position.x);
-        maxY = fmaxf(maxX, v.position.y);
+        maxY = fmaxf(maxY, v.position.y);
         minX = fminf(minX, v.position.x);
         minY = fminf(minY, v.position.y);
     }
@@ -59,10 +59,10 @@ void ArkanoidGameObject::calculateCollidableSurfaces(const std::vector<KMVertex>
     vec2 right(1, 0);
     vec2 left(-1, 0);
     
-    _collidableSurfaces.push_back(CollidableSurface(origin, down,    vec2(minX, minY), vec2(maxX, minY)));    //bottom
-    _collidableSurfaces.push_back(CollidableSurface(origin, right,   vec2(maxY, minY), vec2(maxX, maxY)));    //right
-    _collidableSurfaces.push_back(CollidableSurface(origin, up,      vec2(maxX, maxY), vec2(minX, maxY)));    //top
-    _collidableSurfaces.push_back(CollidableSurface(origin, left,    vec2(minX, maxY), vec2(minX, minY)));    //left
+    _collidableSurfaces.push_back(CollidableSurface(origin, down,    vec2(minX, minY), vec2(maxX, minY), this));    //bottom
+    _collidableSurfaces.push_back(CollidableSurface(origin, right,   vec2(maxX, minY), vec2(maxX, maxY), this));    //right
+    _collidableSurfaces.push_back(CollidableSurface(origin, up,      vec2(maxX, maxY), vec2(minX, maxY), this));    //top
+    _collidableSurfaces.push_back(CollidableSurface(origin, left,    vec2(minX, maxY), vec2(minX, minY), this));    //left
 }
 
 

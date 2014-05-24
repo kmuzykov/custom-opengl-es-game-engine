@@ -7,15 +7,17 @@
 //
 
 #include "CollidableSurface.h"
+#include "ArkanoidGameObject.h"
 
 static bool checkLineAndLineIntersection(const vec2& p1, const vec2& p2, const vec2& p3, const vec2& p4, float& s, float &t, vec2& pointOfIntersection);
 static float distanceFromPointToSegment(const vec2& point, const vec2& p1, const vec2& p2);
 
-CollidableSurface::CollidableSurface(const vec2& origin, const vec2& normal, const vec2& p1, const vec2& p2)
+CollidableSurface::CollidableSurface(const vec2& origin, const vec2& normal, const vec2& p1, const vec2& p2, ArkanoidGameObject* owner)
 : _origin(origin),
   _normal(normal),
   _p1(p1),
-  _p2(p2)
+  _p2(p2),
+  _owner(owner)
 {
         
 }
@@ -24,18 +26,14 @@ bool CollidableSurface::ballIntersectsWhileMoving(const vec2& ballPos, const vec
 {
     vec2 globalP1 = (_origin + _p1) + _normal * ballRadius;
     vec2 globalP2 = (_origin + _p2) + _normal * ballRadius;
-//    vec2 globalP1 = (_origin + _p1);// + _normal * ballRadius;
-//    vec2 globalP2 = (_origin + _p2);// + _normal * ballRadius;
-
-    
-    
+   
     float s, t;
     bool linesIntersect = checkLineAndLineIntersection(globalP1, globalP2, ballPos, ballDesiredPos, s, t, intersectionPoint);
 
     if(linesIntersect && (t >=0.0f && t <= 1.0f))
     {
         float distanceFromSurfaceToMovementVector = distanceFromPointToSegment(intersectionPoint, globalP1, globalP2);
-        return distanceFromSurfaceToMovementVector <= ballRadius; //TODO: Maybe add some EPS
+        return distanceFromSurfaceToMovementVector <= 2.0f * ballRadius; //TODO: Maybe add some EPS
     }
     
     return false;
