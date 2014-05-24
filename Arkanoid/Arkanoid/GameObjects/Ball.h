@@ -19,13 +19,14 @@ public:
 
     vec2 getPosition2D() const {return vec2(_position.x, _position.y);}
     void setPosition2D(const vec2& newPos) { KMGameObject::setPosition(vec3(newPos.x, newPos.y, _position.z));}
-        
-    const vec2& getDimensions() const { return _dimensions; }
+    
+    void setMovementVector(const vec2& movement) { _movement = movement; }
     const vec2& getMovementVector() const {return _movement; }
 
 private:
     vec2 _movement;
-    vec2 _dimensions;
+    float _radius;
+
 };
 
 #endif /* defined(__Arkanoid__Ball__) */

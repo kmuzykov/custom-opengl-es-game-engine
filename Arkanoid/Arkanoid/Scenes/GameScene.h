@@ -13,6 +13,10 @@
 #include "Ball.h"
 #include "Bat.h"
 #include "Brick.h"
+#include "SideWall.h"
+#include "TopWall.h"
+
+#include "CollidableSurface.h"
 
 #include <memory>
 #include <vector>
@@ -26,6 +30,8 @@ protected:
     virtual void update(float dt);
 
 private:
+    std::vector<CollidableSurface> _collidableSurfaces;
+    
     std::shared_ptr<Ball> _ball;
     std::shared_ptr<Bat> _bat;
     

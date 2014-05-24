@@ -14,9 +14,18 @@
 class CollidableSurface
 {
 public:
-    CollidableSurface(const vec2& p1, const vec2& p2);
+    CollidableSurface(const vec2& origin, const vec2& normal, const vec2& p1, const vec2& p2);
+    
+    void updateOrigin(const vec2& newOrigin) { _origin = newOrigin; }
 
+    bool isBallMovingTowards(const vec2& movementVec) { return _normal.Dot(movementVec) < 0; }
+    
+    bool ballIntersectsWhileMoving(const vec2& ballPos, const vec2& ballDesiredPos, const vec2& ballMovementVec, const float ballRadius, vec2& intersectionPoint);
+    
+    vec2 reflectVector(const vec2& movementVec) { return movementVec - _normal * movementVec.Dot(_normal) * 2.0f;}
 private:
+    vec2 _origin;
+    vec2 _normal;
     vec2 _p1;
     vec2 _p2;
 };
