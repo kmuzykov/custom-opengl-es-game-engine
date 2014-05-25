@@ -16,7 +16,7 @@
 #include <memory>
 #include <vector>
 
-/** Mesh Renderer. Renders models consistting of KMVertex vertices. */
+/** Mesh Renderer. Renders models consisting of KMVertex vertices. */
 class KMRendererMesh : public KMRenderer
 {
 public:

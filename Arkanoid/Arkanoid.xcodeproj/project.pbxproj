@@ -317,7 +317,6 @@
 				2AD422D119324D9C0010A57F /* Materials */,
 				2AD422DA19324D9C0010A57F /* Nodes */,
 				2AD422E119324D9C0010A57F /* Physics */,
-				2AD422E819324D9C0010A57F /* Renderables */,
 				2AD422E919324D9C0010A57F /* Renderers */,
 				2AD422EE19324D9C0010A57F /* Shaders */,
 				2AD422F719324D9C0010A57F /* Touches */,
@@ -423,13 +422,6 @@
 				2AD422E719324D9C0010A57F /* KMPhysicsWorld.h */,
 			);
 			path = Physics;
-			sourceTree = "<group>";
-		};
-		2AD422E819324D9C0010A57F /* Renderables */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Renderables;
 			sourceTree = "<group>";
 		};
 		2AD422E919324D9C0010A57F /* Renderers */ = {

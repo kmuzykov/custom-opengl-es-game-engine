@@ -64,7 +64,3 @@ void ArkanoidGameObject::calculateCollidableSurfaces(const std::vector<KMVertex>
     _collidableSurfaces.push_back(CollidableSurface(origin, up,      vec2(maxX, maxY), vec2(minX, maxY), this));    //top
     _collidableSurfaces.push_back(CollidableSurface(origin, left,    vec2(minX, maxY), vec2(minX, minY), this));    //left
 }
-
-
-
-

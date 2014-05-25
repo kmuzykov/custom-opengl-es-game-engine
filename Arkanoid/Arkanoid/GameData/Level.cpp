@@ -12,6 +12,7 @@ using namespace std;
 
 Level Level::getLevelByNumber(int levelNumber)
 {
+    //Right now returning 1 test level.
     vector<vector<int>> l1
     {
         {1, 1, 1, 1, 1, 1},

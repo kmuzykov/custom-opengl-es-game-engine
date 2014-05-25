@@ -20,7 +20,6 @@ enum class ArkanoidGameObjectType
     Wall
 };
 
-
 class ArkanoidGameObject : public KMGameObject
 {
 public:

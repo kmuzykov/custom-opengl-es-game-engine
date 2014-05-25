@@ -19,18 +19,17 @@ static const float DEATH_DISTANCE = -0.25f;
 
 GameScene::GameScene()
 : KMScene(),
-  _brickCount(0)
+_brickCount(0)
 {
-
     _gameState = GameState::Init;
     
     this->addLightSource(vec3(0,0.5,-1));
-
+    
     addWalls();
     addBallAndBat();
     addBricks();
-
-   KMTouchDispatcher::getSharedInstance().subscribe(this);
+    
+    KMTouchDispatcher::getSharedInstance().subscribe(this);
 }
 
 GameScene::~GameScene()
@@ -101,17 +100,18 @@ void GameScene::addBricks()
         {
             _collidableSurfaces.push_back(surf);
         }
-    }    
+    }
 }
 
 void GameScene::update(float dt)
 {
     KMScene::update(dt);
     
+    //If not playing do nothing
     if (_gameState != GameState::Playing)
         return;
-
     
+    //Checking if ball fallen
     vec2    ballPosition = _ball->getPosition2D();
     if (ballPosition.y < (_bat->getPosition().y + DEATH_DISTANCE))
     {
@@ -119,10 +119,12 @@ void GameScene::update(float dt)
         return;
     }
     
+    //Few values we'll need for CCD
     vec2    ballMovementVec    = _ball->getMovementVector();
     vec2    ballPosChange      = ballMovementVec * dt;
     vec2    ballDesiredPos     = ballPosition + ballPosChange;
     
+    //Results of collision detection
     vec2 finalIntersectionPoint;
     bool intersectsAtLeastOnce = false;
     CollidableSurface* collidedSurf = nullptr;
@@ -167,10 +169,12 @@ void GameScene::update(float dt)
     
     if (intersectsAtLeastOnce && collidedSurf)
     {
+        //In case ball collided with something we've got stuff to do.
         handleCollision(collidedSurf, finalIntersectionPoint, ballMovementVec);
     }
     else
     {
+        //In case there are no obstacles simply putting the bal where it wants to be
         _ball->setPosition2D(ballDesiredPos);
     }
 }
@@ -180,7 +184,10 @@ void GameScene::handleCollision(const CollidableSurface* collidedSurf, const vec
     const ArkanoidGameObject* go = collidedSurf->getOwner();
     //KMLOG("Collided with: %s", go->getTag().c_str());
     
+    //Getting type of object (brick, bat, wall)
     ArkanoidGameObjectType goType = go->getObjectType();
+    
+    //If we hit brick need to remove it.
     if (goType == ArkanoidGameObjectType::Brick)
     {
         //Removing everything brick from everywhere
@@ -192,10 +199,10 @@ void GameScene::handleCollision(const CollidableSurface* collidedSurf, const vec
         if (_brickCount <= 0)
             win();
     }
-    
-    const vec2& normal = collidedSurf->getNormal();
+
+    //If we hit top surface of the bat we need to adjust reflect angle, since in Arkanoid it depends on where you hit the bat.
     vec2 up(0,1);
-    
+    const vec2& normal = collidedSurf->getNormal();
     if (goType == ArkanoidGameObjectType::Bat && (normal == up))
     {
         float x = finalIntersectionPoint.x;                 //Point we've hit the bat
@@ -205,16 +212,18 @@ void GameScene::handleCollision(const CollidableSurface* collidedSurf, const vec
         
         //Calculating angle we should get reflected
         float turnAngle = -MAX_BAT_REFLECT_ANGLE * (distanceFromCenter/batHalf);
-
+        
         vec2 reflectVec = normal.Rotate(turnAngle) * ballMovementVec.Length();
         _ball->setMovementVector(reflectVec);
     }
     else
     {
+        //In all other cases calculating standard reflect vector.
         vec2 reflectVec = collidedSurf->reflectVector(ballMovementVec);
         _ball->setMovementVector(reflectVec);
     }
     
+    //Moving ball to the point of intersection (since it can't go further)
     vec2 newBallPosition = finalIntersectionPoint + (normal * 0.01f);
     _ball->setPosition2D(newBallPosition);
 }
@@ -231,6 +240,7 @@ void GameScene::lost()
 
 void GameScene::restart()
 {
+    //Restarting by simply reloading scene to test scene management.
     auto newInstanceOfScene = std::make_shared<GameScene>();
     KMDirector::getSharedDirector().runScene(newInstanceOfScene);
 }
@@ -238,10 +248,17 @@ void GameScene::restart()
 void GameScene::touchBegan(const vec2& location)
 {
     if (_gameState == GameState::Init)
+    {
+        //If we touched the screen and game not started yet. Starting the game.
         _gameState = GameState::Playing;
+    }
     else if (_gameState == GameState::Lost || _gameState == GameState::Won)
+    {
+        //If touching the screen when won/lost restarting the game.
         restart();
+    }
     
+    //If playing then simply allowing to control the bat.
     if (_gameState == GameState::Playing)
         moveBatToPosition(location);
 }
@@ -273,6 +290,9 @@ void GameScene::moveBatToPosition(const vec2& position)
     float normalizedPos = position.x/screenWidth;
     float gamePos = (gameFieldWidth * normalizedPos) - gameFieldWidth * 0.5f;
     
+    //Using clamping instead of setting gameFieldWidth to [-0.5, 0.5] gives better bat control
+    //since its center always right below the finger.  If uisng mapping interval the bat handling point tends
+    //to go closer to edge when finger near the edge screen.
     gamePos = clampf(gamePos, -0.5f, 0.5f);
     
     _bat->setDesiredPosition(gamePos);
