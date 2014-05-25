@@ -12,11 +12,15 @@
 #include "KMEngine.h"
 #include "ArkanoidGameObject.h"
 
+class Level;
+
 class Brick : public ArkanoidGameObject
 {
+    friend class Level;
 public:
     Brick();
-    
+private:
+    static const std::vector<KMVertex>& getBrickVertices();
 };
 
 

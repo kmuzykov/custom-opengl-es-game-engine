@@ -13,7 +13,7 @@
 
 ArkanoidGameObject::ArkanoidGameObject()
 {
-    
+
 }
 
 void ArkanoidGameObject::setPosition(const vec3& position)

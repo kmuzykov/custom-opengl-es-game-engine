@@ -30,12 +30,14 @@ protected:
     virtual void update(float dt);
 
 private:
-    std::vector<CollidableSurface> _collidableSurfaces;
-    
     std::shared_ptr<Ball> _ball;
     std::shared_ptr<Bat> _bat;
+    std::vector<std::shared_ptr<Brick>> _bricks;
+    std::vector<CollidableSurface> _collidableSurfaces;
     
-    std::vector<std::shared_ptr<Brick>> _bricks;    
+    void addBallAndBat();
+    void addWalls();
+    void addBricks();
 };
 
 

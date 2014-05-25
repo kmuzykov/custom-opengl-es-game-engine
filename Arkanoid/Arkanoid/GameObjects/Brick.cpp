@@ -10,8 +10,16 @@
 
 Brick::Brick()
 {
+    //TODO: Texture cache!
     KMTexture tex("arkanoid_ball.png");
-    auto ballVertices = KMVertex::loadFromObj("arkanoid_brick.obj");
-    auto mat = std::make_shared<KMMaterialTextureDiffuse>(tex);
-    _renderer = std::make_shared<KMRendererMesh>(mat, ballVertices);    
+    auto mat = std::make_shared<KMMaterialTextureUnlit>(tex);
+    _renderer = std::make_shared<KMRendererMesh>(mat, getBrickVertices());
+    
+    this->calculateCollidableSurfaces(getBrickVertices()); //TODO: Cache
 }
+
+const std::vector<KMVertex>& Brick::getBrickVertices()
+{
+    static const std::vector<KMVertex> _Vertices = KMVertex::loadFromObj("arkanoid_brick.obj");
+    return _Vertices;
+};
