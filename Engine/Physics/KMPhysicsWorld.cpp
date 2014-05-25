@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 PixelOxygen. All rights reserved.
 //
 
+#if KM_PHYSICS > 0
 
 #include "KMPhysicsWorld.h"
 #include "btBulletDynamicsCommon.h"
@@ -89,3 +90,5 @@ std::auto_ptr<btBvhTriangleMeshShape> KMPhysicsWorld::triangleMeshFromVertices(c
     
     return std::auto_ptr<btBvhTriangleMeshShape>(new btBvhTriangleMeshShape(mesh, true));
 }
+
+#endif

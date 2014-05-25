@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 PixelOxygen. All rights reserved.
 //
 
+#if KM_PHYSICS > 0
 #ifndef __KMEngine__KMPhysicsWorld__
 #define __KMEngine__KMPhysicsWorld__
 
@@ -47,3 +48,4 @@ private:
 
 
 #endif /* defined(__Bowling__KMPhysicsWorld__) */
+#endif

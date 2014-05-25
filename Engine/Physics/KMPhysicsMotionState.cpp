@@ -5,6 +5,7 @@
 //  Created by Kirill Muzykov on 19/05/14.
 //  Copyright (c) 2014 PixelOxygen. All rights reserved.
 //
+#if KM_PHYSICS > 0
 
 #include "KMPhysicsMotionState.h"
 #include "KMGameObject.h"
@@ -43,3 +44,5 @@ void KMPhysicsMotionState::setWorldTransform(const btTransform &worldTrans)
         _node->KMNode::setRotation(Quaternion(rot.x(), rot.y(), rot.z(), rot.w()));
     }
 }
+
+#endif

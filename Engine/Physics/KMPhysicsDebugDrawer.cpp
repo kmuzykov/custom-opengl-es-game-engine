@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 PixelOxygen. All rights reserved.
 //
 
+#if KM_PHYSICS > 0
+
 #include "KMPhysicsDebugDrawer.h"
 #include "Vector.hpp"
 #include "Matrix.hpp"
@@ -64,3 +66,5 @@ void KMPhysicsDebugDrawer::drawContactPoint(const btVector3& pointOnB,const btVe
 {
     KMLOG("drawContactPoint not supported yet");
 }
+
+#endif

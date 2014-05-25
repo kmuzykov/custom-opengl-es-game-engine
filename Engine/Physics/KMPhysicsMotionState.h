@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 PixelOxygen. All rights reserved.
 //
 
+#if KM_PHYSICS > 0
+
 #ifndef __KMEngine__KMPhysicsMotionState__
 #define __KMEngine__KMPhysicsMotionState__
 
@@ -30,3 +32,4 @@ private:
 
 
 #endif /* defined(__Bowling__KMPhysicsMotionState__) */
+#endif

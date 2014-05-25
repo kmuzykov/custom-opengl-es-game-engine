@@ -5,6 +5,7 @@
 //  Created by Kirill Muzykov on 18/05/14.
 //  Copyright (c) 2014 PixelOxygen. All rights reserved.
 
+#if KM_PHYSICS > 0
 
 #ifndef GL_DEBUG_DRAWER_H
 #define GL_DEBUG_DRAWER_H
@@ -30,4 +31,7 @@ public:
     virtual void   setDebugMode(int debugMode);
     virtual int    getDebugMode() const { return m_debugMode;}
 };
+
+#endif
+
 #endif
