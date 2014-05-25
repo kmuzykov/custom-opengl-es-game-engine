@@ -28,11 +28,11 @@ void main()
     vec3 modelViewNormal = normalize(vec3(u_mvMatrix * vec4(a_normal,0)));
     
     v_light_intensity = 0.0;
-    vec3 lightPos;
-    float lightIntensity;
-    vec3 lightVector;
-    float lightResult;
-    float lightDistKoof;
+    lowp vec3 lightPos;
+    lowp float lightIntensity;
+    lowp vec3 lightVector;
+    lowp float lightResult;
+    lowp float lightDistKoof;
     
     for (int i=0; i < u_lights_count; i++)
     {

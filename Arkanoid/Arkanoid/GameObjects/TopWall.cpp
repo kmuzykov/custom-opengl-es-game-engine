@@ -12,7 +12,7 @@ TopWall::TopWall()
 {
     KMTexture tex("arkanoid_ball.png");
     auto ballVertices = KMVertex::loadFromObj("arkanoid_top_wall.obj");
-    auto mat = std::make_shared<KMMaterialTextureUnlit>(tex);
+    auto mat = std::make_shared<KMMaterialTextureDiffuse>(tex);
     _renderer = std::make_shared<KMRendererMesh>(mat, ballVertices);
     
     this->calculateCollidableSurfaces(ballVertices);

@@ -52,7 +52,8 @@ void GameScene::addBallAndBat()
     this->addChild(_ball);
     
     //Starting movement vector
-    _ball->setMovementVector(vec2(0.75f,0.75f));
+    //_ball->setMovementVector(vec2(0.75f,0.75f));
+    _ball->setMovementVector(vec2(0,0.75f));
 }
 
 void GameScene::addWalls()
@@ -147,7 +148,7 @@ void GameScene::update(float dt)
         {
             if (intersectsAtLeastOnce)
             {
-                bool newPointCloser = (finalIntersectionPoint - ballPosition).LengthSquared() < (intersectionPoint - ballPosition).LengthSquared();
+                bool newPointCloser = ((intersectionPoint - ballPosition).LengthSquared() < (finalIntersectionPoint - ballPosition).LengthSquared());
                 if (newPointCloser)
                 {
                     finalIntersectionPoint = intersectionPoint;
@@ -187,6 +188,7 @@ void GameScene::handleCollision(const CollidableSurface* collidedSurf, const vec
         this->removeChildRaw(go);                                                                            //removing from the scene
         
         //If no more bricks we won
+        _brickCount--;
         if (_brickCount <= 0)
             win();
     }
@@ -212,6 +214,9 @@ void GameScene::handleCollision(const CollidableSurface* collidedSurf, const vec
         vec2 reflectVec = collidedSurf->reflectVector(ballMovementVec);
         _ball->setMovementVector(reflectVec);
     }
+    
+    vec2 newBallPosition = finalIntersectionPoint + (normal * 0.01f);
+    _ball->setPosition2D(newBallPosition);
 }
 
 void GameScene::win()

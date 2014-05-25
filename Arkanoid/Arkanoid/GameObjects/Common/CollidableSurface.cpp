@@ -33,7 +33,7 @@ bool CollidableSurface::ballIntersectsWhileMoving(const vec2& ballPos, const vec
     if(linesIntersect && (t >=0.0f && t <= 1.0f))
     {
         float distanceFromSurfaceToMovementVector = distanceFromPointToSegment(intersectionPoint, globalP1, globalP2);
-        return distanceFromSurfaceToMovementVector <=  ballRadius; //TODO: Maybe add some EPS
+        return distanceFromSurfaceToMovementVector <  ballRadius;
     }
     
     return false;

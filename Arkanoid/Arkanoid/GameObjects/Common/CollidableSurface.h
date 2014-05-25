@@ -19,7 +19,7 @@ public:
     
     void updateOrigin(const vec2& newOrigin) { _origin = newOrigin; }
 
-    bool isBallMovingTowards(const vec2& movementVec) { return _normal.Dot(movementVec) < 0; }
+    bool isBallMovingTowards(const vec2& movementVec) { return _normal.Dot(movementVec) <= 0; }
     bool ballIntersectsWhileMoving(const vec2& ballPos, const vec2& ballDesiredPos, const vec2& ballMovementVec, const float ballRadius, vec2& intersectionPoint);
     
     vec2 reflectVector(const vec2& movementVec) const { return movementVec - _normal * movementVec.Dot(_normal) * 2.0f;}
