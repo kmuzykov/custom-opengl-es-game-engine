@@ -1,34 +1,30 @@
-custom-opengl-es-game-engine
+Several iOS games created using custom OpenGL ES 2.0 engine.
 ============================
 
-This repository contains my results of learning and experimenting with OpenGL ES 2.0
+This repository contains my results of learning and experimenting with OpenGL ES 2.0.
   
 ##Contents:
+### /Arkanoid
+Very simple Arkanoid/Breakout game created using pure OpenGL ES 2.0.
+
+<img src='https://raw.githubusercontent.com/kmuzykov/custom-opengl-es-game-engine/master/Screenshots/arkanoid.png' height='256' />
+
 ### /Blender
-Blender models, UV unwraps and .OBJ files of Bowling ball, Pins and Bowling lane used in Bowling project. All models done by me, and I have like 10 days experience, so take this into account.
+Blender models, UV unwraps and .OBJ files for game objects (bowling ball, pins, arkanoid bricks,...).
 
 ### /Bowling
-iOS Bowling game created using custom game engine. 
-Some notes:
-* The iOS part consists of only small amount of the Objective-C code required to switch to C++, the rest is written in C++.
-* Currently there is only one test scene where the bowling ball is thrown and hits some pins, so it is hard to call it a game right now :)
+Bowling game created using same code that was used for Akanoid. Unfortunately, after XCode 5.1 came out Bullet Physics included in the engine doesn't build on iOS devices. So this project is freezed for now.
+
+<img src='https://raw.githubusercontent.com/kmuzykov/custom-opengl-es-game-engine/master/Screenshots/bowling.png' height='256' />
 
 ### /Engine
-Custom game engine I've created while learning OpenGL ES. You defenitelly shouldn't think of using it **anywhere**, but it might be helpful if you're learning OpenGL ES and stuck at something.
+Custom game engine I've created while learning OpenGL ES 2.0. The idea was to create several games using it and thus practice some OpenGL and GLSL skills. 
 
-Notes:
-* I was very much inspired by cocos2d, so there are nodes, scenes and etc.
-* RenderableNodes use component system. You create a shader or use one of created by me (remember I'm still learning) and then you add components to your renderable node (texture module, lightning and etc.). The only thing that modules currently do are passing attributes and uniforms to shader.
-* There are still a lot to be done to call it a game engine. There is currently no user input handling, no labels and etc., but at least it can render .OBJ models, position them in scene, do a basic lightening (per-vertex) and very-very basic physics engine integration.
+It is very basic and you defenitelly shouldn't think of using it **anywhere**, but it might be helpful if you're learning OpenGL ES and stuck at something.
+
 
 ### /bullet-2.82-r2704
 Bullet Physics engine used in bowling game. Please see LICENSE, AUTORS and other documents inside the folder. You can find more at http://bulletphysics.org/
 
+*I hope it will be useful to someone!*
 
-## Reason
-
-I didn't want to upload it in this state, but it looks I won't be able to work on this anywhere soon since I have a lot of projects to work on. So I thought it might be useful to someone. 
-
-I'll try to update it as soon as I'll have some free time.
-
-###I hope it will be useful to someone!
