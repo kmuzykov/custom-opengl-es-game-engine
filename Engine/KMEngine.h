@@ -27,4 +27,6 @@
 #include "KMMaterialTextureUnlit.h"
 #include "KMMaterialTextureDiffuse.h"
 
+#include "KMTouchDispatcher.h"
+
 #endif

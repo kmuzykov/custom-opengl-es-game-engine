@@ -8,20 +8,34 @@
 
 #include "GameScene.h"
 #include "Level.h"
+#include <cmath>
 
 static const float Z_PLANE = -2.0f;
+static const float MAX_BAT_REFLECT_ANGLE = 30.0f;
+static const float DEATH_DISTANCE = -0.25f;
 
 #define kGameFieldHalfWidth  0.7f
 #define kGameFieldHalfHeigt  1.0f
 
 GameScene::GameScene()
-: KMScene()
+: KMScene(),
+  _brickCount(0)
 {
+
+    _gameState = GameState::Init;
+    
     this->addLightSource(vec3(0,0.5,-1));
 
     addWalls();
     addBallAndBat();
     addBricks();
+
+   KMTouchDispatcher::getSharedInstance().subscribe(this);
+}
+
+GameScene::~GameScene()
+{
+    KMTouchDispatcher::getSharedInstance().unsubscribe(this);
 }
 
 void GameScene::addBallAndBat()
@@ -38,7 +52,7 @@ void GameScene::addBallAndBat()
     this->addChild(_ball);
     
     //Starting movement vector
-    _ball->setMovementVector(vec2(0.5f,0.5f));
+    _ball->setMovementVector(vec2(0.75f,0.75f));
 }
 
 void GameScene::addWalls()
@@ -71,8 +85,10 @@ void GameScene::addWalls()
 void GameScene::addBricks()
 {
     Level l1 = Level::getLevelByNumber(0);
+    auto brickPositions = l1.getBrickPositions();
+    _brickCount = brickPositions.size();
     
-    for (const vec2& brickPos : l1.getBrickPositions())
+    for (const vec2& brickPos : brickPositions)
     {
         vec3 brickPos3D = vec3(brickPos.x, brickPos.y, Z_PLANE);
         
@@ -91,7 +107,17 @@ void GameScene::update(float dt)
 {
     KMScene::update(dt);
     
+    if (_gameState != GameState::Playing)
+        return;
+
+    
     vec2    ballPosition = _ball->getPosition2D();
+    if (ballPosition.y < (_bat->getPosition().y + DEATH_DISTANCE))
+    {
+        lost();
+        return;
+    }
+    
     vec2    ballMovementVec    = _ball->getMovementVector();
     vec2    ballPosChange      = ballMovementVec * dt;
     vec2    ballDesiredPos     = ballPosition + ballPosChange;
@@ -99,6 +125,9 @@ void GameScene::update(float dt)
     vec2 finalIntersectionPoint;
     bool intersectsAtLeastOnce = false;
     CollidableSurface* collidedSurf = nullptr;
+    
+    //Moving bat into desired position (to keep in sync with visual position and collidable surfaces)
+    _bat->applyDesiredPosition();
     
     //Adding bat at its current position to the list of surfaces to check
     std::list<CollidableSurface> surfacesToCheck(_collidableSurfaces);
@@ -149,19 +178,97 @@ void GameScene::handleCollision(const CollidableSurface* collidedSurf, const vec
 {
     const ArkanoidGameObject* go = collidedSurf->getOwner();
     //KMLOG("Collided with: %s", go->getTag().c_str());
-
     
     ArkanoidGameObjectType goType = go->getObjectType();
     if (goType == ArkanoidGameObjectType::Brick)
     {
-        _collidableSurfaces.remove_if([go](const CollidableSurface& surf) { return surf.getOwner() == go;});
-        _bricks.remove_if([go](const Brick* brick) { return brick == go;});
-
-
-        this->removeChildRaw(go);
+        //Removing everything brick from everywhere
+        _collidableSurfaces.remove_if([go](const CollidableSurface& surf) { return surf.getOwner() == go;}); //removing brick surfaces
+        this->removeChildRaw(go);                                                                            //removing from the scene
+        
+        //If no more bricks we won
+        if (_brickCount <= 0)
+            win();
     }
     
-    vec2 reflectVec = collidedSurf->reflectVector(ballMovementVec);
-    _ball->setMovementVector(reflectVec);
+    const vec2& normal = collidedSurf->getNormal();
+    vec2 up(0,1);
+    
+    if (goType == ArkanoidGameObjectType::Bat && (normal == up))
+    {
+        float x = finalIntersectionPoint.x;                 //Point we've hit the bat
+        float batCenterX = _bat->getPosition().x;           //Center of the bat
+        float batHalf = collidedSurf->getLength() * 0.5f;   //Half of the bat width
+        float distanceFromCenter = x - batCenterX;          //Distance we've hit from centers
+        
+        //Calculating angle we should get reflected
+        float turnAngle = -MAX_BAT_REFLECT_ANGLE * (distanceFromCenter/batHalf);
 
+        vec2 reflectVec = normal.Rotate(turnAngle) * ballMovementVec.Length();
+        _ball->setMovementVector(reflectVec);
+    }
+    else
+    {
+        vec2 reflectVec = collidedSurf->reflectVector(ballMovementVec);
+        _ball->setMovementVector(reflectVec);
+    }
+}
+
+void GameScene::win()
+{
+    _gameState = GameState::Won;
+}
+
+void GameScene::lost()
+{
+    _gameState = GameState::Lost;
+}
+
+void GameScene::restart()
+{
+    auto newInstanceOfScene = std::make_shared<GameScene>();
+    KMDirector::getSharedDirector().runScene(newInstanceOfScene);
+}
+
+void GameScene::touchBegan(const vec2& location)
+{
+    if (_gameState == GameState::Init)
+        _gameState = GameState::Playing;
+    else if (_gameState == GameState::Lost || _gameState == GameState::Won)
+        restart();
+    
+    if (_gameState == GameState::Playing)
+        moveBatToPosition(location);
+}
+
+void GameScene::touchMoved(const vec2& location)
+{
+    if (_gameState == GameState::Playing)
+        moveBatToPosition(location);
+}
+
+void GameScene::touchEnded(const vec2& location)
+{
+    
+}
+
+inline float clampf( float v, float min, float max )
+{
+    if( v < min ) v = min;
+    if( v > max ) v = max;
+    
+    return v;
+}
+
+void GameScene::moveBatToPosition(const vec2& position)
+{
+    static float screenWidth = KMDirector::getSharedDirector().getViewWidth();
+    static float gameFieldWidth = 1.6f;
+    
+    float normalizedPos = position.x/screenWidth;
+    float gamePos = (gameFieldWidth * normalizedPos) - gameFieldWidth * 0.5f;
+    
+    gamePos = clampf(gamePos, -0.5f, 0.5f);
+    
+    _bat->setDesiredPosition(gamePos);
 }

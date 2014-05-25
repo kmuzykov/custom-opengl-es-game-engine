@@ -8,6 +8,8 @@
 
 #import "KMGLView.h"
 #include "KMDirector.h"
+#include "KMTouchDispatcher.h"
+#include "KMMacros.h"
 
 @implementation KMGLView
 {
@@ -76,18 +78,24 @@
 {
     UITouch* touch = [touches anyObject];
     CGPoint location = [touch locationInView: self];
-}
-
-- (void) touchesEnded: (NSSet*) touches withEvent: (UIEvent*) event
-{
-    UITouch* touch = [touches anyObject];
-    CGPoint location = [touch locationInView: self];
+    
+    KMTouchDispatcher::getSharedInstance().notifyTouchBegan(vec2(location.x, location.y));
 }
 
 - (void) touchesMoved: (NSSet*) touches withEvent: (UIEvent*) event
 {
     UITouch* touch = [touches anyObject];
     CGPoint location = [touch locationInView: self];
+    
+    KMTouchDispatcher::getSharedInstance().notifyTouchMove(vec2(location.x, location.y));
+}
+
+- (void) touchesEnded: (NSSet*) touches withEvent: (UIEvent*) event
+{
+    UITouch* touch = [touches anyObject];
+    CGPoint location = [touch locationInView: self];
+    
+    KMTouchDispatcher::getSharedInstance().notifyTouchEnded(vec2(location.x, location.y));
 }
 
 + (Class) layerClass

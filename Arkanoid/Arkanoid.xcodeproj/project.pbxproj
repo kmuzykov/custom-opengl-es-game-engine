@@ -55,6 +55,8 @@
 		2AD422A11931195E0010A57F /* arkanoid_side_wall.obj in Resources */ = {isa = PBXBuildFile; fileRef = 2AD422A01931195E0010A57F /* arkanoid_side_wall.obj */; };
 		2AD422A6193208110010A57F /* Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD422A4193208110010A57F /* Level.cpp */; };
 		2AD422A819320A190010A57F /* arkanoid_brick.obj in Resources */ = {isa = PBXBuildFile; fileRef = 2AD422A719320A190010A57F /* arkanoid_brick.obj */; };
+		2AD422B31932210D0010A57F /* KMTouchDispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD422B11932210D0010A57F /* KMTouchDispatcher.cpp */; };
+		2AD422B6193221200010A57F /* ITouchSubscriber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD422B4193221200010A57F /* ITouchSubscriber.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,6 +150,10 @@
 		2AD422A4193208110010A57F /* Level.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Level.cpp; path = GameData/Level.cpp; sourceTree = "<group>"; };
 		2AD422A5193208110010A57F /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Level.h; path = GameData/Level.h; sourceTree = "<group>"; };
 		2AD422A719320A190010A57F /* arkanoid_brick.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = arkanoid_brick.obj; sourceTree = "<group>"; };
+		2AD422B11932210D0010A57F /* KMTouchDispatcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMTouchDispatcher.cpp; sourceTree = "<group>"; };
+		2AD422B21932210D0010A57F /* KMTouchDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMTouchDispatcher.h; sourceTree = "<group>"; };
+		2AD422B4193221200010A57F /* ITouchSubscriber.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ITouchSubscriber.cpp; sourceTree = "<group>"; };
+		2AD422B5193221200010A57F /* ITouchSubscriber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITouchSubscriber.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +230,7 @@
 		2AD421FF192F9DAA0010A57F /* Engine */ = {
 			isa = PBXGroup;
 			children = (
+				2AD422B01932210D0010A57F /* Touches */,
 				2AD42200192F9DAA0010A57F /* Common */,
 				2AD4220B192F9DAA0010A57F /* iOS */,
 				2AD4221C192F9DAA0010A57F /* Libraries */,
@@ -423,6 +430,17 @@
 			name = GameData;
 			sourceTree = "<group>";
 		};
+		2AD422B01932210D0010A57F /* Touches */ = {
+			isa = PBXGroup;
+			children = (
+				2AD422B11932210D0010A57F /* KMTouchDispatcher.cpp */,
+				2AD422B21932210D0010A57F /* KMTouchDispatcher.h */,
+				2AD422B4193221200010A57F /* ITouchSubscriber.cpp */,
+				2AD422B5193221200010A57F /* ITouchSubscriber.h */,
+			);
+			path = Touches;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -502,6 +520,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AD422A6193208110010A57F /* Level.cpp in Sources */,
+				2AD422B31932210D0010A57F /* KMTouchDispatcher.cpp in Sources */,
 				2AD42245192F9DAA0010A57F /* KMNode.cpp in Sources */,
 				2AD42248192F9DAA0010A57F /* KMMaterialColorUniform.cpp in Sources */,
 				2AD42242192F9DAA0010A57F /* KMDirector.cpp in Sources */,
@@ -516,6 +535,7 @@
 				2AD4229B1930CE220010A57F /* TopWall.cpp in Sources */,
 				2AD422911930C58C0010A57F /* CollidableSurface.cpp in Sources */,
 				2AD42246192F9DAA0010A57F /* KMRenderer.cpp in Sources */,
+				2AD422B6193221200010A57F /* ITouchSubscriber.cpp in Sources */,
 				2AD4224E192F9DAA0010A57F /* KMRendererMesh.cpp in Sources */,
 				2AD42247192F9DAA0010A57F /* KMScene.cpp in Sources */,
 				2AD421D0192F9D990010A57F /* main.m in Sources */,

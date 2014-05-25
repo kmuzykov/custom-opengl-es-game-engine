@@ -15,5 +15,23 @@ Bat::Bat()
     auto mat = std::make_shared<KMMaterialTextureUnlit>(tex);
     _renderer = std::make_shared<KMRendererMesh>(mat, batVertices);
  
-    this->calculateCollidableSurfaces(batVertices);
+    this->calculateCollidableSurfaces(batVertices);    
+}
+
+void Bat::setPosition(const vec3& position)
+{
+    ArkanoidGameObject::setPosition(position);
+    _desiredPosition = position.x;
+}
+
+void Bat::setDesiredPosition(const float x)
+{
+    _desiredPosition = x;
+}
+
+void Bat::applyDesiredPosition()
+{
+    vec3 newPosition = _position;
+    newPosition.x = _desiredPosition;
+    this->setPosition(newPosition);
 }

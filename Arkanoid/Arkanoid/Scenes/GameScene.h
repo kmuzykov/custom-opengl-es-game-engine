@@ -16,24 +16,30 @@
 #include "SideWall.h"
 #include "TopWall.h"
 
+
 #include "CollidableSurface.h"
 
 #include <memory>
 #include <vector>
 #include <list>
 
-class GameScene : public KMScene
+class GameScene : public KMScene, public ITouchSubscriber
 {
 public:
     GameScene();
+    virtual ~GameScene();
+    
+    virtual void touchBegan(const vec2& location);
+    virtual void touchMoved(const vec2& location);
+    virtual void touchEnded(const vec2& location);
 
 protected:
     virtual void update(float dt);
 
 private:
+    unsigned long _brickCount;
     std::shared_ptr<Ball> _ball;
     std::shared_ptr<Bat> _bat;
-    std::list<Brick*> _bricks;
     std::list<CollidableSurface> _collidableSurfaces;
     
     void addBallAndBat();
@@ -41,6 +47,19 @@ private:
     void addBricks();
     
     void handleCollision(const CollidableSurface* collidedSurf, const vec2& finalIntersectionPoint, const vec2& ballMovementVec);
+    void moveBatToPosition(const vec2& position);
+    
+    void win();
+    void lost();
+    void restart();
+    
+    enum class GameState
+    {
+        Init,
+        Playing,
+        Won,
+        Lost
+    } _gameState;
 };
 
 
