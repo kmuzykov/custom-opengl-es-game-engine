@@ -10,12 +10,12 @@
 
 Bat::Bat()
 {
-    KMTexture tex("arkanoid_ball.png");
+    const KMTexture& tex =  KMTextureCache::loadTexture("arkanoid_bat.png");
     auto batVertices = KMVertex::loadFromObj("arkanoid_bat.obj");
     auto mat = std::make_shared<KMMaterialTextureDiffuse>(tex);
     _renderer = std::make_shared<KMRendererMesh>(mat, batVertices);
- 
-    this->calculateCollidableSurfaces(batVertices);    
+    
+    this->calculateCollidableSurfaces(batVertices);
 }
 
 void Bat::setPosition(const vec3& position)

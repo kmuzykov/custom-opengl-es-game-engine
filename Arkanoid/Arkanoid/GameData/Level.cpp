@@ -18,7 +18,7 @@ Level Level::getLevelByNumber(int levelNumber)
         {1, 0, 0, 0, 0, 1},
         {1, 0, 0, 0, 0, 1},
         {1, 1, 0, 0, 1, 1},
-        {0, 1, 0, 0, 1, 0},
+        {1, 1, 0, 0, 1, 1},
         {1, 0, 0, 0, 0, 1},
         {1, 1, 0, 0, 1, 1},
         {1, 1, 0, 0, 1, 1},
@@ -32,7 +32,7 @@ Level Level::getLevelByNumber(int levelNumber)
     float paddingX = 0.025f;
     float paddingY = 0.01f;
     float startX = -0.65f;
-    float startY = -0.3f;
+    float startY = 1.1f;
     
     Level level1;
     for (int col = 0; col < l1.size(); col++)

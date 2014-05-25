@@ -37,7 +37,7 @@ GLuint KMFileUtilsIOS::loadTexture(const char* imgName)
 {
     NSString* imageFilePath = [[NSBundle mainBundle] pathForResource:[NSString stringWithUTF8String:imgName] ofType:nil];
     NSError* theError;
-    NSDictionary* options = @{GLKTextureLoaderGenerateMipmaps: @YES};
+    NSDictionary* options = @{GLKTextureLoaderGenerateMipmaps: @NO, GLKTextureLoaderOriginBottomLeft: @YES};
     
     GLKTextureInfo *spriteTexture = [GLKTextureLoader textureWithContentsOfFile:imageFilePath options:options error:&theError];
     if (theError)

@@ -15,6 +15,7 @@
 #include "KMScene.h"
 #include "KMGameObject.h"
 
+#include "KMTextureCache.h"
 #include "KMTexture.h"
 #include "KMShader.h"
 #include "KMVertex.h"

@@ -18,19 +18,14 @@
 		2AD421E3192F9D990010A57F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD421E2192F9D990010A57F /* Images.xcassets */; };
 		2AD4225E192F9EC40010A57F /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4225C192F9EC40010A57F /* GameScene.cpp */; };
 		2AD42268192FA33F0010A57F /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42266192FA33F0010A57F /* Ball.cpp */; };
-		2AD42270192FA5A20010A57F /* arkanoid_ball.obj in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4226F192FA5A20010A57F /* arkanoid_ball.obj */; };
 		2AD42274192FAE760010A57F /* arkanoid_ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD42273192FAE760010A57F /* arkanoid_ball.png */; };
 		2AD42279192FAFD50010A57F /* Bat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42277192FAFD50010A57F /* Bat.cpp */; };
-		2AD4227B192FB06D0010A57F /* arkanoid_bat.obj in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4227A192FB06D0010A57F /* arkanoid_bat.obj */; };
 		2AD42280192FB1860010A57F /* Brick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4227E192FB1860010A57F /* Brick.cpp */; };
 		2AD4228B1930A55D0010A57F /* ArkanoidGameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD422891930A55D0010A57F /* ArkanoidGameObject.cpp */; };
 		2AD422911930C58C0010A57F /* CollidableSurface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4228F1930C58C0010A57F /* CollidableSurface.cpp */; };
 		2AD422941930CCE70010A57F /* SideWall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD422921930CCE70010A57F /* SideWall.cpp */; };
 		2AD4229B1930CE220010A57F /* TopWall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD422991930CE220010A57F /* TopWall.cpp */; };
-		2AD4229F1930CEA90010A57F /* arkanoid_top_wall.obj in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4229E1930CEA90010A57F /* arkanoid_top_wall.obj */; };
-		2AD422A11931195E0010A57F /* arkanoid_side_wall.obj in Resources */ = {isa = PBXBuildFile; fileRef = 2AD422A01931195E0010A57F /* arkanoid_side_wall.obj */; };
 		2AD422A6193208110010A57F /* Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD422A4193208110010A57F /* Level.cpp */; };
-		2AD422A819320A190010A57F /* arkanoid_brick.obj in Resources */ = {isa = PBXBuildFile; fileRef = 2AD422A719320A190010A57F /* arkanoid_brick.obj */; };
 		2AD422FC19324D9C0010A57F /* KMFileUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD422BA19324D9C0010A57F /* KMFileUtils.cpp */; };
 		2AD422FD19324D9C0010A57F /* KMShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD422BD19324D9C0010A57F /* KMShader.cpp */; };
 		2AD422FE19324D9C0010A57F /* KMTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD422BF19324D9C0010A57F /* KMTexture.cpp */; };
@@ -60,6 +55,16 @@
 		2AD4231719324D9C0010A57F /* ITouchSubscriber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD422F819324D9C0010A57F /* ITouchSubscriber.cpp */; };
 		2AD4231819324D9C0010A57F /* KMTouchDispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD422FA19324D9C0010A57F /* KMTouchDispatcher.cpp */; };
 		2AD4231919324E410010A57F /* KMPhysicsMotionState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD422E419324D9C0010A57F /* KMPhysicsMotionState.cpp */; };
+		2AD4231D193250A90010A57F /* KMTextureCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4231A19324F170010A57F /* KMTextureCache.cpp */; };
+		2AD4232119325B1C0010A57F /* arkanoid_side_wall.obj in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4231E19325B1C0010A57F /* arkanoid_side_wall.obj */; };
+		2AD4232219325B1C0010A57F /* arkanoid_side_wall.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4231F19325B1C0010A57F /* arkanoid_side_wall.png */; };
+		2AD4232319325B1C0010A57F /* arkanoid_top_wall.obj in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4232019325B1C0010A57F /* arkanoid_top_wall.obj */; };
+		2AD4232619325D4D0010A57F /* arkanoid_brick.obj in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4232419325D4D0010A57F /* arkanoid_brick.obj */; };
+		2AD4232719325D4D0010A57F /* arkanoid_brick.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4232519325D4D0010A57F /* arkanoid_brick.png */; };
+		2AD4232A19325FAF0010A57F /* arkanoid_bat.obj in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4232819325FAF0010A57F /* arkanoid_bat.obj */; };
+		2AD4232B19325FAF0010A57F /* arkanoid_bat.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4232919325FAF0010A57F /* arkanoid_bat.png */; };
+		2AD4232E1932613E0010A57F /* arkanoid_ball.obj in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4232C1932613E0010A57F /* arkanoid_ball.obj */; };
+		2AD4232F1932613E0010A57F /* earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4232D1932613E0010A57F /* earth.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,11 +86,9 @@
 		2AD4225D192F9EC40010A57F /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Scenes/GameScene.h; sourceTree = "<group>"; };
 		2AD42266192FA33F0010A57F /* Ball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ball.cpp; path = GameObjects/Ball.cpp; sourceTree = "<group>"; };
 		2AD42267192FA33F0010A57F /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ball.h; path = GameObjects/Ball.h; sourceTree = "<group>"; };
-		2AD4226F192FA5A20010A57F /* arkanoid_ball.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = arkanoid_ball.obj; sourceTree = "<group>"; };
 		2AD42273192FAE760010A57F /* arkanoid_ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arkanoid_ball.png; sourceTree = "<group>"; };
 		2AD42277192FAFD50010A57F /* Bat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Bat.cpp; path = GameObjects/Bat.cpp; sourceTree = "<group>"; };
 		2AD42278192FAFD50010A57F /* Bat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bat.h; path = GameObjects/Bat.h; sourceTree = "<group>"; };
-		2AD4227A192FB06D0010A57F /* arkanoid_bat.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = arkanoid_bat.obj; sourceTree = "<group>"; };
 		2AD4227E192FB1860010A57F /* Brick.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Brick.cpp; path = GameObjects/Brick.cpp; sourceTree = "<group>"; };
 		2AD4227F192FB1860010A57F /* Brick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Brick.h; path = GameObjects/Brick.h; sourceTree = "<group>"; };
 		2AD422891930A55D0010A57F /* ArkanoidGameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ArkanoidGameObject.cpp; path = GameObjects/ArkanoidGameObject.cpp; sourceTree = "<group>"; };
@@ -96,11 +99,8 @@
 		2AD422931930CCE70010A57F /* SideWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SideWall.h; path = GameObjects/SideWall.h; sourceTree = "<group>"; };
 		2AD422991930CE220010A57F /* TopWall.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TopWall.cpp; path = GameObjects/TopWall.cpp; sourceTree = "<group>"; };
 		2AD4229A1930CE220010A57F /* TopWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopWall.h; path = GameObjects/TopWall.h; sourceTree = "<group>"; };
-		2AD4229E1930CEA90010A57F /* arkanoid_top_wall.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = arkanoid_top_wall.obj; sourceTree = "<group>"; };
-		2AD422A01931195E0010A57F /* arkanoid_side_wall.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = arkanoid_side_wall.obj; sourceTree = "<group>"; };
 		2AD422A4193208110010A57F /* Level.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Level.cpp; path = GameData/Level.cpp; sourceTree = "<group>"; };
 		2AD422A5193208110010A57F /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Level.h; path = GameData/Level.h; sourceTree = "<group>"; };
-		2AD422A719320A190010A57F /* arkanoid_brick.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = arkanoid_brick.obj; sourceTree = "<group>"; };
 		2AD422B919324D9C0010A57F /* KMConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMConfig.h; sourceTree = "<group>"; };
 		2AD422BA19324D9C0010A57F /* KMFileUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMFileUtils.cpp; sourceTree = "<group>"; };
 		2AD422BB19324D9C0010A57F /* KMFileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMFileUtils.h; sourceTree = "<group>"; };
@@ -157,6 +157,17 @@
 		2AD422F919324D9C0010A57F /* ITouchSubscriber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITouchSubscriber.h; sourceTree = "<group>"; };
 		2AD422FA19324D9C0010A57F /* KMTouchDispatcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMTouchDispatcher.cpp; sourceTree = "<group>"; };
 		2AD422FB19324D9C0010A57F /* KMTouchDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMTouchDispatcher.h; sourceTree = "<group>"; };
+		2AD4231A19324F170010A57F /* KMTextureCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMTextureCache.cpp; sourceTree = "<group>"; };
+		2AD4231B19324F170010A57F /* KMTextureCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMTextureCache.h; sourceTree = "<group>"; };
+		2AD4231E19325B1C0010A57F /* arkanoid_side_wall.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = arkanoid_side_wall.obj; sourceTree = "<group>"; };
+		2AD4231F19325B1C0010A57F /* arkanoid_side_wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arkanoid_side_wall.png; sourceTree = "<group>"; };
+		2AD4232019325B1C0010A57F /* arkanoid_top_wall.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = arkanoid_top_wall.obj; sourceTree = "<group>"; };
+		2AD4232419325D4D0010A57F /* arkanoid_brick.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = arkanoid_brick.obj; sourceTree = "<group>"; };
+		2AD4232519325D4D0010A57F /* arkanoid_brick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arkanoid_brick.png; sourceTree = "<group>"; };
+		2AD4232819325FAF0010A57F /* arkanoid_bat.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = arkanoid_bat.obj; sourceTree = "<group>"; };
+		2AD4232919325FAF0010A57F /* arkanoid_bat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arkanoid_bat.png; sourceTree = "<group>"; };
+		2AD4232C1932613E0010A57F /* arkanoid_ball.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = arkanoid_ball.obj; sourceTree = "<group>"; };
+		2AD4232D1932613E0010A57F /* earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,12 +263,16 @@
 		2AD42260192FA2EC0010A57F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2AD422A719320A190010A57F /* arkanoid_brick.obj */,
-				2AD422A01931195E0010A57F /* arkanoid_side_wall.obj */,
-				2AD4229E1930CEA90010A57F /* arkanoid_top_wall.obj */,
-				2AD4227A192FB06D0010A57F /* arkanoid_bat.obj */,
+				2AD4232C1932613E0010A57F /* arkanoid_ball.obj */,
+				2AD4232D1932613E0010A57F /* earth.png */,
+				2AD4232819325FAF0010A57F /* arkanoid_bat.obj */,
+				2AD4232919325FAF0010A57F /* arkanoid_bat.png */,
+				2AD4232419325D4D0010A57F /* arkanoid_brick.obj */,
+				2AD4232519325D4D0010A57F /* arkanoid_brick.png */,
+				2AD4231E19325B1C0010A57F /* arkanoid_side_wall.obj */,
+				2AD4231F19325B1C0010A57F /* arkanoid_side_wall.png */,
+				2AD4232019325B1C0010A57F /* arkanoid_top_wall.obj */,
 				2AD42273192FAE760010A57F /* arkanoid_ball.png */,
-				2AD4226F192FA5A20010A57F /* arkanoid_ball.obj */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -325,6 +340,8 @@
 				2AD422C019324D9C0010A57F /* KMTexture.h */,
 				2AD422C119324D9C0010A57F /* KMVertex.cpp */,
 				2AD422C219324D9C0010A57F /* KMVertex.h */,
+				2AD4231A19324F170010A57F /* KMTextureCache.cpp */,
+				2AD4231B19324F170010A57F /* KMTextureCache.h */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -507,16 +524,20 @@
 				2AD4231219324D9C0010A57F /* textured.vsh in Resources */,
 				2AD4230F19324D9C0010A57F /* default_red_color.fsh in Resources */,
 				2AD4231519324D9C0010A57F /* uniform_color.fsh in Resources */,
-				2AD42270192FA5A20010A57F /* arkanoid_ball.obj in Resources */,
 				2AD4231319324D9C0010A57F /* textureDiffuse.fsh in Resources */,
-				2AD4229F1930CEA90010A57F /* arkanoid_top_wall.obj in Resources */,
-				2AD4227B192FB06D0010A57F /* arkanoid_bat.obj in Resources */,
-				2AD422A11931195E0010A57F /* arkanoid_side_wall.obj in Resources */,
+				2AD4232219325B1C0010A57F /* arkanoid_side_wall.png in Resources */,
+				2AD4232A19325FAF0010A57F /* arkanoid_bat.obj in Resources */,
+				2AD4232B19325FAF0010A57F /* arkanoid_bat.png in Resources */,
+				2AD4232619325D4D0010A57F /* arkanoid_brick.obj in Resources */,
+				2AD4232E1932613E0010A57F /* arkanoid_ball.obj in Resources */,
 				2AD421E3192F9D990010A57F /* Images.xcassets in Resources */,
 				2AD421CE192F9D990010A57F /* InfoPlist.strings in Resources */,
 				2AD4231019324D9C0010A57F /* default_red_color.vsh in Resources */,
 				2AD4231119324D9C0010A57F /* textured.fsh in Resources */,
-				2AD422A819320A190010A57F /* arkanoid_brick.obj in Resources */,
+				2AD4232319325B1C0010A57F /* arkanoid_top_wall.obj in Resources */,
+				2AD4232119325B1C0010A57F /* arkanoid_side_wall.obj in Resources */,
+				2AD4232719325D4D0010A57F /* arkanoid_brick.png in Resources */,
+				2AD4232F1932613E0010A57F /* earth.png in Resources */,
 				2AD4231419324D9C0010A57F /* textureDiffuse.vsh in Resources */,
 				2AD4231619324D9C0010A57F /* uniform_color.vsh in Resources */,
 				2AD42274192FAE760010A57F /* arkanoid_ball.png in Resources */,
@@ -534,6 +555,7 @@
 				2AD4231719324D9C0010A57F /* ITouchSubscriber.cpp in Sources */,
 				2AD42279192FAFD50010A57F /* Bat.cpp in Sources */,
 				2AD4230919324D9C0010A57F /* KMScene.cpp in Sources */,
+				2AD4231D193250A90010A57F /* KMTextureCache.cpp in Sources */,
 				2AD422941930CCE70010A57F /* SideWall.cpp in Sources */,
 				2AD4230019324D9C0010A57F /* KMDirector.cpp in Sources */,
 				2AD4230C19324D9C0010A57F /* KMPhysicsWorld.cpp in Sources */,
