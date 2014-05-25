@@ -20,6 +20,7 @@
 
 #include <memory>
 #include <vector>
+#include <list>
 
 class GameScene : public KMScene
 {
@@ -32,12 +33,14 @@ protected:
 private:
     std::shared_ptr<Ball> _ball;
     std::shared_ptr<Bat> _bat;
-    std::vector<std::shared_ptr<Brick>> _bricks;
-    std::vector<CollidableSurface> _collidableSurfaces;
+    std::list<Brick*> _bricks;
+    std::list<CollidableSurface> _collidableSurfaces;
     
     void addBallAndBat();
     void addWalls();
     void addBricks();
+    
+    void handleCollision(const CollidableSurface* collidedSurf, const vec2& finalIntersectionPoint, const vec2& ballMovementVec);
 };
 
 

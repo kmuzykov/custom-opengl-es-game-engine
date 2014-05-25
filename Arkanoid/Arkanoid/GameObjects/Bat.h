@@ -16,6 +16,8 @@ class Bat : public ArkanoidGameObject
 {
 public:
     Bat();
+    
+    const virtual ArkanoidGameObjectType getObjectType() const {return ArkanoidGameObjectType::Bat;}
 };
 
 

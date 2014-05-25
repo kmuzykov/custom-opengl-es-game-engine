@@ -51,6 +51,11 @@ void KMNode::removeChild(const shared_ptr<KMNode>& node)
     _children.remove(node);
 }
 
+void KMNode::removeChildRaw(const KMNode* node)
+{
+    _children.remove_if([node](const std::shared_ptr<KMNode> child) {return child.get() == node; });    
+}
+
 const list<shared_ptr<KMNode>>& KMNode::getChildren() const
 {
     return _children;

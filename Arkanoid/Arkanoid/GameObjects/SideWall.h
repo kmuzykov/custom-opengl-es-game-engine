@@ -15,6 +15,8 @@ class SideWall : public ArkanoidGameObject
 {
 public:
     SideWall();
+
+    const virtual ArkanoidGameObjectType getObjectType() const {return ArkanoidGameObjectType::Wall;}
 };
 
 #endif /* defined(__Arkanoid__SideWall__) */

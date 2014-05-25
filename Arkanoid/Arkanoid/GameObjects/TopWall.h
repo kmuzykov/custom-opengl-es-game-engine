@@ -15,6 +15,8 @@ class TopWall : public ArkanoidGameObject
 {
 public:
     TopWall();
+
+    const virtual ArkanoidGameObjectType getObjectType() const {return ArkanoidGameObjectType::Wall;}
 };
 
 #endif /* defined(__Arkanoid__TopWall__) */

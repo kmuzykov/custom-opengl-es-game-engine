@@ -87,7 +87,6 @@ void GameScene::addBricks()
     }    
 }
 
-
 void GameScene::update(float dt)
 {
     KMScene::update(dt);
@@ -101,13 +100,15 @@ void GameScene::update(float dt)
     bool intersectsAtLeastOnce = false;
     CollidableSurface* collidedSurf = nullptr;
     
+    //Adding bat at its current position to the list of surfaces to check
+    std::list<CollidableSurface> surfacesToCheck(_collidableSurfaces);
     for (const CollidableSurface& batSurface : _bat->getCollidableSurfaces())
     {
-        //TODO: Add bat collidable surfaces
+        surfacesToCheck.push_back(batSurface);
     }
-
     
-    for (CollidableSurface& surf : _collidableSurfaces)
+    //Iterating over that extended list (that includes bat)
+    for (CollidableSurface& surf : surfacesToCheck)
     {
         if (!surf.isBallMovingTowards(ballMovementVec))
             continue;
@@ -136,13 +137,31 @@ void GameScene::update(float dt)
     
     if (intersectsAtLeastOnce && collidedSurf)
     {
-        //KMLOG("Collided with: %s", collidedSurf->getOwner()->getTag().c_str());
-        
-        vec2 reflectVec = collidedSurf->reflectVector(ballMovementVec);
-        _ball->setMovementVector(reflectVec);
+        handleCollision(collidedSurf, finalIntersectionPoint, ballMovementVec);
     }
     else
     {
         _ball->setPosition2D(ballDesiredPos);
     }
+}
+
+void GameScene::handleCollision(const CollidableSurface* collidedSurf, const vec2& finalIntersectionPoint, const vec2& ballMovementVec)
+{
+    const ArkanoidGameObject* go = collidedSurf->getOwner();
+    //KMLOG("Collided with: %s", go->getTag().c_str());
+
+    
+    ArkanoidGameObjectType goType = go->getObjectType();
+    if (goType == ArkanoidGameObjectType::Brick)
+    {
+        _collidableSurfaces.remove_if([go](const CollidableSurface& surf) { return surf.getOwner() == go;});
+        _bricks.remove_if([go](const Brick* brick) { return brick == go;});
+
+
+        this->removeChildRaw(go);
+    }
+    
+    vec2 reflectVec = collidedSurf->reflectVector(ballMovementVec);
+    _ball->setMovementVector(reflectVec);
+
 }

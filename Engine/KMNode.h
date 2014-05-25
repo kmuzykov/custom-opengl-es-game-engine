@@ -27,6 +27,8 @@ public:
     
     void addChild(const std::shared_ptr<KMNode>& node);
     void removeChild(const std::shared_ptr<KMNode>& node);
+    void removeChildRaw(const KMNode* node);
+    
     const std::list<std::shared_ptr<KMNode>>& getChildren() const;
     
     virtual const vec3& getPosition() { return _position; }

@@ -23,7 +23,7 @@ public:
     
     bool ballIntersectsWhileMoving(const vec2& ballPos, const vec2& ballDesiredPos, const vec2& ballMovementVec, const float ballRadius, vec2& intersectionPoint);
     
-    vec2 reflectVector(const vec2& movementVec) { return movementVec - _normal * movementVec.Dot(_normal) * 2.0f;}
+    vec2 reflectVector(const vec2& movementVec) const { return movementVec - _normal * movementVec.Dot(_normal) * 2.0f;}
     
     const ArkanoidGameObject* const getOwner() const {return _owner;}
 private:

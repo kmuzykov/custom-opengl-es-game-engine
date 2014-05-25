@@ -19,6 +19,8 @@ class Brick : public ArkanoidGameObject
     friend class Level;
 public:
     Brick();
+    const virtual ArkanoidGameObjectType getObjectType() const {return ArkanoidGameObjectType::Brick;}
+    
 private:
     static const std::vector<KMVertex>& getBrickVertices();
 };

@@ -13,6 +13,14 @@
 #include "CollidableSurface.h"
 #include <string>
 
+enum class ArkanoidGameObjectType
+{
+    Bat,
+    Brick,
+    Wall
+};
+
+
 class ArkanoidGameObject : public KMGameObject
 {
 public:
@@ -21,10 +29,11 @@ public:
     void setTag(const std::string& tag) { _tag = tag; }
     const std::string& getTag() const { return _tag; }
     
+    const virtual ArkanoidGameObjectType getObjectType() const = 0;
+    
     virtual void setPosition(const vec3& position);
     
     const std::vector<CollidableSurface>& getCollidableSurfaces() const { return _collidableSurfaces; }
-    
     bool doesCollidesWithBall(const vec2& ballPosition, const vec2& ballDesiredPosition, const float radius, const float distanceToTravel);
 
 protected:

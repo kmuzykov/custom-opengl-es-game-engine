@@ -12,7 +12,7 @@
 #include "KMEngine.h"
 #include "ArkanoidGameObject.h"
 
-class Ball : public ArkanoidGameObject
+class Ball : public KMGameObject
 {
 public:
     Ball();
