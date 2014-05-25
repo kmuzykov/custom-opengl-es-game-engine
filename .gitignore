@@ -24,3 +24,6 @@ Pods
 *.blend1
 *.blend2
 
+bullet-2.82-r2704/lib/libBulletCollision_xcode4.a
+bullet-2.82-r2704/lib/libBulletDynamics_xcode4.a
+bullet-2.82-r2704/lib/libLinearMath_xcode4.a
