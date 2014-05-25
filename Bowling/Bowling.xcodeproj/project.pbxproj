@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A03D2A3192A20FB00345FC0 /* pin_collider.obj in Resources */ = {isa = PBXBuildFile; fileRef = 2A03D2A2192A20FB00345FC0 /* pin_collider.obj */; };
-		2A20681F1928E15E00B5D75F /* KMMaterialTextureUnlit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A20681D1928E15E00B5D75F /* KMMaterialTextureUnlit.cpp */; };
 		2A2068221928EEAF00B5D75F /* BowlingLane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A2068201928EEAF00B5D75F /* BowlingLane.cpp */; };
-		2A20682A1928FE0B00B5D75F /* KMMaterialTextureDiffuse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A2068281928FE0B00B5D75F /* KMMaterialTextureDiffuse.cpp */; };
 		2A206831192930CB00B5D75F /* BowlingPin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A20682F192930CB00B5D75F /* BowlingPin.cpp */; };
 		2A3FB16018881A240028A808 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3FB15F18881A240028A808 /* Foundation.framework */; };
 		2A3FB16218881A240028A808 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3FB16118881A240028A808 /* CoreGraphics.framework */; };
@@ -28,34 +26,9 @@
 		2A3FB221188AA9950028A808 /* pin_diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A3FB21E188AA9950028A808 /* pin_diffuse.png */; };
 		2A3FB228188ADE990028A808 /* ball_diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A3FB225188ADE990028A808 /* ball_diffuse.png */; };
 		2A3FB22D188AF0A20028A808 /* lane_diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A3FB22C188AF0A20028A808 /* lane_diffuse.png */; };
-		2A6C088C18BBBDDA0005AF6F /* KMFileUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C085918BBBDDA0005AF6F /* KMFileUtils.cpp */; };
-		2A6C088E18BBBDDA0005AF6F /* KMShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C085E18BBBDDA0005AF6F /* KMShader.cpp */; };
-		2A6C088F18BBBDDA0005AF6F /* KMTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C086018BBBDDA0005AF6F /* KMTexture.cpp */; };
-		2A6C089018BBBDDA0005AF6F /* KMVertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C086218BBBDDA0005AF6F /* KMVertex.cpp */; };
-		2A6C089118BBBDDA0005AF6F /* KMFileUtilsIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C086618BBBDDA0005AF6F /* KMFileUtilsIOS.mm */; };
-		2A6C089218BBBDDA0005AF6F /* KMGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C086818BBBDDA0005AF6F /* KMGLView.mm */; };
-		2A6C089318BBBDDA0005AF6F /* KMDirector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C086918BBBDDA0005AF6F /* KMDirector.cpp */; };
-		2A6C089418BBBDDA0005AF6F /* KMNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C086B18BBBDDA0005AF6F /* KMNode.cpp */; };
-		2A6C089618BBBDDA0005AF6F /* KMScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C087018BBBDDA0005AF6F /* KMScene.cpp */; };
-		2A6C089818BBBDDA0005AF6F /* KMPhysicsWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C087A18BBBDDA0005AF6F /* KMPhysicsWorld.cpp */; };
-		2A6C08A418BBBE040005AF6F /* default_red_color.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 2A6C088418BBBDDA0005AF6F /* default_red_color.fsh */; };
-		2A6C08A518BBBE040005AF6F /* default_red_color.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 2A6C088518BBBDDA0005AF6F /* default_red_color.vsh */; };
-		2A6C08A618BBBE040005AF6F /* textured.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 2A6C088618BBBDDA0005AF6F /* textured.fsh */; };
-		2A6C08A718BBBE040005AF6F /* textured.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 2A6C088718BBBDDA0005AF6F /* textured.vsh */; };
-		2A6C08A818BBBE040005AF6F /* textureDiffuse.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 2A6C088818BBBDDA0005AF6F /* textureDiffuse.fsh */; };
-		2A6C08A918BBBE040005AF6F /* textureDiffuse.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 2A6C088918BBBDDA0005AF6F /* textureDiffuse.vsh */; };
-		2A6C08AA18BBBE040005AF6F /* uniform_color.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 2A6C088A18BBBDDA0005AF6F /* uniform_color.fsh */; };
-		2A6C08AB18BBBE040005AF6F /* uniform_color.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 2A6C088B18BBBDDA0005AF6F /* uniform_color.vsh */; };
-		2A72AE671929376600A0A9B8 /* KMPhysicsDebugDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A72AE651929376600A0A9B8 /* KMPhysicsDebugDrawer.cpp */; };
-		2A72AE6A1929E44E00A0A9B8 /* KMPhysicsMotionState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A72AE681929E44D00A0A9B8 /* KMPhysicsMotionState.cpp */; };
 		2A9D405A192B527300279280 /* walls_diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A9D4057192B527300279280 /* walls_diffuse.png */; };
 		2A9D405B192B527400279280 /* walls.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 2A9D4058192B527300279280 /* walls.mtl */; };
 		2A9D405C192B527400279280 /* walls.obj in Resources */ = {isa = PBXBuildFile; fileRef = 2A9D4059192B527300279280 /* walls.obj */; };
-		2AA5C44819229E1D00B65E9D /* KMGameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AA5C44619229E1D00B65E9D /* KMGameObject.cpp */; };
-		2AA5C44B19229EE200B65E9D /* KMRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AA5C44919229EE200B65E9D /* KMRenderer.cpp */; };
-		2AA5C4521922A00000B65E9D /* KMRendererMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AA5C4501922A00000B65E9D /* KMRendererMesh.cpp */; };
-		2AA5C4551922A09D00B65E9D /* KMMaterial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AA5C4531922A09D00B65E9D /* KMMaterial.cpp */; };
-		2AA5C4591922B2E100B65E9D /* KMMaterialColorUniform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AA5C4571922B2E100B65E9D /* KMMaterialColorUniform.cpp */; };
 		2AA5C45D1922B46900B65E9D /* BowlingBall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AA5C45B1922B46900B65E9D /* BowlingBall.cpp */; };
 		2AC55584188D384E0015A49F /* libBulletCollision_xcode4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A5B78DF188D36F700E3C3C0 /* libBulletCollision_xcode4.a */; };
 		2AC55585188D384E0015A49F /* libBulletDynamics_xcode4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A5B78E2188D36F700E3C3C0 /* libBulletDynamics_xcode4.a */; };
@@ -67,6 +40,36 @@
 		2AC55591188D46F50015A49F /* pin.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 2AC5558F188D46F50015A49F /* pin.mtl */; };
 		2AC55592188D46F50015A49F /* pin.obj in Resources */ = {isa = PBXBuildFile; fileRef = 2AC55590188D46F50015A49F /* pin.obj */; };
 		2AC5559E188DC6360015A49F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AC5559D188DC6360015A49F /* QuartzCore.framework */; };
+		2AD4237A193266210010A57F /* KMFileUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42336193266210010A57F /* KMFileUtils.cpp */; };
+		2AD4237B193266210010A57F /* KMShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42339193266210010A57F /* KMShader.cpp */; };
+		2AD4237C193266210010A57F /* KMTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4233B193266210010A57F /* KMTexture.cpp */; };
+		2AD4237D193266210010A57F /* KMTextureCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4233D193266210010A57F /* KMTextureCache.cpp */; };
+		2AD4237E193266210010A57F /* KMVertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4233F193266210010A57F /* KMVertex.cpp */; };
+		2AD4237F193266210010A57F /* KMDirector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42342193266210010A57F /* KMDirector.cpp */; };
+		2AD42380193266210010A57F /* KMFileUtilsIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42346193266210010A57F /* KMFileUtilsIOS.mm */; };
+		2AD42381193266210010A57F /* KMGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42348193266210010A57F /* KMGLView.mm */; };
+		2AD42382193266210010A57F /* KMMaterial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42350193266210010A57F /* KMMaterial.cpp */; };
+		2AD42383193266210010A57F /* KMMaterialColorUniform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42352193266210010A57F /* KMMaterialColorUniform.cpp */; };
+		2AD42384193266210010A57F /* KMMaterialTextureDiffuse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42354193266210010A57F /* KMMaterialTextureDiffuse.cpp */; };
+		2AD42385193266210010A57F /* KMMaterialTextureUnlit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42356193266210010A57F /* KMMaterialTextureUnlit.cpp */; };
+		2AD42386193266210010A57F /* KMGameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42359193266210010A57F /* KMGameObject.cpp */; };
+		2AD42387193266210010A57F /* KMNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4235B193266210010A57F /* KMNode.cpp */; };
+		2AD42388193266210010A57F /* KMScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4235D193266210010A57F /* KMScene.cpp */; };
+		2AD42389193266210010A57F /* KMPhysicsDebugDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42360193266210010A57F /* KMPhysicsDebugDrawer.cpp */; };
+		2AD4238A193266210010A57F /* KMPhysicsMotionState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42362193266210010A57F /* KMPhysicsMotionState.cpp */; };
+		2AD4238B193266210010A57F /* KMPhysicsWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42364193266210010A57F /* KMPhysicsWorld.cpp */; };
+		2AD4238C193266210010A57F /* KMRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42368193266210010A57F /* KMRenderer.cpp */; };
+		2AD4238D193266210010A57F /* KMRendererMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4236A193266210010A57F /* KMRendererMesh.cpp */; };
+		2AD4238E193266210010A57F /* default_red_color.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4236D193266210010A57F /* default_red_color.fsh */; };
+		2AD4238F193266210010A57F /* default_red_color.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4236E193266210010A57F /* default_red_color.vsh */; };
+		2AD42390193266210010A57F /* textured.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4236F193266210010A57F /* textured.fsh */; };
+		2AD42391193266210010A57F /* textured.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 2AD42370193266210010A57F /* textured.vsh */; };
+		2AD42392193266210010A57F /* textureDiffuse.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 2AD42371193266210010A57F /* textureDiffuse.fsh */; };
+		2AD42393193266210010A57F /* textureDiffuse.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 2AD42372193266210010A57F /* textureDiffuse.vsh */; };
+		2AD42394193266210010A57F /* uniform_color.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 2AD42373193266210010A57F /* uniform_color.fsh */; };
+		2AD42395193266210010A57F /* uniform_color.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 2AD42374193266210010A57F /* uniform_color.vsh */; };
+		2AD42396193266210010A57F /* ITouchSubscriber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42376193266210010A57F /* ITouchSubscriber.cpp */; };
+		2AD42397193266210010A57F /* KMTouchDispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AD42378193266210010A57F /* KMTouchDispatcher.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,12 +119,8 @@
 
 /* Begin PBXFileReference section */
 		2A03D2A2192A20FB00345FC0 /* pin_collider.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pin_collider.obj; sourceTree = "<group>"; };
-		2A20681D1928E15E00B5D75F /* KMMaterialTextureUnlit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = KMMaterialTextureUnlit.cpp; path = Materials/KMMaterialTextureUnlit.cpp; sourceTree = "<group>"; };
-		2A20681E1928E15E00B5D75F /* KMMaterialTextureUnlit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KMMaterialTextureUnlit.h; path = Materials/KMMaterialTextureUnlit.h; sourceTree = "<group>"; };
 		2A2068201928EEAF00B5D75F /* BowlingLane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BowlingLane.cpp; path = GameObjects/BowlingLane.cpp; sourceTree = "<group>"; };
 		2A2068211928EEAF00B5D75F /* BowlingLane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BowlingLane.h; path = GameObjects/BowlingLane.h; sourceTree = "<group>"; };
-		2A2068281928FE0B00B5D75F /* KMMaterialTextureDiffuse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = KMMaterialTextureDiffuse.cpp; path = Materials/KMMaterialTextureDiffuse.cpp; sourceTree = "<group>"; };
-		2A2068291928FE0B00B5D75F /* KMMaterialTextureDiffuse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KMMaterialTextureDiffuse.h; path = Materials/KMMaterialTextureDiffuse.h; sourceTree = "<group>"; };
 		2A20682F192930CB00B5D75F /* BowlingPin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BowlingPin.cpp; path = GameObjects/BowlingPin.cpp; sourceTree = "<group>"; };
 		2A206830192930CB00B5D75F /* BowlingPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BowlingPin.h; path = GameObjects/BowlingPin.h; sourceTree = "<group>"; };
 		2A3FB15C18881A240028A808 /* Bowling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bowling.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,56 +148,9 @@
 		2A5B78D4188D36F600E3C3C0 /* BulletCollision.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletCollision.xcodeproj; path = "../bullet-2.82-r2704/build/xcode4ios/BulletCollision.xcodeproj"; sourceTree = "<group>"; };
 		2A5B78D7188D36F700E3C3C0 /* BulletDynamics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletDynamics.xcodeproj; path = "../bullet-2.82-r2704/build/xcode4ios/BulletDynamics.xcodeproj"; sourceTree = "<group>"; };
 		2A5B78DA188D36F700E3C3C0 /* LinearMath.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LinearMath.xcodeproj; path = "../bullet-2.82-r2704/build/xcode4ios/LinearMath.xcodeproj"; sourceTree = "<group>"; };
-		2A6C085818BBBDDA0005AF6F /* KMConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMConfig.h; sourceTree = "<group>"; };
-		2A6C085918BBBDDA0005AF6F /* KMFileUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMFileUtils.cpp; sourceTree = "<group>"; };
-		2A6C085A18BBBDDA0005AF6F /* KMFileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMFileUtils.h; sourceTree = "<group>"; };
-		2A6C085D18BBBDDA0005AF6F /* KMMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMMacros.h; sourceTree = "<group>"; };
-		2A6C085E18BBBDDA0005AF6F /* KMShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMShader.cpp; sourceTree = "<group>"; };
-		2A6C085F18BBBDDA0005AF6F /* KMShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMShader.h; sourceTree = "<group>"; };
-		2A6C086018BBBDDA0005AF6F /* KMTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMTexture.cpp; sourceTree = "<group>"; };
-		2A6C086118BBBDDA0005AF6F /* KMTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMTexture.h; sourceTree = "<group>"; };
-		2A6C086218BBBDDA0005AF6F /* KMVertex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMVertex.cpp; sourceTree = "<group>"; };
-		2A6C086318BBBDDA0005AF6F /* KMVertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMVertex.h; sourceTree = "<group>"; };
-		2A6C086518BBBDDA0005AF6F /* KMFileUtilsIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMFileUtilsIOS.h; sourceTree = "<group>"; };
-		2A6C086618BBBDDA0005AF6F /* KMFileUtilsIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = KMFileUtilsIOS.mm; sourceTree = "<group>"; };
-		2A6C086718BBBDDA0005AF6F /* KMGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMGLView.h; sourceTree = "<group>"; };
-		2A6C086818BBBDDA0005AF6F /* KMGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = KMGLView.mm; sourceTree = "<group>"; };
-		2A6C086918BBBDDA0005AF6F /* KMDirector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMDirector.cpp; sourceTree = "<group>"; };
-		2A6C086A18BBBDDA0005AF6F /* KMDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMDirector.h; sourceTree = "<group>"; };
-		2A6C086B18BBBDDA0005AF6F /* KMNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMNode.cpp; sourceTree = "<group>"; };
-		2A6C086C18BBBDDA0005AF6F /* KMNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMNode.h; sourceTree = "<group>"; };
-		2A6C087018BBBDDA0005AF6F /* KMScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMScene.cpp; sourceTree = "<group>"; };
-		2A6C087118BBBDDA0005AF6F /* KMScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMScene.h; sourceTree = "<group>"; };
-		2A6C087418BBBDDA0005AF6F /* Matrix.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Matrix.hpp; sourceTree = "<group>"; };
-		2A6C087518BBBDDA0005AF6F /* Quaternion.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Quaternion.hpp; sourceTree = "<group>"; };
-		2A6C087618BBBDDA0005AF6F /* Vector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Vector.hpp; sourceTree = "<group>"; };
-		2A6C087A18BBBDDA0005AF6F /* KMPhysicsWorld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMPhysicsWorld.cpp; sourceTree = "<group>"; };
-		2A6C087B18BBBDDA0005AF6F /* KMPhysicsWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPhysicsWorld.h; sourceTree = "<group>"; };
-		2A6C088418BBBDDA0005AF6F /* default_red_color.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = default_red_color.fsh; sourceTree = "<group>"; };
-		2A6C088518BBBDDA0005AF6F /* default_red_color.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = default_red_color.vsh; sourceTree = "<group>"; };
-		2A6C088618BBBDDA0005AF6F /* textured.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = textured.fsh; sourceTree = "<group>"; };
-		2A6C088718BBBDDA0005AF6F /* textured.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = textured.vsh; sourceTree = "<group>"; };
-		2A6C088818BBBDDA0005AF6F /* textureDiffuse.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = textureDiffuse.fsh; sourceTree = "<group>"; };
-		2A6C088918BBBDDA0005AF6F /* textureDiffuse.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = textureDiffuse.vsh; sourceTree = "<group>"; };
-		2A6C088A18BBBDDA0005AF6F /* uniform_color.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = uniform_color.fsh; sourceTree = "<group>"; };
-		2A6C088B18BBBDDA0005AF6F /* uniform_color.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = uniform_color.vsh; sourceTree = "<group>"; };
-		2A72AE651929376600A0A9B8 /* KMPhysicsDebugDrawer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMPhysicsDebugDrawer.cpp; sourceTree = "<group>"; };
-		2A72AE661929376600A0A9B8 /* KMPhysicsDebugDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPhysicsDebugDrawer.h; sourceTree = "<group>"; };
-		2A72AE681929E44D00A0A9B8 /* KMPhysicsMotionState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMPhysicsMotionState.cpp; sourceTree = "<group>"; };
-		2A72AE691929E44D00A0A9B8 /* KMPhysicsMotionState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPhysicsMotionState.h; sourceTree = "<group>"; };
 		2A9D4057192B527300279280 /* walls_diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walls_diffuse.png; sourceTree = "<group>"; };
 		2A9D4058192B527300279280 /* walls.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = walls.mtl; sourceTree = "<group>"; };
 		2A9D4059192B527300279280 /* walls.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = walls.obj; sourceTree = "<group>"; };
-		2AA5C44619229E1D00B65E9D /* KMGameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMGameObject.cpp; sourceTree = "<group>"; };
-		2AA5C44719229E1D00B65E9D /* KMGameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMGameObject.h; sourceTree = "<group>"; };
-		2AA5C44919229EE200B65E9D /* KMRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMRenderer.cpp; sourceTree = "<group>"; };
-		2AA5C44A19229EE200B65E9D /* KMRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMRenderer.h; sourceTree = "<group>"; };
-		2AA5C4501922A00000B65E9D /* KMRendererMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = KMRendererMesh.cpp; path = Renderers/KMRendererMesh.cpp; sourceTree = "<group>"; };
-		2AA5C4511922A00000B65E9D /* KMRendererMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KMRendererMesh.h; path = Renderers/KMRendererMesh.h; sourceTree = "<group>"; };
-		2AA5C4531922A09D00B65E9D /* KMMaterial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMMaterial.cpp; sourceTree = "<group>"; };
-		2AA5C4541922A09D00B65E9D /* KMMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMMaterial.h; sourceTree = "<group>"; };
-		2AA5C4571922B2E100B65E9D /* KMMaterialColorUniform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = KMMaterialColorUniform.cpp; path = Materials/KMMaterialColorUniform.cpp; sourceTree = "<group>"; };
-		2AA5C4581922B2E100B65E9D /* KMMaterialColorUniform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KMMaterialColorUniform.h; path = Materials/KMMaterialColorUniform.h; sourceTree = "<group>"; };
 		2AA5C45B1922B46900B65E9D /* BowlingBall.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BowlingBall.cpp; path = GameObjects/BowlingBall.cpp; sourceTree = "<group>"; };
 		2AA5C45C1922B46900B65E9D /* BowlingBall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BowlingBall.h; path = GameObjects/BowlingBall.h; sourceTree = "<group>"; };
 		2AC55587188D46C10015A49F /* ball.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ball.mtl; sourceTree = "<group>"; };
@@ -208,6 +160,64 @@
 		2AC5558F188D46F50015A49F /* pin.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pin.mtl; sourceTree = "<group>"; };
 		2AC55590188D46F50015A49F /* pin.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pin.obj; sourceTree = "<group>"; };
 		2AC5559D188DC6360015A49F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2AD42335193266210010A57F /* KMConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMConfig.h; sourceTree = "<group>"; };
+		2AD42336193266210010A57F /* KMFileUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMFileUtils.cpp; sourceTree = "<group>"; };
+		2AD42337193266210010A57F /* KMFileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMFileUtils.h; sourceTree = "<group>"; };
+		2AD42338193266210010A57F /* KMMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMMacros.h; sourceTree = "<group>"; };
+		2AD42339193266210010A57F /* KMShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMShader.cpp; sourceTree = "<group>"; };
+		2AD4233A193266210010A57F /* KMShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMShader.h; sourceTree = "<group>"; };
+		2AD4233B193266210010A57F /* KMTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMTexture.cpp; sourceTree = "<group>"; };
+		2AD4233C193266210010A57F /* KMTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMTexture.h; sourceTree = "<group>"; };
+		2AD4233D193266210010A57F /* KMTextureCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMTextureCache.cpp; sourceTree = "<group>"; };
+		2AD4233E193266210010A57F /* KMTextureCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMTextureCache.h; sourceTree = "<group>"; };
+		2AD4233F193266210010A57F /* KMVertex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMVertex.cpp; sourceTree = "<group>"; };
+		2AD42340193266210010A57F /* KMVertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMVertex.h; sourceTree = "<group>"; };
+		2AD42342193266210010A57F /* KMDirector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMDirector.cpp; sourceTree = "<group>"; };
+		2AD42343193266210010A57F /* KMDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMDirector.h; sourceTree = "<group>"; };
+		2AD42345193266210010A57F /* KMFileUtilsIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMFileUtilsIOS.h; sourceTree = "<group>"; };
+		2AD42346193266210010A57F /* KMFileUtilsIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = KMFileUtilsIOS.mm; sourceTree = "<group>"; };
+		2AD42347193266210010A57F /* KMGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMGLView.h; sourceTree = "<group>"; };
+		2AD42348193266210010A57F /* KMGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = KMGLView.mm; sourceTree = "<group>"; };
+		2AD42349193266210010A57F /* KMEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMEngine.h; sourceTree = "<group>"; };
+		2AD4234C193266210010A57F /* Matrix.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Matrix.hpp; sourceTree = "<group>"; };
+		2AD4234D193266210010A57F /* Quaternion.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Quaternion.hpp; sourceTree = "<group>"; };
+		2AD4234E193266210010A57F /* Vector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Vector.hpp; sourceTree = "<group>"; };
+		2AD42350193266210010A57F /* KMMaterial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMMaterial.cpp; sourceTree = "<group>"; };
+		2AD42351193266210010A57F /* KMMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMMaterial.h; sourceTree = "<group>"; };
+		2AD42352193266210010A57F /* KMMaterialColorUniform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMMaterialColorUniform.cpp; sourceTree = "<group>"; };
+		2AD42353193266210010A57F /* KMMaterialColorUniform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMMaterialColorUniform.h; sourceTree = "<group>"; };
+		2AD42354193266210010A57F /* KMMaterialTextureDiffuse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMMaterialTextureDiffuse.cpp; sourceTree = "<group>"; };
+		2AD42355193266210010A57F /* KMMaterialTextureDiffuse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMMaterialTextureDiffuse.h; sourceTree = "<group>"; };
+		2AD42356193266210010A57F /* KMMaterialTextureUnlit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMMaterialTextureUnlit.cpp; sourceTree = "<group>"; };
+		2AD42357193266210010A57F /* KMMaterialTextureUnlit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMMaterialTextureUnlit.h; sourceTree = "<group>"; };
+		2AD42359193266210010A57F /* KMGameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMGameObject.cpp; sourceTree = "<group>"; };
+		2AD4235A193266210010A57F /* KMGameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMGameObject.h; sourceTree = "<group>"; };
+		2AD4235B193266210010A57F /* KMNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMNode.cpp; sourceTree = "<group>"; };
+		2AD4235C193266210010A57F /* KMNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMNode.h; sourceTree = "<group>"; };
+		2AD4235D193266210010A57F /* KMScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMScene.cpp; sourceTree = "<group>"; };
+		2AD4235E193266210010A57F /* KMScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMScene.h; sourceTree = "<group>"; };
+		2AD42360193266210010A57F /* KMPhysicsDebugDrawer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMPhysicsDebugDrawer.cpp; sourceTree = "<group>"; };
+		2AD42361193266210010A57F /* KMPhysicsDebugDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPhysicsDebugDrawer.h; sourceTree = "<group>"; };
+		2AD42362193266210010A57F /* KMPhysicsMotionState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMPhysicsMotionState.cpp; sourceTree = "<group>"; };
+		2AD42363193266210010A57F /* KMPhysicsMotionState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPhysicsMotionState.h; sourceTree = "<group>"; };
+		2AD42364193266210010A57F /* KMPhysicsWorld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMPhysicsWorld.cpp; sourceTree = "<group>"; };
+		2AD42365193266210010A57F /* KMPhysicsWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPhysicsWorld.h; sourceTree = "<group>"; };
+		2AD42368193266210010A57F /* KMRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMRenderer.cpp; sourceTree = "<group>"; };
+		2AD42369193266210010A57F /* KMRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMRenderer.h; sourceTree = "<group>"; };
+		2AD4236A193266210010A57F /* KMRendererMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMRendererMesh.cpp; sourceTree = "<group>"; };
+		2AD4236B193266210010A57F /* KMRendererMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMRendererMesh.h; sourceTree = "<group>"; };
+		2AD4236D193266210010A57F /* default_red_color.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = default_red_color.fsh; sourceTree = "<group>"; };
+		2AD4236E193266210010A57F /* default_red_color.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = default_red_color.vsh; sourceTree = "<group>"; };
+		2AD4236F193266210010A57F /* textured.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = textured.fsh; sourceTree = "<group>"; };
+		2AD42370193266210010A57F /* textured.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = textured.vsh; sourceTree = "<group>"; };
+		2AD42371193266210010A57F /* textureDiffuse.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = textureDiffuse.fsh; sourceTree = "<group>"; };
+		2AD42372193266210010A57F /* textureDiffuse.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = textureDiffuse.vsh; sourceTree = "<group>"; };
+		2AD42373193266210010A57F /* uniform_color.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = uniform_color.fsh; sourceTree = "<group>"; };
+		2AD42374193266210010A57F /* uniform_color.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = uniform_color.vsh; sourceTree = "<group>"; };
+		2AD42376193266210010A57F /* ITouchSubscriber.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ITouchSubscriber.cpp; sourceTree = "<group>"; };
+		2AD42377193266210010A57F /* ITouchSubscriber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITouchSubscriber.h; sourceTree = "<group>"; };
+		2AD42378193266210010A57F /* KMTouchDispatcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KMTouchDispatcher.cpp; sourceTree = "<group>"; };
+		2AD42379193266210010A57F /* KMTouchDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMTouchDispatcher.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,7 +277,7 @@
 		2A3FB16918881A240028A808 /* Bowling */ = {
 			isa = PBXGroup;
 			children = (
-				2A6C085618BBBDDA0005AF6F /* Engine */,
+				2AD42333193266210010A57F /* Engine */,
 				2A3FB1D9188910740028A808 /* Scenes */,
 				2AA5C45A1922B45000B65E9D /* GameObjects */,
 				2A3FB1E7188958440028A808 /* Resources */,
@@ -376,107 +386,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2A6C085618BBBDDA0005AF6F /* Engine */ = {
-			isa = PBXGroup;
-			children = (
-				2AA5C4561922A60900B65E9D /* Materials */,
-				2A6C085718BBBDDA0005AF6F /* Common */,
-				2A6C086418BBBDDA0005AF6F /* iOS */,
-				2A6C087218BBBDDA0005AF6F /* Libraries */,
-				2A6C087718BBBDDA0005AF6F /* Physics */,
-				2A6C088318BBBDDA0005AF6F /* Shaders */,
-				2AA5C44F19229FCF00B65E9D /* Renderers */,
-				2A6C086A18BBBDDA0005AF6F /* KMDirector.h */,
-				2A6C086918BBBDDA0005AF6F /* KMDirector.cpp */,
-				2A6C086C18BBBDDA0005AF6F /* KMNode.h */,
-				2A6C086B18BBBDDA0005AF6F /* KMNode.cpp */,
-				2A6C087118BBBDDA0005AF6F /* KMScene.h */,
-				2A6C087018BBBDDA0005AF6F /* KMScene.cpp */,
-				2AA5C44719229E1D00B65E9D /* KMGameObject.h */,
-				2AA5C44619229E1D00B65E9D /* KMGameObject.cpp */,
-				2AA5C44A19229EE200B65E9D /* KMRenderer.h */,
-				2AA5C44919229EE200B65E9D /* KMRenderer.cpp */,
-				2AA5C4541922A09D00B65E9D /* KMMaterial.h */,
-				2AA5C4531922A09D00B65E9D /* KMMaterial.cpp */,
-			);
-			name = Engine;
-			path = ../../Engine;
-			sourceTree = "<group>";
-		};
-		2A6C085718BBBDDA0005AF6F /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				2A6C085818BBBDDA0005AF6F /* KMConfig.h */,
-				2A6C085D18BBBDDA0005AF6F /* KMMacros.h */,
-				2A6C085A18BBBDDA0005AF6F /* KMFileUtils.h */,
-				2A6C085918BBBDDA0005AF6F /* KMFileUtils.cpp */,
-				2A6C085F18BBBDDA0005AF6F /* KMShader.h */,
-				2A6C085E18BBBDDA0005AF6F /* KMShader.cpp */,
-				2A6C086118BBBDDA0005AF6F /* KMTexture.h */,
-				2A6C086018BBBDDA0005AF6F /* KMTexture.cpp */,
-				2A6C086318BBBDDA0005AF6F /* KMVertex.h */,
-				2A6C086218BBBDDA0005AF6F /* KMVertex.cpp */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		2A6C086418BBBDDA0005AF6F /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				2A6C086518BBBDDA0005AF6F /* KMFileUtilsIOS.h */,
-				2A6C086618BBBDDA0005AF6F /* KMFileUtilsIOS.mm */,
-				2A6C086718BBBDDA0005AF6F /* KMGLView.h */,
-				2A6C086818BBBDDA0005AF6F /* KMGLView.mm */,
-			);
-			path = iOS;
-			sourceTree = "<group>";
-		};
-		2A6C087218BBBDDA0005AF6F /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				2A6C087318BBBDDA0005AF6F /* Math */,
-			);
-			path = Libraries;
-			sourceTree = "<group>";
-		};
-		2A6C087318BBBDDA0005AF6F /* Math */ = {
-			isa = PBXGroup;
-			children = (
-				2A6C087418BBBDDA0005AF6F /* Matrix.hpp */,
-				2A6C087518BBBDDA0005AF6F /* Quaternion.hpp */,
-				2A6C087618BBBDDA0005AF6F /* Vector.hpp */,
-			);
-			path = Math;
-			sourceTree = "<group>";
-		};
-		2A6C087718BBBDDA0005AF6F /* Physics */ = {
-			isa = PBXGroup;
-			children = (
-				2A6C087B18BBBDDA0005AF6F /* KMPhysicsWorld.h */,
-				2A6C087A18BBBDDA0005AF6F /* KMPhysicsWorld.cpp */,
-				2A72AE661929376600A0A9B8 /* KMPhysicsDebugDrawer.h */,
-				2A72AE651929376600A0A9B8 /* KMPhysicsDebugDrawer.cpp */,
-				2A72AE691929E44D00A0A9B8 /* KMPhysicsMotionState.h */,
-				2A72AE681929E44D00A0A9B8 /* KMPhysicsMotionState.cpp */,
-			);
-			path = Physics;
-			sourceTree = "<group>";
-		};
-		2A6C088318BBBDDA0005AF6F /* Shaders */ = {
-			isa = PBXGroup;
-			children = (
-				2A6C088418BBBDDA0005AF6F /* default_red_color.fsh */,
-				2A6C088518BBBDDA0005AF6F /* default_red_color.vsh */,
-				2A6C088618BBBDDA0005AF6F /* textured.fsh */,
-				2A6C088718BBBDDA0005AF6F /* textured.vsh */,
-				2A6C088818BBBDDA0005AF6F /* textureDiffuse.fsh */,
-				2A6C088918BBBDDA0005AF6F /* textureDiffuse.vsh */,
-				2A6C088A18BBBDDA0005AF6F /* uniform_color.fsh */,
-				2A6C088B18BBBDDA0005AF6F /* uniform_color.vsh */,
-			);
-			path = Shaders;
-			sourceTree = "<group>";
-		};
 		2A9D4056192B526300279280 /* Decorations */ = {
 			isa = PBXGroup;
 			children = (
@@ -485,28 +394,6 @@
 				2A9D4059192B527300279280 /* walls.obj */,
 			);
 			name = Decorations;
-			sourceTree = "<group>";
-		};
-		2AA5C44F19229FCF00B65E9D /* Renderers */ = {
-			isa = PBXGroup;
-			children = (
-				2AA5C4511922A00000B65E9D /* KMRendererMesh.h */,
-				2AA5C4501922A00000B65E9D /* KMRendererMesh.cpp */,
-			);
-			name = Renderers;
-			sourceTree = "<group>";
-		};
-		2AA5C4561922A60900B65E9D /* Materials */ = {
-			isa = PBXGroup;
-			children = (
-				2AA5C4581922B2E100B65E9D /* KMMaterialColorUniform.h */,
-				2AA5C4571922B2E100B65E9D /* KMMaterialColorUniform.cpp */,
-				2A20681E1928E15E00B5D75F /* KMMaterialTextureUnlit.h */,
-				2A20681D1928E15E00B5D75F /* KMMaterialTextureUnlit.cpp */,
-				2A2068291928FE0B00B5D75F /* KMMaterialTextureDiffuse.h */,
-				2A2068281928FE0B00B5D75F /* KMMaterialTextureDiffuse.cpp */,
-			);
-			name = Materials;
 			sourceTree = "<group>";
 		};
 		2AA5C45A1922B45000B65E9D /* GameObjects */ = {
@@ -520,6 +407,168 @@
 				2A20682F192930CB00B5D75F /* BowlingPin.cpp */,
 			);
 			name = GameObjects;
+			sourceTree = "<group>";
+		};
+		2AD42333193266210010A57F /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				2AD42334193266210010A57F /* Common */,
+				2AD42341193266210010A57F /* Director */,
+				2AD42344193266210010A57F /* iOS */,
+				2AD42349193266210010A57F /* KMEngine.h */,
+				2AD4234A193266210010A57F /* Libraries */,
+				2AD4234F193266210010A57F /* Materials */,
+				2AD42358193266210010A57F /* Nodes */,
+				2AD4235F193266210010A57F /* Physics */,
+				2AD42366193266210010A57F /* Renderables */,
+				2AD42367193266210010A57F /* Renderers */,
+				2AD4236C193266210010A57F /* Shaders */,
+				2AD42375193266210010A57F /* Touches */,
+			);
+			name = Engine;
+			path = ../../Engine;
+			sourceTree = "<group>";
+		};
+		2AD42334193266210010A57F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2AD42335193266210010A57F /* KMConfig.h */,
+				2AD42336193266210010A57F /* KMFileUtils.cpp */,
+				2AD42337193266210010A57F /* KMFileUtils.h */,
+				2AD42338193266210010A57F /* KMMacros.h */,
+				2AD42339193266210010A57F /* KMShader.cpp */,
+				2AD4233A193266210010A57F /* KMShader.h */,
+				2AD4233B193266210010A57F /* KMTexture.cpp */,
+				2AD4233C193266210010A57F /* KMTexture.h */,
+				2AD4233D193266210010A57F /* KMTextureCache.cpp */,
+				2AD4233E193266210010A57F /* KMTextureCache.h */,
+				2AD4233F193266210010A57F /* KMVertex.cpp */,
+				2AD42340193266210010A57F /* KMVertex.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		2AD42341193266210010A57F /* Director */ = {
+			isa = PBXGroup;
+			children = (
+				2AD42342193266210010A57F /* KMDirector.cpp */,
+				2AD42343193266210010A57F /* KMDirector.h */,
+			);
+			path = Director;
+			sourceTree = "<group>";
+		};
+		2AD42344193266210010A57F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2AD42345193266210010A57F /* KMFileUtilsIOS.h */,
+				2AD42346193266210010A57F /* KMFileUtilsIOS.mm */,
+				2AD42347193266210010A57F /* KMGLView.h */,
+				2AD42348193266210010A57F /* KMGLView.mm */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		2AD4234A193266210010A57F /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				2AD4234B193266210010A57F /* Math */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		2AD4234B193266210010A57F /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				2AD4234C193266210010A57F /* Matrix.hpp */,
+				2AD4234D193266210010A57F /* Quaternion.hpp */,
+				2AD4234E193266210010A57F /* Vector.hpp */,
+			);
+			path = Math;
+			sourceTree = "<group>";
+		};
+		2AD4234F193266210010A57F /* Materials */ = {
+			isa = PBXGroup;
+			children = (
+				2AD42350193266210010A57F /* KMMaterial.cpp */,
+				2AD42351193266210010A57F /* KMMaterial.h */,
+				2AD42352193266210010A57F /* KMMaterialColorUniform.cpp */,
+				2AD42353193266210010A57F /* KMMaterialColorUniform.h */,
+				2AD42354193266210010A57F /* KMMaterialTextureDiffuse.cpp */,
+				2AD42355193266210010A57F /* KMMaterialTextureDiffuse.h */,
+				2AD42356193266210010A57F /* KMMaterialTextureUnlit.cpp */,
+				2AD42357193266210010A57F /* KMMaterialTextureUnlit.h */,
+			);
+			path = Materials;
+			sourceTree = "<group>";
+		};
+		2AD42358193266210010A57F /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				2AD42359193266210010A57F /* KMGameObject.cpp */,
+				2AD4235A193266210010A57F /* KMGameObject.h */,
+				2AD4235B193266210010A57F /* KMNode.cpp */,
+				2AD4235C193266210010A57F /* KMNode.h */,
+				2AD4235D193266210010A57F /* KMScene.cpp */,
+				2AD4235E193266210010A57F /* KMScene.h */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
+		2AD4235F193266210010A57F /* Physics */ = {
+			isa = PBXGroup;
+			children = (
+				2AD42360193266210010A57F /* KMPhysicsDebugDrawer.cpp */,
+				2AD42361193266210010A57F /* KMPhysicsDebugDrawer.h */,
+				2AD42362193266210010A57F /* KMPhysicsMotionState.cpp */,
+				2AD42363193266210010A57F /* KMPhysicsMotionState.h */,
+				2AD42364193266210010A57F /* KMPhysicsWorld.cpp */,
+				2AD42365193266210010A57F /* KMPhysicsWorld.h */,
+			);
+			path = Physics;
+			sourceTree = "<group>";
+		};
+		2AD42366193266210010A57F /* Renderables */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Renderables;
+			sourceTree = "<group>";
+		};
+		2AD42367193266210010A57F /* Renderers */ = {
+			isa = PBXGroup;
+			children = (
+				2AD42368193266210010A57F /* KMRenderer.cpp */,
+				2AD42369193266210010A57F /* KMRenderer.h */,
+				2AD4236A193266210010A57F /* KMRendererMesh.cpp */,
+				2AD4236B193266210010A57F /* KMRendererMesh.h */,
+			);
+			path = Renderers;
+			sourceTree = "<group>";
+		};
+		2AD4236C193266210010A57F /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				2AD4236D193266210010A57F /* default_red_color.fsh */,
+				2AD4236E193266210010A57F /* default_red_color.vsh */,
+				2AD4236F193266210010A57F /* textured.fsh */,
+				2AD42370193266210010A57F /* textured.vsh */,
+				2AD42371193266210010A57F /* textureDiffuse.fsh */,
+				2AD42372193266210010A57F /* textureDiffuse.vsh */,
+				2AD42373193266210010A57F /* uniform_color.fsh */,
+				2AD42374193266210010A57F /* uniform_color.vsh */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		2AD42375193266210010A57F /* Touches */ = {
+			isa = PBXGroup;
+			children = (
+				2AD42376193266210010A57F /* ITouchSubscriber.cpp */,
+				2AD42377193266210010A57F /* ITouchSubscriber.h */,
+				2AD42378193266210010A57F /* KMTouchDispatcher.cpp */,
+				2AD42379193266210010A57F /* KMTouchDispatcher.h */,
+			);
+			path = Touches;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -615,30 +664,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A6C08A418BBBE040005AF6F /* default_red_color.fsh in Resources */,
-				2A6C08A518BBBE040005AF6F /* default_red_color.vsh in Resources */,
+				2AD42393193266210010A57F /* textureDiffuse.vsh in Resources */,
 				2A9D405B192B527400279280 /* walls.mtl in Resources */,
-				2A6C08A618BBBE040005AF6F /* textured.fsh in Resources */,
-				2A6C08A718BBBE040005AF6F /* textured.vsh in Resources */,
-				2A6C08A818BBBE040005AF6F /* textureDiffuse.fsh in Resources */,
-				2A6C08A918BBBE040005AF6F /* textureDiffuse.vsh in Resources */,
-				2A6C08AA18BBBE040005AF6F /* uniform_color.fsh in Resources */,
-				2A6C08AB18BBBE040005AF6F /* uniform_color.vsh in Resources */,
 				2AC5558E188D46CA0015A49F /* lane.obj in Resources */,
 				2AC55592188D46F50015A49F /* pin.obj in Resources */,
+				2AD42395193266210010A57F /* uniform_color.vsh in Resources */,
+				2AD42392193266210010A57F /* textureDiffuse.fsh in Resources */,
 				2AC55589188D46C10015A49F /* ball.mtl in Resources */,
 				2AC5558A188D46C10015A49F /* ball.obj in Resources */,
+				2AD42394193266210010A57F /* uniform_color.fsh in Resources */,
+				2AD4238E193266210010A57F /* default_red_color.fsh in Resources */,
 				2A9D405A192B527300279280 /* walls_diffuse.png in Resources */,
 				2AC55591188D46F50015A49F /* pin.mtl in Resources */,
 				2A9D405C192B527400279280 /* walls.obj in Resources */,
 				2A3FB1ED188958440028A808 /* cube.obj in Resources */,
 				2A3FB1EE188958440028A808 /* cube_diffuse.png in Resources */,
 				2A3FB221188AA9950028A808 /* pin_diffuse.png in Resources */,
+				2AD42391193266210010A57F /* textured.vsh in Resources */,
 				2A3FB228188ADE990028A808 /* ball_diffuse.png in Resources */,
+				2AD42390193266210010A57F /* textured.fsh in Resources */,
 				2A3FB1EC188958440028A808 /* cube.mtl in Resources */,
 				2A03D2A3192A20FB00345FC0 /* pin_collider.obj in Resources */,
 				2A3FB22D188AF0A20028A808 /* lane_diffuse.png in Resources */,
 				2A3FB18018881A240028A808 /* Images.xcassets in Resources */,
+				2AD4238F193266210010A57F /* default_red_color.vsh in Resources */,
 				2A3FB16E18881A240028A808 /* InfoPlist.strings in Resources */,
 				2AC5558D188D46CA0015A49F /* lane.mtl in Resources */,
 			);
@@ -652,30 +701,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A206831192930CB00B5D75F /* BowlingPin.cpp in Sources */,
-				2A6C088F18BBBDDA0005AF6F /* KMTexture.cpp in Sources */,
-				2A6C088E18BBBDDA0005AF6F /* KMShader.cpp in Sources */,
-				2AA5C4521922A00000B65E9D /* KMRendererMesh.cpp in Sources */,
-				2A6C089618BBBDDA0005AF6F /* KMScene.cpp in Sources */,
-				2A20681F1928E15E00B5D75F /* KMMaterialTextureUnlit.cpp in Sources */,
+				2AD4238A193266210010A57F /* KMPhysicsMotionState.cpp in Sources */,
+				2AD42383193266210010A57F /* KMMaterialColorUniform.cpp in Sources */,
+				2AD4238C193266210010A57F /* KMRenderer.cpp in Sources */,
 				2A2068221928EEAF00B5D75F /* BowlingLane.cpp in Sources */,
-				2A20682A1928FE0B00B5D75F /* KMMaterialTextureDiffuse.cpp in Sources */,
-				2A6C089318BBBDDA0005AF6F /* KMDirector.cpp in Sources */,
-				2A6C089818BBBDDA0005AF6F /* KMPhysicsWorld.cpp in Sources */,
-				2A6C089018BBBDDA0005AF6F /* KMVertex.cpp in Sources */,
+				2AD4237A193266210010A57F /* KMFileUtils.cpp in Sources */,
+				2AD42389193266210010A57F /* KMPhysicsDebugDrawer.cpp in Sources */,
+				2AD4238B193266210010A57F /* KMPhysicsWorld.cpp in Sources */,
 				2A3FB17418881A240028A808 /* AppDelegate.mm in Sources */,
-				2A72AE671929376600A0A9B8 /* KMPhysicsDebugDrawer.cpp in Sources */,
-				2A6C089218BBBDDA0005AF6F /* KMGLView.mm in Sources */,
-				2A6C088C18BBBDDA0005AF6F /* KMFileUtils.cpp in Sources */,
-				2AA5C44B19229EE200B65E9D /* KMRenderer.cpp in Sources */,
-				2A72AE6A1929E44E00A0A9B8 /* KMPhysicsMotionState.cpp in Sources */,
-				2A6C089118BBBDDA0005AF6F /* KMFileUtilsIOS.mm in Sources */,
-				2AA5C44819229E1D00B65E9D /* KMGameObject.cpp in Sources */,
-				2A6C089418BBBDDA0005AF6F /* KMNode.cpp in Sources */,
+				2AD42396193266210010A57F /* ITouchSubscriber.cpp in Sources */,
+				2AD4237D193266210010A57F /* KMTextureCache.cpp in Sources */,
+				2AD4237B193266210010A57F /* KMShader.cpp in Sources */,
+				2AD42380193266210010A57F /* KMFileUtilsIOS.mm in Sources */,
+				2AD42382193266210010A57F /* KMMaterial.cpp in Sources */,
+				2AD42387193266210010A57F /* KMNode.cpp in Sources */,
+				2AD42381193266210010A57F /* KMGLView.mm in Sources */,
 				2A3FB17018881A240028A808 /* main.m in Sources */,
-				2AA5C4551922A09D00B65E9D /* KMMaterial.cpp in Sources */,
-				2AA5C4591922B2E100B65E9D /* KMMaterialColorUniform.cpp in Sources */,
+				2AD4237F193266210010A57F /* KMDirector.cpp in Sources */,
+				2AD42386193266210010A57F /* KMGameObject.cpp in Sources */,
+				2AD42384193266210010A57F /* KMMaterialTextureDiffuse.cpp in Sources */,
+				2AD42385193266210010A57F /* KMMaterialTextureUnlit.cpp in Sources */,
+				2AD42388193266210010A57F /* KMScene.cpp in Sources */,
 				2A3FB1DC188910930028A808 /* TestScene.cpp in Sources */,
+				2AD4237E193266210010A57F /* KMVertex.cpp in Sources */,
+				2AD42397193266210010A57F /* KMTouchDispatcher.cpp in Sources */,
 				2AA5C45D1922B46900B65E9D /* BowlingBall.cpp in Sources */,
+				2AD4237C193266210010A57F /* KMTexture.cpp in Sources */,
+				2AD4238D193266210010A57F /* KMRendererMesh.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
